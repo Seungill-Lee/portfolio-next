@@ -3,6 +3,6 @@ import Image from 'next/image';
 
 export default function Gate() {
     return(
-        <h1>Seungill's Portfolio</h1>
+        <h1>Seungill&apos;s Portfolio</h1>
     )
 }
