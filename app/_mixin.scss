@@ -1,0 +1,25 @@
+@import "./variables";
+
+@mixin FullHD {
+    @media all and (width <= $FullHDMax) {
+        @content;
+    }
+}
+
+@mixin TabletHz {
+    @media all and (width <= $TabletMax) {
+        @content;
+    }
+}
+
+@mixin TabletVt {
+    @media all and (width <= $TabletMin) {
+        @content;
+    }
+}
+
+@mixin MobileVt {
+    @media all and (width <= $MobileMin) {
+        @content;
+    }
+}
