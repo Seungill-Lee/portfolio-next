@@ -74,7 +74,7 @@ section#portfolio {
                     }
                     .project_name {
                         margin-top: get-vw(4px,$divceWidth);
-                        font-weight: 300;
+                        font-weight: 400;
                         line-height: 140%;
                         opacity: 0.75;
                         transition: 0.3s ease all;
@@ -170,7 +170,7 @@ section#portfolio {
                                 }
                                 th {
                                     width: get-vw(130px,$divceWidth);
-                                    font-weight: 300;
+                                    font-weight: 400;
                                     color: navy;
                                 }
                                 td {
@@ -402,6 +402,81 @@ section#portfolio {
     @media screen and (orientation: portrait) {
         $divceHeight: $TabletMax;
 
+        /* Portfolio */
+        section#portfolio {
+            padding: get-vh(60px,$divceHeight) get-vh(150px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight);
+            .pf_cont_inner {
+                h2 {
+                    padding: get-vh(80px,$divceHeight) get-vh(150px,$divceHeight) get-vh(40px,$divceHeight) get-vh(60px,$divceHeight);
+                    background-color: rgba(255,255,255,0);
+                    transition: 0.2s ease all;
+                }
+                .pf_year {
+                    font-size: get-vh(34px,$divceHeight);
+                    padding-top: get-vh(94px,$divceHeight);
+                    right: get-vh(150px,$divceHeight);
+                    transition: 0.2s ease all;
+                }
+                &.fixed {
+                    h2 {
+                        padding: get-vh(16px,$divceHeight) get-vh(150px,$divceHeight) get-vh(14px,$divceHeight) get-vh(60px,$divceHeight);
+                        background-color: rgba(255,255,255,0.75);
+                    }
+                    .pf_year {
+                        padding-top: get-vh(32px,$divceHeight);
+                    }
+                }
+                ul.detail {
+                    > li {
+                        padding: get-vh(120px,$divceHeight) 0px 0px 0px;
+                        min-height: auto;
+                        .screenshot {
+                            position: static;
+                            width: 100%;
+                            max-height: none;
+                            img {
+                                max-height: calc(100vw - get-vh(260px,$divceHeight))
+                            }
+                        }
+                        .project_info {
+                            margin-top: get-vh(20px,$divceHeight);
+                            h3 {
+                                font-size: get-vh(26px,$divceHeight);
+                                a {
+                                    &:hover {
+                                        text-decoration-thickness: get-vh(2px,$divceHeight);
+                                        text-underline-offset: get-vh(12px,$divceHeight);
+                                    }
+                                }
+                            }
+                            table {
+                                margin-top: get-vh(12px,$divceHeight);
+                                tbody {
+                                    tr {
+                                        th,td {
+                                            padding: get-vh(15px,$divceHeight) 0px;
+                                        }
+                                        th {
+                                            width: get-vh(120px,$divceHeight)
+                                        }
+                                        td {
+                                            &.participation {
+                                                .gauge {
+                                                    .bar {
+                                                        padding: get-vh(11px,$divceHeight) get-vh(12px,$divceHeight) get-vh(12px,$divceHeight);
+                                                        font-size: get-vh(15px,$divceHeight);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -413,5 +488,79 @@ section#portfolio {
     @media screen and (orientation: portrait) {
         $divceHeight: $MobileMax;
         
+        /* Portfolio */
+        section#portfolio {
+            padding: get-vh(40px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight) get-vh(40px,$divceHeight);
+            .pf_cont_inner {
+                h2 {
+                    padding: get-vh(60px,$divceHeight) get-vh(80px,$divceHeight) get-vh(40px,$divceHeight) get-vh(40px,$divceHeight);
+                    background-color: rgba(255,255,255,0);
+                    transition: 0.2s ease all;
+                }
+                .pf_year {
+                    font-size: get-vh(34px,$divceHeight);
+                    padding-top: get-vh(70px,$divceHeight);
+                    right: get-vh(80px,$divceHeight);
+                    transition: 0.2s ease all;
+                }
+                &.fixed {
+                    h2 {
+                        padding: get-vh(16px,$divceHeight) get-vh(80px,$divceHeight) get-vh(14px,$divceHeight) get-vh(40px,$divceHeight);
+                        background-color: rgba(255,255,255,0.75);
+                    }
+                    .pf_year {
+                        padding-top: get-vh(28px,$divceHeight);
+                    }
+                }
+                ul.detail {
+                    > li {
+                        padding: get-vh(120px,$divceHeight) 0px 0px 0px;
+                        .screenshot {
+                            position: static;
+                            width: 100%;
+                            max-height: none;
+                            img {
+                                max-height: calc(100vw - get-vh(120px,$divceHeight))
+                            }
+                        }
+                        .project_info {
+                            margin-top: get-vh(20px,$divceHeight);
+                            h3 {
+                                font-size: get-vh(26px,$divceHeight);
+                                a {
+                                    &:hover {
+                                        text-decoration-thickness: get-vh(2px,$divceHeight);
+                                        text-underline-offset: get-vh(12px,$divceHeight);
+                                    }
+                                }
+                            }
+                            table {
+                                margin-top: get-vh(12px,$divceHeight);
+                                tbody {
+                                    tr {
+                                        th,td {
+                                            padding: get-vh(15px,$divceHeight) 0px;
+                                        }
+                                        th {
+                                            width: get-vh(110px,$divceHeight)
+                                        }
+                                        td {
+                                            &.participation {
+                                                .gauge {
+                                                    .bar {
+                                                        padding: get-vh(11px,$divceHeight) get-vh(12px,$divceHeight) get-vh(12px,$divceHeight);
+                                                        font-size: get-vh(15px,$divceHeight);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

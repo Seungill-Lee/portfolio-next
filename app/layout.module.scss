@@ -31,11 +31,11 @@ footer#footer {
 
     /* 세로 모드 */
     @media screen and (orientation: portrait) {
-        $divceWidth: $TabletMin;
+        $divceHeight: $TabletMin;
 
         /* Footer */
         footer#footer {
-            padding: get-vw(38px,$divceWidth) get-vw(40px,$divceWidth) get-vw(36px,$divceWidth);
+            padding: get-vh(38px,$divceHeight) get-vh(40px,$divceHeight) get-vh(36px,$divceHeight);
         }
     }
 }
@@ -46,11 +46,11 @@ footer#footer {
 
     /* 세로모드 */
 	@media screen and (orientation: portrait) {
-		$divceWidth: $MobileMin;
+		$divceHeight: $MobileMax;
 
         /* Footer */
         footer#footer {
-            padding: get-vw(34px,$divceWidth) get-vw(30px,$divceWidth) get-vw(32px,$divceWidth);
+            padding: get-vh(30px,$divceHeight) get-vh(30px,$divceHeight) get-vh(28px,$divceHeight);
         }
 	}
 }

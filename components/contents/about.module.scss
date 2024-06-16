@@ -7,12 +7,6 @@ $divceWidth: $QuadHDMax;
 section#about {
     padding: get-vw(100px,$divceWidth) get-vw(300px,$divceWidth) get-vw(100px,$divceWidth) get-vw(100px,$divceWidth);
     background-color: orange;
-    h2 {
-        position: absolute;
-        z-index: 3;
-        top: get-vw(100px,$divceWidth);
-        left: get-vw(100px,$divceWidth);
-    }
     .about_photo {
         position: absolute;
         top: get-vw(230px,$divceWidth);
@@ -27,24 +21,12 @@ section#about {
         }
     }
     .about_cont {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        z-index: 1;
-        width: 100%;
-        height: 100vh;
-        padding: get-vw(230px,$divceWidth) get-vw(800px,$divceWidth) get-vw(100px,$divceWidth) get-vw(100px,$divceWidth);
-        box-sizing: border-box;
-        opacity: 0;
-        &.on {
-            z-index: 2;
-            opacity: 1;
-        }
+        margin-top: get-vw(64px,$divceWidth);
         h3 {
             margin-bottom: get-vw(24px,$divceWidth);
-            transform: translateY(get-vw(20px,$divceWidth));
-            opacity: 0;
-            transition: 0.3s ease transform, 0.3s ease opacity;
+            // transform: translateY(get-vw(20px,$divceWidth));
+            // opacity: 0;
+            // transition: 0.3s ease transform, 0.3s ease opacity;
         }
         &.on h3 {
             transform: translateY(0px);
@@ -55,9 +37,9 @@ section#about {
                 li {
                     position: relative;
                     padding-left: get-vw(18px,$divceWidth);
-                    transform: translateY(get-vw(10px,$divceWidth));
-                    opacity: 0;
-                    transition: 0.3s ease transform, 0.3s ease opacity;
+                    // transform: translateY(get-vw(10px,$divceWidth));
+                    // opacity: 0;
+                    // transition: 0.3s ease transform, 0.3s ease opacity;
                     & + li {
                         margin-top: get-vw(14px,$divceWidth);
                     }
@@ -74,28 +56,22 @@ section#about {
                 }
             }
         }
-        &.on.profile {
-            ul {
-                li {
-                    transform: translateY(0px);
-                    opacity: 1;
-                }
-            }
-        }
+        // &.on.profile {
+        //     ul {
+        //         li {
+        //             transform: translateY(0px);
+        //             opacity: 1;
+        //         }
+        //     }
+        // }
         &.intro {
             p {
-                transform: translateY(get-vw(20px,$divceWidth));
-                opacity: 0;
-                transition: 0.3s ease 0.15s transform, 0.3s ease 0.15s opacity;
+                // transform: translateY(get-vw(20px,$divceWidth));
+                // opacity: 0;
+                // transition: 0.3s ease 0.15s transform, 0.3s ease 0.15s opacity;
                 & + p {
                     margin-top: get-vw(24px,$divceWidth);
                 }
-            }
-        }
-        &.on.intro {
-            p {
-                transform: translateY(0px);
-                opacity: 1;
             }
         }
         &.skill {
@@ -105,25 +81,27 @@ section#about {
                     grid-template-columns: get-vw(150px,$divceWidth) get-vw(800px,$divceWidth);
                     align-items: center;
                     gap: 0px get-vw(12px,$divceWidth);
-                    transform: translateY(get-vw(10px,$divceWidth));
-                    opacity: 0;
-                    transition: 0.3s ease transform, 0.3s ease opacity;
+                    // transform: translateY(get-vw(10px,$divceWidth));
+                    // opacity: 0;
+                    // transition: 0.3s ease transform, 0.3s ease opacity;
                     & + li {
                         margin-top: get-vw(20px,$divceWidth);
                     }
                     .cateogry {
                         font-weight: 500;
+                        position: relative;
+                        top: -1px;
                     }
                     .gauge {
                         overflow: hidden;
                         .bar {
-                            padding: get-vw(8px,$divceWidth) get-vw(16px,$divceWidth) get-vw(10px,$divceWidth);
+                            padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(9px,$divceWidth);
                             box-sizing: border-box;
                             color: white;
                             border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                             background-color: crimson;
-                            transform: translateX(-100%);
-                            transition: 0.3s ease transform;
+                            // transform: translateX(-100%);
+                            // transition: 0.3s ease transform;
                             &.react {
                                 color: #61DAFB;
                                 background-color: rgb(23,23,23);
@@ -166,7 +144,7 @@ section#about {
             &.profile {
                 ul {
                     li {
-                        transform: translateY(get-vw(10px,$divceWidth));
+                        // transform: translateY(get-vw(10px,$divceWidth));
                         & + li {
                             margin-top: get-vw(14px,$divceWidth);
                         }
@@ -186,7 +164,7 @@ section#about {
                     li {
                         grid-template-columns: get-vw(150px,$divceWidth) get-vw(800px,$divceWidth);
                         gap: 0px 12px;
-                        transform: translateY(get-vw(10px,$divceWidth));
+                        // transform: translateY(get-vw(10px,$divceWidth));
                         & + li {
                             margin-top: get-vw(20px,$divceWidth);
                         }
@@ -215,20 +193,18 @@ section#about {
             margin-bottom: get-vw(40px,$divceWidth);
         }
         .about_photo {
-            top: get-vw(216px,$divceWidth);
+            top: get-vw(230px,$divceWidth);
             right: get-vw(180px,$divceWidth);
-            width: get-vw(400px,$divceWidth);
+            width: get-vw(430px,$divceWidth);
         }
         .about_cont {
             position: static;
             height: auto;
             padding: 0px;
             opacity: 1;
-            & + .about_cont {
-                margin-top: get-vw(70px,$divceWidth);
-            }
+            margin-top: get-vw(60px,$divceWidth);
             h3 {
-                margin-bottom: get-vw(24px,$divceWidth);
+                margin-bottom: get-vw(25px,$divceWidth);
                 transform: translateY(0px);
                 opacity: 1;
             }
@@ -242,9 +218,9 @@ section#about {
                             margin-top: get-vw(14px,$divceWidth);
                         }
                         &:before {
-                            top: get-vw(10px,$divceWidth);
-                            width: get-vw(10px,$divceWidth);
-                            height: get-vw(10px,$divceWidth);
+                            top: get-vw(15px,$divceWidth);
+                            width: get-vw(8px,$divceWidth);
+                            height: get-vw(8px,$divceWidth);
                         }
                     }
                 }
@@ -264,7 +240,7 @@ section#about {
             &.skill {
                 ul {
                     li {
-                        grid-template-columns: get-vw(120px,$divceWidth) auto;
+                        grid-template-columns: get-vw(150px,$divceWidth) auto;
                         gap: 0px get-vw(12px,$divceWidth);
                         transform: translateY(0px);
                         opacity: 1;
@@ -273,7 +249,7 @@ section#about {
                         }
                         .gauge {
                             .bar {
-                                padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(9px,$divceWidth);
+                                padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(10px,$divceWidth);
                                 border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                             }
                         }
@@ -298,5 +274,64 @@ section#about {
     @media screen and (orientation: portrait) {
         $divceHeight: $MobileMax;
         
+        /* About */
+        section#about {
+            padding: get-vh(60px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight) get-vh(40px,$divceHeight);
+            h2 {
+                margin-bottom: get-vh(40px,$divceHeight);
+            }
+            .about_photo {
+                position: static;
+                width: 100%;
+                height: auto;
+            }
+            .about_cont {
+                margin-top: get-vh(40px,$divceHeight);
+                h3 {
+                    margin-bottom: get-vh(20px,$divceHeight);
+                }
+                &.profile {
+                    ul {
+                        li {
+                            padding-left: get-vh(14px,$divceHeight);
+                            & + li {
+                                margin-top: get-vh(12px,$divceHeight);
+                            }
+                            &:before {
+                                top: get-vh(11px,$divceHeight);
+                                width: get-vh(7px,$divceHeight);
+                                height: get-vh(7px,$divceHeight);
+                            }
+                        }
+                    }
+                }
+                &.intro {
+                    p {
+                        transform: translateY(0px);
+                        & + p {
+                            margin-top: get-vh(20px,$divceHeight);
+                        }
+                    }
+                }
+                &.skill {
+                    ul {
+                        li {
+                            grid-template-columns: get-vh(110px,$divceHeight) auto;
+                            gap: 0px get-vh(8px,$divceHeight);
+                            transform: translateY(0px);
+                            & + li {
+                                margin-top: get-vh(20px,$divceHeight);
+                            }
+                            .gauge {
+                                .bar {
+                                    padding: get-vh(7px,$divceHeight) get-vh(12px,$divceHeight) get-vh(9px,$divceHeight);
+                                    border-radius: 0px get-vh(10px,$divceHeight) get-vh(10px,$divceHeight) 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

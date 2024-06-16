@@ -6,15 +6,11 @@ $divceWidth: $QuadHDMax;
 
 /* Story */
 section#story {
-    height: 450vh;
-    padding: get-vw(100px,$divceWidth) get-vw(300px,$divceWidth) get-vw(100px,$divceWidth) get-vw(100px,$divceWidth);
     box-sizing: border-box;
     background-color: purple;
     h2 {
-        position: absolute;
+        position: relative;
         z-index: 2;
-        top: 0px;
-        left: 0px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -23,10 +19,7 @@ section#story {
         color: white;
     }
     .story_cont {
-        position: absolute;
-        z-index: 3;
-        top: 0px;
-        left: 0px;
+        position: relative;
         display: flex;
         align-items: center;
         width: 100%;
@@ -35,8 +28,6 @@ section#story {
         padding: get-vw(100px,$divceWidth) get-vw(200px,$divceWidth) get-vw(100px,$divceWidth) get-vw(100px,$divceWidth);
         background-repeat: no-repeat;
         background-size: cover;
-        opacity: 0;
-        transition: 0.3s ease opacity;
         &:after {
             position: absolute;
             z-index: 1;
@@ -79,20 +70,6 @@ section#story {
             font-size: get-vw(40px,$divceWidth);
             line-height: 170%;
             color: white;
-            p {
-                transform: translateY(get-vw(20px,$divceWidth));
-                opacity: 0;
-                transition: 0.3s ease transform,0.3s ease opacity;
-            }
-        }
-        &.on {
-            opacity: 1;
-            .sc_inner {
-                p {
-                    transform: translateY(0px);
-                    opacity: 1;
-                }
-            }
         }
     }
     &.fixed {
@@ -119,9 +96,6 @@ section#story {
         .story_cont {
             .sc_inner {
                 font-size: get-vw(34px,$divceWidth);
-                p {
-                    transform: translateY(get-vw(20px,$divceWidth));
-                }
             }
         }
     }
@@ -136,9 +110,6 @@ section#story {
             padding: get-vw(80px,$divceWidth) get-vw(180px,$divceWidth) get-vw(80px,$divceWidth) get-vw(80px,$divceWidth);
             .sc_inner {
                 font-size: get-vw(36px,$divceWidth);
-                p {
-                    transform: translateY(get-vw(20px,$divceWidth));
-                }
             }
         }
     }
@@ -154,9 +125,35 @@ section#story {
 @include Mobile {
     $divceWidth: $MobileMax;
 
+    /* Story */
+    section#story {
+        .story_cont {
+            padding: get-vw(60px,$divceWidth) get-vw(80px,$divceWidth) get-vw(60px,$divceWidth) get-vw(40px,$divceWidth);
+            .sc_inner {
+                font-size: get-vw(26px,$divceWidth);
+                p {
+                    // transform: translateY(get-vw(20px,$divceWidth));
+                    letter-spacing: -1px;
+                }
+            }
+        }
+    }
+
     /* 세로 모드 */
     @media screen and (orientation: portrait) {
         $divceHeight: $MobileMax;
         
+        /* Story */
+        section#story {
+            .story_cont {
+                padding: get-vh(60px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight) get-vh(40px,$divceHeight);
+                .sc_inner {
+                    font-size: get-vh(26px,$divceHeight);
+                    p {
+                        // transform: translateY(get-vh(20px,$divceHeight));
+                    }
+                }
+            }
+        }
     }
 }

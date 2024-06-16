@@ -1,5 +1,6 @@
 @import "/app/variables";
 @import "/app/vwvh";
+@import "/app/mixin";
 
 $divceWidth: $QuadHDMax;
 
@@ -126,8 +127,8 @@ strong,b {
     overflow: hidden;
 }
 
-/* 노말 해상도 이하 */
-@media screen and (max-width:$FullHDMax) {
+/* Full HD */
+@include FullHD {
 	$divceWidth: $FullHDMax;
 	
     body {
@@ -147,8 +148,8 @@ strong,b {
 	}
 }
 
-/* 테블릿 해상도 이하 */
-@media screen and (max-width:$TabletMax) {
+/* Tablet */
+@include Tablet {
     $divceWidth: $TabletMax;
 
 	body {
@@ -166,52 +167,52 @@ strong,b {
 	input,textarea {
 		font-size: get-vw(20px,$divceWidth);
 	}
-}
 
-/* 미디어 쿼리 - 세로모드 */
-@media screen and (orientation: portrait) {
-
-	/* 테블릿 해상도 이하 */
-	@media screen and (max-width:$TabletMin) {
-        $divceWidth: $TabletMin;
+	/* 세로 모드 */
+	@media screen and (orientation: portrait) {
+		$divceHeight: $TabletMax;
 
 		body {
-			font-size: get-vw(18px,$divceWidth);
+			font-size: get-vh(18px,$divceHeight);
 			line-height: 150%;
 		}
 		h2 {
-			font-size: get-vw(62px,$divceWidth);
+			font-size: get-vh(62px,$divceHeight);
 		}
 		h3 {
-			font-size: get-vw(34px,$divceWidth);
+			font-size: get-vh(34px,$divceHeight);
 		}
 		h4 {
-			font-size: get-vw(26px,$divceWidth);
+			font-size: get-vh(26px,$divceHeight);
 		}
 		input,textarea {
-			font-size: get-vw(18px,$divceWidth);
+			font-size: get-vh(18px,$divceHeight);
 		}
 	}
+}
 
-	/* 모바일 해상도 이하 */
-	@media screen and (max-width:$MobileMin) {
-		$divceWidth: $MobileMin;
+/* Mobile */
+@include Mobile {
+
+	/* 세로모드 */
+	@media screen and (orientation: portrait) {
+		$divceHeight: $MobileMax;
 
 		body {
-			font-size: get-vw(18px,$divceWidth);
+			font-size: get-vh(18px,$divceHeight);
 			line-height: 150%;
 		}
 		h2 {
-			font-size: get-vw(62px,$divceWidth);
+			font-size: get-vh(62px,$divceHeight);
 		}
 		h3 {
-			font-size: get-vw(34px,$divceWidth);
+			font-size: get-vh(34px,$divceHeight);
 		}
 		h4 {
-			font-size: get-vw(26px,$divceWidth);
+			font-size: get-vh(26px,$divceHeight);
 		}
 		input,textarea {
-			font-size: get-vw(18px,$divceWidth);
+			font-size: get-vh(18px,$divceHeight);
 		}
 	}
 }

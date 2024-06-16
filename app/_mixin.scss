@@ -13,7 +13,7 @@
 }
 
 @mixin Mobile {
-    @media screen and (width <= $MobileMax) , screen and (height <= $MobileMax) {
+    @media screen and (width <= $MobileMax) and (height <= $MobileMin) , screen and (width <= $MobileMin) and (height <= $MobileMax) {
         @content;
     }
 }

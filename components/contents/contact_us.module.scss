@@ -275,7 +275,7 @@ section#contact_us {
                         }
                         input {
                             padding: 0px get-vh(22px,$divceHeight);
-                            line-height: get-vh(72px,$divceHeight);
+                            line-height: get-vh(70px,$divceHeight);
                         }
                         textarea {
                             padding: get-vh(17px,$divceHeight) get-vh(22px,$divceHeight);
@@ -325,19 +325,20 @@ section#contact_us {
 
         /* Contact Us */
         section#contact_us {
+            padding: get-vh(40px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight) get-vh(40px,$divceHeight);
             form.sendmail_form {
                 fieldset {
                     gap: get-vh(14px,$divceHeight);
                     margin-top: get-vh(20px,$divceHeight);
                     .field {
-                        height: get-vh(46px,$divceHeight);
+                        height: get-vh(50px,$divceHeight);
                         &.message {
                             height: get-vh(300px,$divceHeight);
                         }
                         label {
                             padding: 0px get-vh(13px,$divceHeight);
-                            font-size: get-vh(16px,$divceHeight);
-                            line-height: get-vh(46px,$divceHeight);
+                            font-size: get-vh(18px,$divceHeight);
+                            line-height: get-vh(50px,$divceHeight);
                             &:has(+ *:focus),
                             &:has(+ *:valid) {
                                 top: get-vh(-9px,$divceHeight);
@@ -352,7 +353,7 @@ section#contact_us {
                         }
                         input {
                             padding: 0px get-vh(13px,$divceHeight);
-                            line-height: get-vh(46px,$divceHeight);
+                            line-height: get-vh(52px,$divceHeight);
                         }
                         textarea {
                             padding: get-vh(10px,$divceHeight) get-vh(13px,$divceHeight);
