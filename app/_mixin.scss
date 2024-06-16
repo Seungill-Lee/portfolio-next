@@ -6,20 +6,14 @@
     }
 }
 
-@mixin TabletHz {
+@mixin Tablet {
     @media all and (width <= $TabletMax) {
         @content;
     }
 }
 
-@mixin TabletVt {
-    @media all and (width <= $TabletMin) {
-        @content;
-    }
-}
-
-@mixin MobileVt {
-    @media all and (width <= $MobileMin) {
+@mixin Mobile {
+    @media screen and (width <= $MobileMax) , screen and (height <= $MobileMax) {
         @content;
     }
 }

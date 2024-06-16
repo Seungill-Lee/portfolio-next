@@ -1,5 +1,6 @@
 @import "/app/variables";
 @import "/app/vwvh";
+@import "/app/mixin";
 
 $divceWidth: $QuadHDMax;
 
@@ -19,22 +20,17 @@ footer#footer {
     }
 }
 
-/* 테블릿 해상도 이하 */
-@media screen and (max-width:$TabletMax) {
+/* Tablet */
+@include Tablet {
     $divceWidth: $TabletMax;
 
     /* Footer */
     footer#footer {
         padding: get-vw(40px,$divceWidth) get-vw(40px,$divceWidth) get-vw(38px,$divceWidth);
     }
-}
 
-
-/* 미디어 쿼리 - 세로모드 */
-@media screen and (orientation: portrait) {
-
-    /* 테블릿 해상도 이하 */
-    @media screen and (max-width:$TabletMin) {
+    /* 세로 모드 */
+    @media screen and (orientation: portrait) {
         $divceWidth: $TabletMin;
 
         /* Footer */
@@ -42,9 +38,14 @@ footer#footer {
             padding: get-vw(38px,$divceWidth) get-vw(40px,$divceWidth) get-vw(36px,$divceWidth);
         }
     }
+}
 
-    /* 모바일 해상도 이하 */
-	@media screen and (max-width:$MobileMin) {
+
+/* Mobile */
+@include Mobile {
+
+    /* 세로모드 */
+	@media screen and (orientation: portrait) {
 		$divceWidth: $MobileMin;
 
         /* Footer */

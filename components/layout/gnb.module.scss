@@ -1,5 +1,6 @@
 @import "/app/variables";
 @import "/app/vwvh";
+@import "/app/mixin";
 
 $divceWidth: $QuadHDMax;
 
@@ -13,8 +14,6 @@ nav#gnb {
     ul {
         li {
             line-height: 0;
-            transform: translateX(100%);
-            transition: 0.3s ease transform;
             & + li {
                 margin-top: get-vw(16px,$divceWidth);
             }
@@ -59,7 +58,7 @@ nav#gnb {
 }
 
 
-/* 노말 해상도 이하 */
+/* Full HD */
 @media screen and (max-width:$FullHDMax) {
     $divceWidth: $FullHDMax;
 
@@ -80,7 +79,7 @@ nav#gnb {
     }
 }
 
-/* 테블릿 해상도 이하 */
+/* Tablet */
 @media screen and (max-width:$TabletMax) {
     $divceWidth: $TabletMax;
 
@@ -99,13 +98,10 @@ nav#gnb {
             }
         }
     }
-}
 
-/* 미디어 쿼리 - 세로모드 */
-@media screen and (orientation: portrait) {
-
-    /* 테블릿 해상도 이하 */
-    @media screen and (max-width:$TabletMin) {
+    /* 세로모드 */
+    @media screen and (orientation: portrait) {
+        /* 테블릿 해상도 이하 */
         $divceWidth: $TabletMin;
 
         /* GNB */
@@ -124,12 +120,17 @@ nav#gnb {
             }
         }
     }
+}
 
-    /* 모바일 해상도 이하 */
-	@media screen and (max-width:$MobileMin) {
-		$divceWidth: $MobileMin;
 
-		/* GNB */
+/* Mobile */
+@include Mobile {
+
+    /* 세로모드 */
+    @media screen and (orientation: portrait) {
+        $divceWidth: $MobileMin;
+
+        /* GNB */
         nav#gnb {
             ul {
                 li {
@@ -146,5 +147,5 @@ nav#gnb {
                 }
             }
         }
-	}
+    }
 }

@@ -1,0 +1,394 @@
+@import "/app/variables";
+@import "/app/vwvh";
+@import "/app/mixin";
+
+$divceWidth: $QuadHDMax;
+
+/* Contact Us */
+section#contact_us {
+    padding: get-vw(100px,$divceWidth) get-vw(300px,$divceWidth) get-vw(100px,$divceWidth) get-vw(100px,$divceWidth);
+    background-color: gainsboro;
+    form.sendmail_form {
+        position: relative;
+        z-index: 2;
+        fieldset {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: get-vw(30px,$divceWidth);
+            margin-top: get-vw(60px,$divceWidth);
+            .field {
+                position: relative;
+                height: get-vw(80px,$divceWidth);
+                background-color: white;
+                &.email ~ * {
+                    grid-column: 1 / span 2;
+                }
+                &.message {
+                    height: get-vw(600px,$divceWidth);
+                }
+                label {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    display: inline-block;
+                    width: auto;
+                    padding: 0px get-vw(23px,$divceWidth);
+                    box-sizing: border-box;
+                    font-size: get-vw(28px,$divceWidth);
+                    line-height: get-vw(80px,$divceWidth);
+                    background-color: transparent;
+                    transition: 0.3s ease all;
+                    cursor: text;
+                    &:has(+ *:focus),
+                    &:has(+ *:valid) {
+                        top: get-vw(-9px,$divceWidth);
+                        left: get-vw(24px,$divceWidth);
+                        font-weight: 400;
+                        padding: 0px get-vw(4px,$divceWidth);
+                        font-size: get-vw(15px,$divceWidth);
+                        line-height: get-vw(23px,$divceWidth);
+                        color: white;
+                        background-color: gray;
+                    }
+                    &:has(+ *:focus) {
+                        background-color: darkslategray;
+                    }
+                }
+                input,textarea {
+                    width: 100%;
+                    height: 100%;
+                    font-size: get-vw(28px,$divceWidth);
+                    border: 1px solid lightgray;
+                    box-sizing: border-box;
+                    transition: 0.3s ease all;
+                    &:focus {
+                        border-color: darkslategray;
+                        outline: 0;
+                    }
+                }
+                input {
+                    padding: 0px get-vw(24px,$divceWidth);
+                    line-height: get-vw(80px,$divceWidth);
+                }
+                textarea {
+                    padding: get-vw(16px,$divceWidth) get-vw(24px,$divceWidth);
+                }
+            }
+            .btn_send {
+                text-align: right;
+                button {
+                    padding: get-vw(2px,$divceWidth) get-vw(50px,$divceWidth) 0px;
+                    height: get-vw(80px,$divceWidth);
+                    font-size: get-vw(28px,$divceWidth);
+                    font-family: Alkatra;
+                    line-height: 1;
+                    color: lightgoldenrodyellow;
+                    border: 1px solid gray;
+                    background-color: darkslategrey;
+                    transition: 0.5s ease background-color;
+                    &:hover {
+                        background-color: darkcyan;
+                    }
+                }
+            }
+        }
+    }
+    .sendmail_result {
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #DCDCDC;
+        &.on {
+            z-index: 11;
+            visibility: visible;
+        }
+        .sr_message {
+            display: none;
+            text-align: center;
+            .ico {
+                img {
+                    width: get-vw(200px,$divceWidth);
+                    height: get-vw(200px,$divceWidth);
+                }
+            }
+            p.message {
+                font-size: get-vw(28px,$divceWidth);
+                line-height: 150%;
+                margin: get-vw(32px,$divceWidth) 0px get-vw(36px,$divceWidth);
+            }
+            .btn_set {
+                button {
+                    padding: get-vw(2px,$divceWidth) get-vw(50px,$divceWidth) 0px;
+                    height: get-vw(80px,$divceWidth);
+                    font-size: get-vw(28px,$divceWidth);
+                    font-family: Alkatra;
+                    line-height: 1;
+                    color: lightgoldenrodyellow;
+                    transition: 0.5s ease background-color;
+                    &.ok {
+                        border: 1px solid gray;
+                        background-color: darkslategrey;
+                        &:hover {
+                            background-color: darkcyan;
+                        }
+                    }
+                    &.return {
+                        border: 1px solid gray;
+                        background-color: maroon;
+                        &:hover {
+                            background-color: firebrick;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Full HD */
+@include FullHD {
+    $divceWidth: $FullHDMax;
+
+    section#contact_us {
+        form.sendmail_form {
+            fieldset {
+                gap: get-vw(20px,$divceWidth);
+                margin-top: get-vw(40px,$divceWidth);
+                .field {
+                    &.message {
+                        height: get-vw(500px,$divceWidth);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablet */
+@include Tablet {
+    $divceWidth: $TabletMax;
+
+    section#contact_us {
+        padding: get-vw(80px,$divceWidth) get-vw(180px,$divceWidth) get-vw(80px,$divceWidth) get-vw(80px,$divceWidth);
+        form.sendmail_form {
+            fieldset {
+                gap: get-vw(20px,$divceWidth);
+                margin-top: get-vw(30px,$divceWidth);
+                .field {
+                    height: get-vw(72px,$divceWidth);
+                    &.message {
+                        height: get-vw(450px,$divceWidth);
+                    }
+                    label {
+                        padding: 0px get-vw(20px,$divceWidth);
+                        font-size: get-vw(24px,$divceWidth);
+                        line-height: get-vw(72px,$divceWidth);
+                        &:has(+ *:focus),
+                        &:has(+ *:valid) {
+                            top: get-vw(-9px,$divceWidth);
+                            left: get-vw(20px,$divceWidth);
+                            padding: 0px get-vw(4px,$divceWidth);
+                            font-size: get-vw(14px,$divceWidth);
+                            line-height: get-vw(20px,$divceWidth);
+                        }
+                    }
+                    input,textarea {
+                        font-size: get-vw(24px,$divceWidth);
+                    }
+                    input {
+                        padding: 0px get-vw(20px,$divceWidth);
+                        line-height: get-vw(72px,$divceWidth);
+                    }
+                    textarea {
+                        padding: get-vw(14px,$divceWidth) get-vw(20px,$divceWidth);
+                    }
+                }
+                .btn_send {
+                    button {
+                        padding: get-vw(3px,$divceWidth) get-vw(50px,$divceWidth) 0px;
+                        height: get-vw(72px,$divceWidth);
+                        font-size: get-vw(24px,$divceWidth);
+                    }
+                }
+            }
+        }
+        .sendmail_result {
+            .sr_message {
+                .ico {
+                    img {
+                        width: get-vw(180px,$divceWidth);
+                        height: get-vw(180px,$divceWidth);
+                    }
+                }
+                p.message {
+                    font-size: get-vw(24px,$divceWidth);
+                    margin: get-vw(32px,$divceWidth) 0px get-vw(36px,$divceWidth);
+                }
+                .btn_set {
+                    button {
+                        padding: get-vw(3px,$divceWidth) get-vw(50px,$divceWidth) 0px;
+                        height: get-vw(72px,$divceWidth);
+                        font-size: get-vw(24px,$divceWidth);
+                    }
+                }
+            }
+        }
+    }
+
+    /* 세로 모드 */
+    @media screen and (orientation: portrait) {
+        $divceHeight: $TabletMax;
+
+        section#contact_us {
+            form.sendmail_form {
+                fieldset {
+                    gap: get-vh(24px,$divceHeight);
+                    margin-top: get-vh(30px,$divceHeight);
+                    .field {
+                        grid-column: 1 / span 2;
+                        height: get-vh(70px,$divceHeight);
+                        &.message {
+                            height: get-vh(600px,$divceHeight);
+                        }
+                        label {
+                            padding: 0px get-vh(22px,$divceHeight);
+                            font-size: get-vh(22px,$divceHeight);
+                            line-height: get-vh(70px,$divceHeight);
+                            &:has(+ *:focus),
+                            &:has(+ *:valid) {
+                                top: get-vh(-9px,$divceHeight);
+                                left: get-vh(22px,$divceHeight);
+                                padding: 0px get-vh(5px,$divceHeight);
+                                font-size: get-vh(13px,$divceHeight);
+                                line-height: get-vh(21px,$divceHeight);
+                            }
+                        }
+                        input,textarea {
+                            font-size: get-vh(22px,$divceHeight);
+                        }
+                        input {
+                            padding: 0px get-vh(22px,$divceHeight);
+                            line-height: get-vh(72px,$divceHeight);
+                        }
+                        textarea {
+                            padding: get-vh(17px,$divceHeight) get-vh(22px,$divceHeight);
+                        }
+                    }
+                    .btn_send {
+                        button {
+                            padding: get-vh(2px,$divceHeight) get-vh(50px,$divceHeight) 0px;
+                            height: get-vh(70px,$divceHeight);
+                            font-size: get-vh(22px,$divceHeight);
+                        }
+                    }
+                }
+            }
+            .sendmail_result {
+                .sr_message {
+                    .ico {
+                        img {
+                            width: get-vh(180px,$divceHeight);
+                            height: get-vh(180px,$divceHeight);
+                        }
+                    }
+                    p.message {
+                        font-size: get-vh(28px,$divceHeight);
+                        margin: get-vh(34px,$divceHeight) 0px get-vh(36px,$divceHeight);
+                    }
+                    .btn_set {
+                        button {
+                            padding: get-vh(2px,$divceHeight) get-vh(50px,$divceHeight) 0px;
+                            height: get-vh(70px,$divceHeight);
+                            font-size: get-vh(22px,$divceHeight);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile */
+@include Mobile {
+    $divceWidth: $MobileMax;
+
+    /* 세로 모드 */
+    @media screen and (orientation: portrait) {
+        $divceHeight: $MobileMax;
+
+        /* Contact Us */
+        section#contact_us {
+            form.sendmail_form {
+                fieldset {
+                    gap: get-vh(14px,$divceHeight);
+                    margin-top: get-vh(20px,$divceHeight);
+                    .field {
+                        height: get-vh(46px,$divceHeight);
+                        &.message {
+                            height: get-vh(300px,$divceHeight);
+                        }
+                        label {
+                            padding: 0px get-vh(13px,$divceHeight);
+                            font-size: get-vh(16px,$divceHeight);
+                            line-height: get-vh(46px,$divceHeight);
+                            &:has(+ *:focus),
+                            &:has(+ *:valid) {
+                                top: get-vh(-9px,$divceHeight);
+                                left: get-vh(13px,$divceHeight);
+                                padding: 0px get-vh(3px,$divceHeight);
+                                font-size: get-vh(10px,$divceHeight);
+                                line-height: get-vh(17px,$divceHeight);
+                            }
+                        }
+                        input,textarea {
+                            font-size: get-vh(16px,$divceHeight);
+                        }
+                        input {
+                            padding: 0px get-vh(13px,$divceHeight);
+                            line-height: get-vh(46px,$divceHeight);
+                        }
+                        textarea {
+                            padding: get-vh(10px,$divceHeight) get-vh(13px,$divceHeight);
+                        }
+                    }
+                    .btn_send {
+                        button {
+                            padding: get-vh(2px,$divceHeight) get-vh(26px,$divceHeight) 0px;
+                            height: get-vh(46px,$divceHeight);
+                            font-size: get-vh(16px,$divceHeight);
+                        }
+                    }
+                }
+            }
+            .sendmail_result {
+                .sr_message {
+                    .ico {
+                        img {
+                            width: get-vh(100px,$divceHeight);
+                            height: get-vh(100px,$divceHeight);
+                        }
+                    }
+                    p.message {
+                        font-size: get-vh(18px,$divceHeight);
+                        margin: get-vh(20px,$divceHeight) 0px get-vh(21px,$divceHeight);
+                    }
+                    .btn_set {
+                        button {
+                            padding: get-vh(2px,$divceHeight) get-vh(26px,$divceHeight) 0px;
+                            height: get-vh(46px,$divceHeight);
+                            font-size: get-vh(16px,$divceHeight);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

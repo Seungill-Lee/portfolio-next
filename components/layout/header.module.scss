@@ -1,5 +1,6 @@
 @import "/app/variables";
 @import "/app/vwvh";
+@import "/app/mixin";
 
 $divceWidth: $QuadHDMax;
 $divceHeight: $QuadHDMin;
@@ -69,7 +70,7 @@ header#header {
     }
 }
 
-/* 미디어 쿼리 - 세로모드 */
+/* 세로모드 */
 @media screen and (orientation: portrait) {
     /* Header */
     header#header {
@@ -79,8 +80,8 @@ header#header {
     }
 }
 
-/* 모바일 해상도 이하 */
-@media screen and (max-width:$MobileMax) and (max-height:$MobileMin) , screen and (max-height:$MobileMax) and (max-width:$MobileMin) {
+/* Mobile */
+@include Mobile {
     /* Header */
     header#header {
         .btn_enter {
