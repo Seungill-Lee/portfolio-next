@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { Alkatra, Noto_Sans_KR } from "next/font/google";
 import "./base.scss";
 import scss from "./layout.module.scss";
-import Gate from "/components/gate.js";
+import Header from "/components/layout/header.js";
+import GNB from "/components/layout/gnb.js";
 
 export const metadata = {
     title: "Seungill's Portfolio - 웹퍼블리셔 승일이의 포트폴리오",
@@ -73,18 +74,8 @@ export default function RootLayout({ children }) {
     return (
         <html lang="ko" className={`${alkatra.variable} ${noto_sans_kr.variable}`}>
             <body>
-                <header id={scss.header}>
-                    <h1 className="hidden_cont">Seungill&apos;s Portfolio</h1>
-                    <p className={`${scss.intro} hidden_cont`}>Welcome to my portfolio page.</p>
-                </header>
-                <nav id={scss.gnb}>
-                    <ul>
-                        <li className={scss.admin}><Link href="#about">About</Link></li>
-                        <li className={scss.story}><Link href="#story">Story</Link></li>
-                        <li className={scss.portfolio}><Link href="#portfolio">Portfolio</Link></li>
-                        <li className={scss.contact_us}><Link href="#contact_us">Contact Us</Link></li>
-                    </ul>
-                </nav>
+                <Header />
+                <GNB />
                 <main id={scss.container}>
                     {children}
                 </main>
