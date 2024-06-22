@@ -7,6 +7,9 @@ $divceWidth: $QuadHDMax;
 section#about {
     padding: get-vw(100px,$divceWidth) get-vw(300px,$divceWidth) get-vw(100px,$divceWidth) get-vw(100px,$divceWidth);
     background-color: orange;
+    &::-webkit-scrollbar-track {
+        background-color: orange;
+    }
     .about_photo {
         position: absolute;
         top: get-vw(230px,$divceWidth);
@@ -23,7 +26,7 @@ section#about {
     .about_cont {
         margin-top: get-vw(64px,$divceWidth);
         h3 {
-            margin-bottom: get-vw(24px,$divceWidth);
+            margin-bottom: get-vw(26px,$divceWidth);
             // transform: translateY(get-vw(20px,$divceWidth));
             // opacity: 0;
             // transition: 0.3s ease transform, 0.3s ease opacity;

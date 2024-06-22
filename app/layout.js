@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
         <html lang="ko" className={`${alkatra.variable} ${noto_sans_kr.variable}`}>
             <body>
                 <Header />
-                <GNB />
+                {/* <GNB /> */}
                 <main id={scss.container}>
                     {children}
                 </main>
