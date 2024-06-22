@@ -2,8 +2,12 @@
 
 import scss from './header.module.scss'
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation"
 
 export default function Header() {
+    const pathname = usePathname();
+    const router = useRouter();
+
     useEffect(()=> {
         const screenRatio = () => {
             //console.log(window.innerWidth)
@@ -20,12 +24,14 @@ export default function Header() {
 
     const [enterPage, stateEnterPage] = useState(false)
 
+    console.log(pathname)
+
     return(
-        <header id={scss.header} className={enterPage ? scss["on"] : ""}>
+        <header id={scss.header} className={enterPage || pathname != "/" ? scss["on"] : ""}>
             <h1 className="hidden_cont">Seungill&apos;s Portfolio</h1>
             <p className={`${scss.intro} hidden_cont`}>Welcome to my portfolio page.</p>
             <div className={scss.btn_enter}>
-                <button type="button" onClick={()=> stateEnterPage(true)} disabled={enterPage ? true : false}>&#123; Enter &#125;</button>
+                <button type="button" onClick={()=> {stateEnterPage(true)}} disabled={enterPage || pathname != "/" ? true : false}>&#123; Enter &#125;</button>
             </div>
         </header>
     )

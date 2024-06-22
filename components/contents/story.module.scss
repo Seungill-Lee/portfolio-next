@@ -6,6 +6,8 @@ $divceWidth: $QuadHDMax;
 
 /* Story */
 section#story {
+    overflow: hidden;
+    scrollbar-gutter: unset;
     box-sizing: border-box;
     background-color: purple;
     h2 {
@@ -40,27 +42,27 @@ section#story {
             background: transparent linear-gradient(60deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
             background-size: cover;
         }
-        &:nth-of-type(1) {
+        &.sc1 {
             background-image: url(/images/photo_story1.jpg);
             background-position: center center;
         }
-        &:nth-of-type(2) {
+        &.sc2 {
             background-image: url(/images/photo_story2.jpg),;
             background-position: center center;
         }
-        &:nth-of-type(3) {
+        &.sc3 {
             background-image: url(/images/photo_story3.jpg);
             background-position: 20% center;
         }
-        &:nth-of-type(4) {
+        &.sc4 {
             background-image: url(/images/photo_story4.jpg);
             background-position: center center;
         }
-        &:nth-of-type(5) {
+        &.sc5 {
             background-image: url(/images/photo_story5.jpg);
             background-position: center center;
         }
-        &:nth-of-type(6) {
+        &.sc6 {
             background-image: url(/images/photo_story6.jpg);
             background-position: right center;
         }
@@ -70,20 +72,6 @@ section#story {
             font-size: get-vw(40px,$divceWidth);
             line-height: 170%;
             color: white;
-        }
-    }
-    &.fixed {
-        h2, 
-        .story_cont {
-            position: fixed;
-        }
-    }
-    &.end {
-        h2, 
-        .story_cont {
-            position: absolute;
-            top: auto;
-            bottom: 0px;
         }
     }
 }

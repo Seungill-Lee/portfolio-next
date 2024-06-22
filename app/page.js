@@ -28,23 +28,23 @@ export default function Home() {
     }, []);
 
     return (
-        <swiper-container ref={swiperElRef} slides-per-view="1" navigation="true" pagination="true">
-            <swiper-slide>
+        <swiper-container ref={swiperElRef} slides-per-view="1" history-key="intro" navigation="true" pagination="true">
+            <swiper-slide data-history="about">
                 <div className={scss.content_wrap}>
                     <About />
                 </div>
             </swiper-slide>
-            <swiper-slide>
+            <swiper-slide data-history="story">
                 <div className={scss.content_wrap}>
                     <Story />
                 </div>
             </swiper-slide>
-            <swiper-slide>
+            <swiper-slide data-history="portfolio">
                 <div className={scss.content_wrap}>
                     <Portfolio />
                 </div>
             </swiper-slide>
-            <swiper-slide>
+            <swiper-slide data-history="contact-us">
                 <div className={scss.content_wrap}>
                     <ContactUs />
                 </div>
