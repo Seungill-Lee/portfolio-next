@@ -1,0 +1,92 @@
+@import "/app/variables";
+@import "/app/vwvh";
+@import "/app/mixin";
+
+$divceWidth: $QuadHDMax;
+
+/* GNB */
+nav#gnb {
+    position: fixed;
+    z-index: 11;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    button {
+        display: block;
+        width: 100%;
+        padding: get-vw(12px,$divceWidth) get-vw(24px,$divceWidth) get-vw(11px,$divceWidth) get-vw(24px,$divceWidth);
+        box-sizing: border-box;
+        border-radius: get-vw(30px,$divceWidth) 0px 0px get-vw(30px,$divceWidth);
+        color: white;
+        text-align: left;
+        line-height: 1;
+        font-family: 'Alkatra';
+        background-color: black;
+        transform: translateX(0%);
+        & + button {
+            margin-top: get-vw(16px,$divceWidth);
+        }
+        &[part="bullet-active"] {
+            background-color: white;
+            transform: translateX(0px);
+        }
+        &#about:hover,
+        &#about[part="bullet-active"] {
+            color: orange;
+        }
+        &#story:hover,
+        &#story[part="bullet-active"] {
+            color: purple;
+        }
+        &#portfolio:hover,
+        &#portfolio[part="bullet-active"] {
+            color: skyblue;
+        }
+        &#contact_us:hover,
+        &#contact_us[part="bullet-active"] {
+            color: gainsboro;
+        }
+    }
+}
+
+/* Contents 공통 */
+.content_wrap {
+    section {
+        position: relative;
+        box-sizing: border-box;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        &::-webkit-scrollbar {
+            width: 12px; 
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            background-clip: padding-box;
+            border: 3px solid transparent;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+    }
+}
+
+/* Tablet */
+@include Tablet {
+    $divceWidth: $TabletMax;
+
+    /* 세로모드 */
+    @media screen and (orientation: portrait) {
+        $divceHeight: $TabletMax;
+
+    }
+}
+
+
+/* Mobile */
+@include Mobile {
+    $divceHeight: $MobileMax;
+
+}

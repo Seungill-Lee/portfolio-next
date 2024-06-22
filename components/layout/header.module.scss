@@ -63,8 +63,8 @@ header#header {
             opacity: 1;
             &:disabled {
                 visibility: hidden;
-                opacity: 1;
-                transition: 0.3s ease all;
+                opacity: 0;
+                transition: 0.1s ease all;
             }
         }
     }

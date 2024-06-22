@@ -3,8 +3,6 @@ import Image from 'next/image';
 import { Alkatra, Noto_Sans_KR } from "next/font/google";
 import "./base.scss";
 import scss from "./layout.module.scss";
-import Header from "/components/layout/header.js";
-import GNB from "/components/layout/gnb.js";
 
 export const metadata = {
     title: "Seungill's Portfolio - 웹퍼블리셔 승일이의 포트폴리오",
@@ -74,11 +72,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="ko" className={`${alkatra.variable} ${noto_sans_kr.variable}`}>
             <body>
-                <Header />
-                {/* <GNB /> */}
-                <main id={scss.container}>
-                    {children}
-                </main>
+                {children}
                 <footer id={scss.footer}>
                     <p className={scss.copyright}>
                         Copyrightⓒ 2024 <a href="mailto:ever9415@nate.com">Seungill Lee</a>. All right reserved. <br />
