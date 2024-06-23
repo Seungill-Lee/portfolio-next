@@ -7,10 +7,9 @@ import About from "/components/contents/about.js"
 import Story from "/components/contents/story.js"
 import Portfolio from "/components/contents/portfolio.js"
 import ContactUs from "/components/contents/contact_us.js"
+import Header from "/components/layout/header.js";
 import { useEffect, useState } from 'react';
 import { register } from 'swiper/element/bundle';
-import Header from "/components/layout/header.js";
-import GNB from "/components/layout/gnb.js";
 
 register();
 
@@ -28,6 +27,7 @@ export default function Intro() {
             history: {
                 key:"/"
             },
+            navigation: true,
             pagination: {
                 el: "#"+scss['gnb'],
                 clickable: true,

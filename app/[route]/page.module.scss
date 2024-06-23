@@ -20,6 +20,7 @@ nav#gnb {
         color: white;
         text-align: left;
         line-height: 1;
+        font-size: get-vw(20px,$divceWidth);
         font-family: 'Alkatra';
         background-color: black;
         transform: translateX(get-vw(12px,$divceWidth));
@@ -83,6 +84,7 @@ nav#gnb {
         button {
             padding: get-vw(15px,$divceWidth) get-vw(24px,$divceWidth) get-vw(11px,$divceWidth) get-vw(24px,$divceWidth);
             border-radius: get-vw(30px,$divceWidth) 0px 0px get-vw(30px,$divceWidth);
+            font-size: get-vw(20px,$divceWidth);
             transform: translateX(get-vw(16px,$divceWidth));
             & + button {
                 margin-top: get-vw(16px,$divceWidth);
@@ -99,6 +101,7 @@ nav#gnb {
             button {
                 padding: get-vh(11px,$divceHeight) get-vh(24px,$divceHeight) get-vh(9px,$divceHeight) get-vh(18px,$divceHeight);
                 border-radius: get-vh(30px,$divceHeight) 0px 0px get-vh(30px,$divceHeight);
+                font-size: get-vh(18px,$divceHeight);
                 transform: translateX(get-vh(14px,$divceHeight));
                 & + button {
                     margin-top: get-vh(12px,$divceHeight);
@@ -120,6 +123,7 @@ nav#gnb {
             button {
                 padding: get-vh(18px,$divceHeight) get-vh(12px,$divceHeight) get-vh(20px,$divceHeight) get-vh(10px,$divceHeight);
                 border-radius: get-vh(20px,$divceHeight) 0px 0px get-vh(20px,$divceHeight);
+                font-size: get-vh(18px,$divceHeight);
                 transform: translateX(get-vh(6px,$divceHeight));
                 writing-mode: vertical-rl;
                 text-orientation: mixed;
