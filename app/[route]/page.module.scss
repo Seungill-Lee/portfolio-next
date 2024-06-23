@@ -22,7 +22,8 @@ nav#gnb {
         line-height: 1;
         font-family: 'Alkatra';
         background-color: black;
-        transform: translateX(0%);
+        transform: translateX(get-vw(12px,$divceWidth));
+        transition: 0.3s ease all;
         & + button {
             margin-top: get-vw(16px,$divceWidth);
         }
@@ -77,16 +78,55 @@ nav#gnb {
 @include Tablet {
     $divceWidth: $TabletMax;
 
+    /* GNB */
+    nav#gnb {
+        button {
+            padding: get-vw(15px,$divceWidth) get-vw(24px,$divceWidth) get-vw(11px,$divceWidth) get-vw(24px,$divceWidth);
+            border-radius: get-vw(30px,$divceWidth) 0px 0px get-vw(30px,$divceWidth);
+            transform: translateX(get-vw(16px,$divceWidth));
+            & + button {
+                margin-top: get-vw(16px,$divceWidth);
+            }
+        }
+    }
+
     /* 세로모드 */
     @media screen and (orientation: portrait) {
         $divceHeight: $TabletMax;
 
+        /* GNB */
+        nav#gnb {
+            button {
+                padding: get-vh(11px,$divceHeight) get-vh(24px,$divceHeight) get-vh(9px,$divceHeight) get-vh(18px,$divceHeight);
+                border-radius: get-vh(30px,$divceHeight) 0px 0px get-vh(30px,$divceHeight);
+                transform: translateX(get-vh(14px,$divceHeight));
+                & + button {
+                    margin-top: get-vh(12px,$divceHeight);
+                }
+            }
+        }
     }
 }
 
 
 /* Mobile */
 @include Mobile {
-    $divceHeight: $MobileMax;
+    /* 세로모드 */
+    @media screen and (orientation: portrait) {
+        $divceHeight: $MobileMax;
 
+        /* GNB */
+        nav#gnb {
+            button {
+                padding: get-vh(18px,$divceHeight) get-vh(12px,$divceHeight) get-vh(20px,$divceHeight) get-vh(10px,$divceHeight);
+                border-radius: get-vh(20px,$divceHeight) 0px 0px get-vh(20px,$divceHeight);
+                transform: translateX(get-vh(6px,$divceHeight));
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+                & + button {
+                    margin-top: get-vh(12px,$divceHeight);
+                }
+            }
+        }
+    }
 }

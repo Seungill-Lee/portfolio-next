@@ -25,7 +25,7 @@ export default function Header(props) {
 
     const [enterIs , stateEnterIs]  = useState(props.enterIs)
 
-    console.log(pathname)
+    //console.log(pathname)
 
     return(
         <header id={scss.header} className={slideLoading ? scss["on"] : ""}>

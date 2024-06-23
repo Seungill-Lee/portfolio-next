@@ -4,24 +4,29 @@ import Image from 'next/image';
 import scss from "./story.module.scss";
 import { register } from 'swiper/element/bundle';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 register()
 
-export default function Story() {
+export default function Story(props) {
+    const path = usePathname();
+    const slideLoading = props.slideLoadingIs
 
     useEffect(() => {
-        const swiperEl = document.querySelector('swiper-container.story_slide')
-        swiperEl.style.height = "100vh"
-        const params = {
-            direction: "vertical",
-            mousewheel: true,
-            effect:"fade"
+        if(slideLoading) {
+            const swiperStory = document.querySelector('swiper-container.story_slide')
+            swiperStory.style.height = "100vh"
+            const params = {
+                direction: "vertical",
+                mousewheel: true,
+                effect:"fade"
+            }
+
+            Object.assign(swiperStory, params)
+
+            swiperStory.initialize();
         }
-
-        Object.assign(swiperEl, params)
-
-        swiperEl.initialize();
-    }, []);
+    },[slideLoading]);
 
     return(
         <section id={scss.story}>

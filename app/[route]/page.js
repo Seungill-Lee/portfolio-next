@@ -21,8 +21,8 @@ export default function Intro() {
     const bulletTxt = ["About","Story","Portfolio","Contact us"]
 
     useEffect(() => {
-        const swiperEl = document.querySelector('swiper-container.intro_slide')
-        swiperEl.style.height = "100vh"
+        const swiperPages = document.querySelector('swiper-container.intro_slide')
+        swiperPages.style.height = "100vh"
         const params = {
             slidesPerView: 1,
             history: {
@@ -34,12 +34,12 @@ export default function Intro() {
                 renderBullet: function (index, className) {
                     return '<button type="button" id='+ scss[bulletId[index]] +' class='+ className +'>' + bulletTxt[index] + '</button>';
                 },
-            },
+            }
         }
 
-        Object.assign(swiperEl, params)
+        Object.assign(swiperPages, params)
 
-        swiperEl.initialize();
+        swiperPages.initialize();
 
         stateLoadingIs(true)
     }, []);
@@ -59,7 +59,7 @@ export default function Intro() {
                     </swiper-slide>
                     <swiper-slide data-history="story">
                         <div className={scss.content_wrap}>
-                            <Story />
+                            <Story slideLoadingIs={loadingIs} />
                         </div>
                     </swiper-slide>
                     <swiper-slide data-history="portfolio">
