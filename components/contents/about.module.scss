@@ -189,7 +189,6 @@ section#about {
     $divceWidth: $TabletMax;
 
     section#about {
-        height: auto;
         padding: get-vw(80px,$divceWidth) get-vw(180px,$divceWidth) get-vw(80px,$divceWidth) get-vw(80px,$divceWidth);
         h2 {
             position: static;
@@ -265,7 +264,6 @@ section#about {
     /* 세로 모드 */
     @media screen and (orientation: portrait) {
         $divceHeight: $TabletMax;
-
     }
 }
 

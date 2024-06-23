@@ -28,6 +28,7 @@ header#header {
     }
     &.on {
         visibility: hidden;
+        z-index: 0;
         opacity: 0;
         transition: 0.3s ease-in 1s all;
         h1 {

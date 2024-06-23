@@ -3,15 +3,33 @@
 import Image from 'next/image';
 import scss from "./story.module.scss";
 import { register } from 'swiper/element/bundle';
+import { useEffect, useState } from 'react';
 
 register()
 
 export default function Story() {
+
+    useEffect(() => {
+        const swiperEl = document.querySelector('swiper-container.story_slide')
+        swiperEl.style.height = "100vh"
+        const params = {
+            direction: "vertical",
+            mousewheel: true,
+            effect:"fade"
+        }
+
+        Object.assign(swiperEl, params)
+
+        swiperEl.initialize();
+    }, []);
+
     return(
         <section id={scss.story}>
-            <swiper-container slides-per-view="1" space-between="30" mousewheel="true" effect="fade">
+            <swiper-container class="story_slide" init={false}>
                 <swiper-slide>
                     <h2>Story</h2>
+                </swiper-slide>
+                <swiper-slide>
                     <div className={`${scss.story_cont} ${scss.sc1}`}>
                         <div className={scss.sc_inner}>
                             <p>저는 2021년도 부터 자취생활을 시작하였습니다.</p>

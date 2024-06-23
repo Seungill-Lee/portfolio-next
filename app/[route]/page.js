@@ -7,7 +7,7 @@ import About from "/components/contents/about.js"
 import Story from "/components/contents/story.js"
 import Portfolio from "/components/contents/portfolio.js"
 import ContactUs from "/components/contents/contact_us.js"
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { register } from 'swiper/element/bundle';
 import Header from "/components/layout/header.js";
 import GNB from "/components/layout/gnb.js";
@@ -15,23 +15,19 @@ import GNB from "/components/layout/gnb.js";
 register();
 
 export default function Intro() {
-    const swiperElRef = useRef(null);
-    const testNav = useRef();
     const [loadingIs,stateLoadingIs] = useState(false)
 
     const bulletId = ["about","story","portfolio","contact_us"]
     const bulletTxt = ["About","Story","Portfolio","Contact us"]
-    // const pagenation = {
-    //     el: '.swiper-pagination',
-    //     clickable: true,
-    //     renderBullet: function (index, className) {
-    //         return '<span class="' + className + '">' + bulletTxt[index] + '</span>';
-    //     }
-    // }
 
     useEffect(() => {
-        const swiperEl = document.querySelector('swiper-container')
+        const swiperEl = document.querySelector('swiper-container.intro_slide')
+        swiperEl.style.height = "100vh"
         const params = {
+            slidesPerView: 1,
+            history: {
+                key:"/"
+            },
             pagination: {
                 el: "#"+scss['gnb'],
                 clickable: true,
@@ -52,10 +48,10 @@ export default function Intro() {
         <>
             <Header slideLoadingIs={loadingIs} enterIs={true} />
             {/* <GNB /> */}
-            <nav id={scss.gnb} ref={testNav}>
+            <nav id={scss.gnb}>
             </nav>
             <main id={scss.container}>
-                <swiper-container init={false} ref={swiperElRef}>
+                <swiper-container class="intro_slide" init={false}>
                     <swiper-slide data-history="about">
                         <div className={scss.content_wrap}>
                             <About />
