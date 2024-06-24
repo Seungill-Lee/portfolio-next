@@ -31,8 +31,12 @@ a {
 	color: #333333;
 }
 button,input[type="submit"],input[type="image"] {
+	padding: 0px;
 	border-width: 0px;
 	cursor: pointer;
+}
+button:disabled {
+	cursor: default;
 }
 hr {
 	display: none;

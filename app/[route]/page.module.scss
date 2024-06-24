@@ -52,25 +52,52 @@ nav#gnb {
 }
 
 /* Contents 공통 */
-.content_wrap {
-    section {
-        position: relative;
-        box-sizing: border-box;
-        height: 100vh;
-        overflow-x: hidden;
-        overflow-y: auto;
-        scrollbar-gutter: stable;
-        &::-webkit-scrollbar {
-            width: 12px; 
+main#container {
+    position: relative;
+    .content_wrap {
+        section {
+            position: relative;
+            box-sizing: border-box;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: 12px; 
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(0,0,0,0.3);
+                border-radius: 20px;
+                background-clip: padding-box;
+                border: 3px solid transparent;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(0,0,0,0.5);
+            }
         }
-        &::-webkit-scrollbar-thumb {
-            background-color: rgba(0,0,0,0.3);
-            border-radius: 20px;
-            background-clip: padding-box;
-            border: 3px solid transparent;
-        }
-        &::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(0,0,0,0.5);
+    }
+    .intro_navi {
+        button {
+            position: absolute;
+            z-index: 11;
+            top: calc(50% - get-vw(40px,$divceWidth));
+            width: get-vw(50px,$divceWidth);
+            height: get-vw(80px,$divceWidth);
+            background-color: black;
+            opacity: 0.75;
+            &:disabled {
+                opacity: 0.25;
+            }
+            &.btn_prev {
+                left: 0px;
+            }
+            &.btn_next {
+                right: 0px;
+            }
+            svg {
+                width: 100%;
+                height: auto;
+                fill: white;
+            }
         }
     }
 }

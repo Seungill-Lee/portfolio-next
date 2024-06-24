@@ -8,8 +8,9 @@ import Story from "/components/contents/story.js"
 import Portfolio from "/components/contents/portfolio.js"
 import ContactUs from "/components/contents/contact_us.js"
 import Header from "/components/layout/header.js";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { register } from 'swiper/element/bundle';
+import IntroNaviBullet from "/components/layout/introNaviBullet.js";
 
 register();
 
@@ -19,6 +20,9 @@ export default function Intro() {
     const bulletId = ["about","story","portfolio","contact_us"]
     const bulletTxt = ["About","Story","Portfolio","Contact us"]
 
+    const btnIntroPrev = useRef();
+    const btnIntroNext = useRef();
+
     useEffect(() => {
         const swiperPages = document.querySelector('swiper-container.intro_slide')
         swiperPages.style.height = "100vh"
@@ -27,7 +31,10 @@ export default function Intro() {
             history: {
                 key:"/"
             },
-            navigation: true,
+            navigation: {
+                prevEl: btnIntroPrev.current,
+                nextEl: btnIntroNext.current,
+            },
             pagination: {
                 el: "#"+scss['gnb'],
                 clickable: true,
@@ -73,6 +80,10 @@ export default function Intro() {
                         </div>
                     </swiper-slide>
                 </swiper-container>
+                <div className={scss.intro_navi}>
+                    <button type="button" className={scss.btn_prev} ref={btnIntroPrev}><IntroNaviBullet shape="Prev" /></button>
+                    <button type="button" className={scss.btn_next} ref={btnIntroNext}><IntroNaviBullet shape="Next" /></button>
+                </div>
             </main>
         </>
     );
