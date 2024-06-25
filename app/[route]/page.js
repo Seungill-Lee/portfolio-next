@@ -16,6 +16,7 @@ register();
 
 export default function Intro() {
     const [loadingIs,stateLoadingIs] = useState(false)
+    const [gnbOpen,stateGnbOepn] = useState(false);
 
     const bulletId = ["about","story","portfolio","contact_us"]
     const bulletTxt = ["About","Story","Portfolio","Contact us"]
@@ -36,10 +37,10 @@ export default function Intro() {
                 nextEl: btnIntroNext.current,
             },
             pagination: {
-                el: "#"+scss['gnb'],
+                el: "#"+scss['gnb']+"> ."+scss['g_navi'],
                 clickable: true,
                 renderBullet: function (index, className) {
-                    return '<button type="button" id='+ scss[bulletId[index]] +' class='+ className +'>' + bulletTxt[index] + '</button>';
+                    return '<a href="javascript:void(0)" id='+ scss[bulletId[index]] +' class='+ className +'>' + bulletTxt[index] + '</a>';
                 },
             }
         }
@@ -55,7 +56,15 @@ export default function Intro() {
         <>
             <Header slideLoadingIs={loadingIs} enterIs={true} />
             {/* <GNB /> */}
-            <nav id={scss.gnb}>
+            <nav id={scss.gnb} className={gnbOpen ? scss.on : ""}>
+                <div className={scss.g_navi}></div>
+                <button type="button" className={scss.btn_g_navi} onClick={() => !gnbOpen ? stateGnbOepn(true) : stateGnbOepn(false)}>
+                    <span className={scss.bar}></span>
+                    <span className={scss.bar}></span>
+                    <span className={scss.bar}></span>
+                    <span className={scss.bar}></span>
+                    <span className={scss.txt}>{gnbOpen ? "Close the GNB" : "Open the GNB"}</span>
+                </button>
             </nav>
             <main id={scss.container}>
                 <swiper-container class="intro_slide" init={false}>

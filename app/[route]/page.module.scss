@@ -6,47 +6,125 @@ $divceWidth: $QuadHDMax;
 
 /* GNB */
 nav#gnb {
-    position: fixed;
+    position: absolute;
     z-index: 11;
-    top: 50%;
-    right: 0px;
-    transform: translateY(-50%);
-    button {
-        display: block;
-        width: 100%;
-        padding: get-vw(12px,$divceWidth) get-vw(24px,$divceWidth) get-vw(11px,$divceWidth) get-vw(24px,$divceWidth);
+    top: get-vw(100px,$divceWidth);
+    right: get-vw(200px,$divceWidth);
+    display: flex;
+    align-items: center;
+    padding: get-vw(10px,$divceWidth);
+    gap: 0px get-vw(10px,$divceWidth);
+    border-radius: get-vw(27px,$divceWidth);
+    .g_navi {
+        display: none;
         box-sizing: border-box;
-        border-radius: get-vw(30px,$divceWidth) 0px 0px get-vw(30px,$divceWidth);
-        color: white;
-        text-align: left;
-        line-height: 1;
-        font-size: get-vw(20px,$divceWidth);
-        font-family: 'Alkatra';
+        a {
+            display: flex;
+            align-items: center;
+            border-radius: get-vw(20px,$divceWidth);
+            height: get-vw(27px,$divceWidth);
+            padding: 0px get-vw(12px,$divceWidth);
+            color: white;
+            line-height: 1;
+            font-size: get-vw(17px,$divceWidth);
+            font-family: var(--alkatra);
+            transition: 0.3s ease all;
+            &[part="bullet-active"] {
+                background-color: white;
+                transform: translateX(0px);
+            }
+            &#about:hover,
+            &#about[part="bullet-active"] {
+                color: orange;
+            }
+            &#story:hover,
+            &#story[part="bullet-active"] {
+                color: purple;
+            }
+            &#portfolio:hover,
+            &#portfolio[part="bullet-active"] {
+                color: skyblue;
+            }
+            &#contact_us:hover,
+            &#contact_us[part="bullet-active"] {
+                color: gainsboro;
+            }
+        }
+    }
+    button.btn_g_navi {
+        display: flex;
+        position: relative;
+        width: get-vw(27px,$divceWidth);
+        height: get-vw(27px,$divceWidth);
+        border-radius: 50%;
+        span {
+            position: absolute;
+            display: block;
+            &.bar {
+                width: get-vw(27px,$divceWidth);
+                height: 3px;
+                background-color: #333333;
+                transform: rotate(0deg);
+                transition: 0.3s ease all;
+                &:nth-child(1) {
+                    left: 0px;
+                    top: 0px;
+                }
+                &:nth-child(2) {
+                    right: 0px;
+                    top: get-vw(8px,$divceWidth);
+                }
+                &:nth-child(3) {
+                    left: 0px;
+                    bottom: get-vw(8px,$divceWidth);
+                }
+                &:nth-child(4) {
+                    right: 0px;
+                    bottom: 0px;
+                }
+            }
+            &.txt {
+                top: -999%;
+                left: -999%;
+            }
+        }
+    }
+    &.on {
         background-color: black;
-        transform: translateX(get-vw(12px,$divceWidth));
-        transition: 0.3s ease all;
-        & + button {
-            margin-top: get-vw(16px,$divceWidth);
+        .g_navi {
+            display: flex;
+            gap: 0px get-vw(5px,$divceWidth);
+            align-items: center;
         }
-        &[part="bullet-active"] {
-            background-color: white;
-            transform: translateX(0px);
-        }
-        &#about:hover,
-        &#about[part="bullet-active"] {
-            color: orange;
-        }
-        &#story:hover,
-        &#story[part="bullet-active"] {
-            color: purple;
-        }
-        &#portfolio:hover,
-        &#portfolio[part="bullet-active"] {
-            color: skyblue;
-        }
-        &#contact_us:hover,
-        &#contact_us[part="bullet-active"] {
-            color: gainsboro;
+        button.btn_g_navi {
+            background-color: #555555;
+            span {
+                &.bar {
+                    width: get-vw(7px,$divceWidth);
+                    background-color: white;
+                    &:nth-child(1) {
+                        left: get-vw(7px,$divceWidth);
+                        top: get-vw(9px,$divceWidth);
+                        transform: rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                        
+                        right: get-vw(7px,$divceWidth);
+                        top: get-vw(9px,$divceWidth);
+                        transform: rotate(-45deg);
+                    }
+                    &:nth-child(3) {
+                        left: get-vw(7px,$divceWidth);
+                        bottom: get-vw(9px,$divceWidth);
+                        transform: rotate(135deg);
+                    }
+                    &:nth-child(4) {
+                        right: get-vw(7px,$divceWidth);
+                        bottom: get-vw(9px,$divceWidth);
+                        transform: rotate(-135deg);
+                    }
+                }
+            }
         }
     }
 }
@@ -108,13 +186,15 @@ main#container {
 
     /* GNB */
     nav#gnb {
-        button {
-            padding: get-vw(15px,$divceWidth) get-vw(24px,$divceWidth) get-vw(11px,$divceWidth) get-vw(24px,$divceWidth);
-            border-radius: get-vw(30px,$divceWidth) 0px 0px get-vw(30px,$divceWidth);
-            font-size: get-vw(20px,$divceWidth);
-            transform: translateX(get-vw(16px,$divceWidth));
-            & + button {
-                margin-top: get-vw(16px,$divceWidth);
+        .g_navi {
+            a {
+                padding: get-vw(15px,$divceWidth) get-vw(24px,$divceWidth) get-vw(11px,$divceWidth) get-vw(24px,$divceWidth);
+                border-radius: get-vw(30px,$divceWidth) 0px 0px get-vw(30px,$divceWidth);
+                font-size: get-vw(20px,$divceWidth);
+                transform: translateX(get-vw(16px,$divceWidth));
+                & + a {
+                    margin-top: get-vw(16px,$divceWidth);
+                }
             }
         }
     }
@@ -125,13 +205,15 @@ main#container {
 
         /* GNB */
         nav#gnb {
-            button {
-                padding: get-vh(11px,$divceHeight) get-vh(24px,$divceHeight) get-vh(9px,$divceHeight) get-vh(18px,$divceHeight);
-                border-radius: get-vh(30px,$divceHeight) 0px 0px get-vh(30px,$divceHeight);
-                font-size: get-vh(18px,$divceHeight);
-                transform: translateX(get-vh(14px,$divceHeight));
-                & + button {
-                    margin-top: get-vh(12px,$divceHeight);
+            .g_navi {
+                a {
+                    padding: get-vh(11px,$divceHeight) get-vh(24px,$divceHeight) get-vh(9px,$divceHeight) get-vh(18px,$divceHeight);
+                    border-radius: get-vh(30px,$divceHeight) 0px 0px get-vh(30px,$divceHeight);
+                    font-size: get-vh(18px,$divceHeight);
+                    transform: translateX(get-vh(14px,$divceHeight));
+                    & + a {
+                        margin-top: get-vh(12px,$divceHeight);
+                    }
                 }
             }
         }
@@ -147,15 +229,17 @@ main#container {
 
         /* GNB */
         nav#gnb {
-            button {
-                padding: get-vh(18px,$divceHeight) get-vh(12px,$divceHeight) get-vh(20px,$divceHeight) get-vh(10px,$divceHeight);
-                border-radius: get-vh(20px,$divceHeight) 0px 0px get-vh(20px,$divceHeight);
-                font-size: get-vh(18px,$divceHeight);
-                transform: translateX(get-vh(6px,$divceHeight));
-                writing-mode: vertical-rl;
-                text-orientation: mixed;
-                & + button {
-                    margin-top: get-vh(12px,$divceHeight);
+            .g_navi {
+                a {
+                    padding: get-vh(18px,$divceHeight) get-vh(12px,$divceHeight) get-vh(20px,$divceHeight) get-vh(10px,$divceHeight);
+                    border-radius: get-vh(20px,$divceHeight) 0px 0px get-vh(20px,$divceHeight);
+                    font-size: get-vh(18px,$divceHeight);
+                    transform: translateX(get-vh(6px,$divceHeight));
+                    writing-mode: vertical-rl;
+                    text-orientation: mixed;
+                    & + a {
+                        margin-top: get-vh(12px,$divceHeight);
+                    }
                 }
             }
         }

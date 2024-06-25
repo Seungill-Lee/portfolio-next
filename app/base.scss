@@ -34,6 +34,7 @@ button,input[type="submit"],input[type="image"] {
 	padding: 0px;
 	border-width: 0px;
 	cursor: pointer;
+	background-color: transparent;
 }
 button:disabled {
 	cursor: default;

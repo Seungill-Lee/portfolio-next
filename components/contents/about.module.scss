@@ -5,7 +5,7 @@
 $divceWidth: $QuadHDMax;
 
 section#about {
-    padding: get-vw(100px,$divceWidth) get-vw(300px,$divceWidth) get-vw(100px,$divceWidth) get-vw(100px,$divceWidth);
+    padding: get-vw(100px,$divceWidth) get-vw(200px,$divceWidth);
     background-color: orange;
     &::-webkit-scrollbar-track {
         background-color: orange;
