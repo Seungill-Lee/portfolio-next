@@ -12,21 +12,22 @@ nav#gnb {
     right: get-vw(200px,$divceWidth);
     display: flex;
     align-items: center;
-    padding: get-vw(10px,$divceWidth);
-    gap: 0px get-vw(10px,$divceWidth);
-    border-radius: get-vw(27px,$divceWidth);
+    padding: 10px;
+    gap: 0px 10px;
+    border-radius: 27px;
     .g_navi {
         display: none;
         box-sizing: border-box;
         a {
             display: flex;
             align-items: center;
-            border-radius: get-vw(20px,$divceWidth);
-            height: get-vw(27px,$divceWidth);
-            padding: 0px get-vw(12px,$divceWidth);
+            border-radius: 20px;
+            height: 27px;
+            padding: 1px 12px 0px;
+            box-sizing: border-box;
             color: white;
             line-height: 1;
-            font-size: get-vw(17px,$divceWidth);
+            font-size: 17px;
             font-family: var(--alkatra);
             transition: 0.3s ease all;
             &[part="bullet-active"] {
@@ -54,14 +55,14 @@ nav#gnb {
     button.btn_g_navi {
         display: flex;
         position: relative;
-        width: get-vw(27px,$divceWidth);
-        height: get-vw(27px,$divceWidth);
+        width: 27px;
+        height: 27px;
         border-radius: 50%;
         span {
             position: absolute;
             display: block;
             &.bar {
-                width: get-vw(27px,$divceWidth);
+                width: 27px;
                 height: 3px;
                 background-color: #333333;
                 transform: rotate(0deg);
@@ -72,11 +73,11 @@ nav#gnb {
                 }
                 &:nth-child(2) {
                     right: 0px;
-                    top: get-vw(8px,$divceWidth);
+                    top: 8px;
                 }
                 &:nth-child(3) {
                     left: 0px;
-                    bottom: get-vw(8px,$divceWidth);
+                    bottom: 8px;
                 }
                 &:nth-child(4) {
                     right: 0px;
@@ -93,34 +94,34 @@ nav#gnb {
         background-color: black;
         .g_navi {
             display: flex;
-            gap: 0px get-vw(5px,$divceWidth);
+            gap: 0px 5px;
             align-items: center;
         }
         button.btn_g_navi {
             background-color: #555555;
             span {
                 &.bar {
-                    width: get-vw(7px,$divceWidth);
+                    width: 7px;
                     background-color: white;
                     &:nth-child(1) {
-                        left: get-vw(7px,$divceWidth);
-                        top: get-vw(9px,$divceWidth);
+                        left: 7px;
+                        top: 9px;
                         transform: rotate(45deg);
                     }
                     &:nth-child(2) {
                         
-                        right: get-vw(7px,$divceWidth);
-                        top: get-vw(9px,$divceWidth);
+                        right: 7px;
+                        top: 9px;
                         transform: rotate(-45deg);
                     }
                     &:nth-child(3) {
-                        left: get-vw(7px,$divceWidth);
-                        bottom: get-vw(9px,$divceWidth);
+                        left: 7px;
+                        bottom: 9px;
                         transform: rotate(135deg);
                     }
                     &:nth-child(4) {
-                        right: get-vw(7px,$divceWidth);
-                        bottom: get-vw(9px,$divceWidth);
+                        right: 7px;
+                        bottom: 9px;
                         transform: rotate(-135deg);
                     }
                 }
