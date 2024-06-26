@@ -5,7 +5,6 @@
 $divceWidth: $QuadHDMax;
 
 section#portfolio {
-    padding: 0px;
     overflow-y: hidden;
     background-color: skyblue;
     &::-webkit-scrollbar-track {
@@ -14,7 +13,7 @@ section#portfolio {
     .pf_cont_inner {
         position: absolute;
         top: 0px;
-        overflow: hidden;
+        // overflow: hidden;
         width: 100%;
         height: 100vh;
         &.fixed {
@@ -23,12 +22,12 @@ section#portfolio {
         h2 {
             position: absolute;
             top: get-vw(100px,$divceWidth);
-            left: get-vw(100px,$divceWidth);
+            left: get-vw(200px,$divceWidth);
         }
         .pf_year {
             position: absolute;
             top: get-vw(230px,$divceWidth);
-            left: get-vw(100px,$divceWidth);
+            left: get-vw(200px,$divceWidth);
             font-size: get-vw(40px,$divceWidth);
             font-weight: 500;
             line-height: 1;
@@ -37,8 +36,8 @@ section#portfolio {
         .summary {
             position: absolute;
             top: get-vw(100px,$divceWidth);
-            left: get-vw(580px,$divceWidth);
-            right: get-vw(880px,$divceWidth);
+            left: get-vw(600px,$divceWidth);
+            width: get-vw(700px,$divceWidth);
             transition: 0.3s ease margin-top;
             > ul {
                 > li {
@@ -115,13 +114,13 @@ section#portfolio {
         ul.detail {
             position: absolute;
             top: get-vw(100px,$divceWidth);
-            right: get-vw(300px,$divceWidth);
-            width: get-vw(640px,$divceWidth);
+            right: get-vw(625px,$divceWidth);
+            width: get-vw(600px,$divceWidth);
             > li {
                 position: absolute;
                 top: 0px;
                 left: 0px;
-                width: 100%;
+                gap: 0px get-vw(40px,$divceWidth);
                 box-sizing: border-box;
                 visibility: hidden;
                 opacity: 0;
@@ -135,7 +134,7 @@ section#portfolio {
                     height: auto;
                     img {
                         width: 100%;
-                        height: 100%;
+                        height: auto;
                         max-height: get-vw(480px,$divceWidth);
                         object-fit: cover;
                         object-position: 50% 0%;

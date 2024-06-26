@@ -11,9 +11,9 @@ section#about {
         background-color: orange;
     }
     .about_photo {
-        position: absolute;
+        position: fixed;
         top: get-vw(230px,$divceWidth);
-        right: get-vw(300px,$divceWidth);
+        right: get-vw(200px,$divceWidth);
         width: get-vw(450px,$divceWidth);
         background-color: green;
         img {

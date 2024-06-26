@@ -8,26 +8,26 @@ $divceWidth: $QuadHDMax;
 nav#gnb {
     position: absolute;
     z-index: 11;
-    top: get-vw(100px,$divceWidth);
-    right: get-vw(200px,$divceWidth);
+    top: get-vw(90px,$divceWidth);
+    right: get-vw(202px,$divceWidth);
     display: flex;
     align-items: center;
-    padding: 10px;
-    gap: 0px 10px;
-    border-radius: 27px;
+    padding: get-vw(10px,$divceWidth);
+    gap: 0px get-vw(10px,$divceWidth);
+    border-radius: get-vw(27px,$divceWidth);
     .g_navi {
         display: none;
         box-sizing: border-box;
         a {
             display: flex;
             align-items: center;
-            border-radius: 20px;
-            height: 27px;
-            padding: 1px 12px 0px;
+            border-radius: get-vw(20px,$divceWidth);
+            height: get-vw(27px,$divceWidth);
+            padding: 0px get-vw(12px,$divceWidth);
             box-sizing: border-box;
             color: white;
             line-height: 1;
-            font-size: 17px;
+            font-size: get-vw(17px,$divceWidth);
             font-family: var(--alkatra);
             transition: 0.3s ease all;
             &[part="bullet-active"] {
@@ -55,15 +55,15 @@ nav#gnb {
     button.btn_g_navi {
         display: flex;
         position: relative;
-        width: 27px;
-        height: 27px;
+        width: get-vw(27px,$divceWidth);
+        height: get-vw(27px,$divceWidth);
         border-radius: 50%;
         span {
             position: absolute;
             display: block;
             &.bar {
-                width: 27px;
-                height: 3px;
+                width: get-vw(27px,$divceWidth);
+                height: get-vw(3px,$divceWidth);
                 background-color: #333333;
                 transform: rotate(0deg);
                 transition: 0.3s ease all;
@@ -73,11 +73,11 @@ nav#gnb {
                 }
                 &:nth-child(2) {
                     right: 0px;
-                    top: 8px;
+                    top: get-vw(8px,$divceWidth);
                 }
                 &:nth-child(3) {
                     left: 0px;
-                    bottom: 8px;
+                    bottom: get-vw(8px,$divceWidth);
                 }
                 &:nth-child(4) {
                     right: 0px;
@@ -94,34 +94,34 @@ nav#gnb {
         background-color: black;
         .g_navi {
             display: flex;
-            gap: 0px 5px;
+            gap: 0px get-vw(5px,$divceWidth);
             align-items: center;
         }
         button.btn_g_navi {
             background-color: #555555;
             span {
                 &.bar {
-                    width: 7px;
+                    width: get-vw(7px,$divceWidth);
                     background-color: white;
                     &:nth-child(1) {
-                        left: 7px;
-                        top: 9px;
+                        left: get-vw(7px,$divceWidth);
+                        top: get-vw(9px,$divceWidth);
                         transform: rotate(45deg);
                     }
                     &:nth-child(2) {
                         
-                        right: 7px;
-                        top: 9px;
+                        right: get-vw(7px,$divceWidth);
+                        top: get-vw(9px,$divceWidth);
                         transform: rotate(-45deg);
                     }
                     &:nth-child(3) {
-                        left: 7px;
-                        bottom: 9px;
+                        left: get-vw(7px,$divceWidth);
+                        bottom: get-vw(9px,$divceWidth);
                         transform: rotate(135deg);
                     }
                     &:nth-child(4) {
-                        right: 7px;
-                        bottom: 9px;
+                        right: get-vw(7px,$divceWidth);
+                        bottom: get-vw(9px,$divceWidth);
                         transform: rotate(-135deg);
                     }
                 }
@@ -139,7 +139,7 @@ main#container {
             box-sizing: border-box;
             height: 100vh;
             overflow-x: hidden;
-            overflow-y: auto;
+            overflow-y: scroll;
             &::-webkit-scrollbar {
                 width: 12px; 
             }
