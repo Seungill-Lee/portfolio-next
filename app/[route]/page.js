@@ -8,8 +8,9 @@ import Story from "/components/contents/story.js"
 import Portfolio from "/components/contents/portfolio.js"
 import ContactUs from "/components/contents/contact_us.js"
 import Header from "/components/layout/header.js";
-import { useEffect, useState, useRef } from 'react';
 import { register } from 'swiper/element/bundle';
+import { useEffect, useState, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import IntroNaviBullet from "/components/layout/introNaviBullet.js";
 
 register();
@@ -21,8 +22,11 @@ export default function Intro() {
     const bulletId = ["about","story","portfolio","contact_us"]
     const bulletTxt = ["About","Story","Portfolio","Contact us"]
 
+    const btnGNBNavi = useRef();
     const btnIntroPrev = useRef();
     const btnIntroNext = useRef();
+
+    const pathname = usePathname();
 
     useEffect(() => {
         const swiperPages = document.querySelector('swiper-container.intro_slide')
@@ -42,6 +46,20 @@ export default function Intro() {
                 renderBullet: function (index, className) {
                     return '<a href="javascript:void(0)" id='+ scss[bulletId[index]] +' class='+ className +'>' + bulletTxt[index] + '</a>';
                 },
+            },
+            on: {
+                init: () => {
+                    if(pathname == "/story") {
+                        btnGNBNavi.current.classList.add(scss["reverse"]);
+                    }
+                },
+                realIndexChange: (swiper) => {
+                    if(bulletId[swiper.realIndex] == "story")  {
+                        btnGNBNavi.current.classList.add(scss["reverse"]);
+                    } else {
+                        btnGNBNavi.current.classList.remove(scss["reverse"]);
+                    }
+                }
             }
         }
 
@@ -49,7 +67,7 @@ export default function Intro() {
 
         swiperPages.initialize();
 
-        stateLoadingIs(true)
+        stateLoadingIs(true);
     }, []);
 
     return (
@@ -58,7 +76,7 @@ export default function Intro() {
             {/* <GNB /> */}
             <nav id={scss.gnb} className={gnbOpen ? scss.on : ""}>
                 <div className={scss.g_navi}></div>
-                <button type="button" className={scss.btn_g_navi} onClick={() => !gnbOpen ? stateGnbOepn(true) : stateGnbOepn(false)}>
+                <button type="button" className={scss.btn_g_navi} onClick={() => !gnbOpen ? stateGnbOepn(true) : stateGnbOepn(false)} ref={btnGNBNavi}>
                     <span className={scss.bar}></span>
                     <span className={scss.bar}></span>
                     <span className={scss.bar}></span>

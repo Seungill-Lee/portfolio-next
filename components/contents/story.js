@@ -9,13 +9,13 @@ import { usePathname } from 'next/navigation';
 register()
 
 export default function Story(props) {
-    const path = usePathname();
     const slideLoading = props.slideLoadingIs
+    const pathname = usePathname();
 
     useEffect(() => {
+        const swiperStory = document.querySelector('swiper-container.story_slide');
         if(slideLoading) {
-            const swiperStory = document.querySelector('swiper-container.story_slide')
-            swiperStory.style.height = "100vh"
+            swiperStory.style.height = "100vh";
             const params = {
                 direction: "vertical",
                 mousewheel: true,
@@ -25,8 +25,13 @@ export default function Story(props) {
             Object.assign(swiperStory, params)
 
             swiperStory.initialize();
+
+            if(pathname != "/story") {
+                swiperStory.swiper.slideTo(0)
+            }
         }
-    },[slideLoading]);
+        
+    },[slideLoading,pathname]);
 
     return(
         <section id={scss.story}>

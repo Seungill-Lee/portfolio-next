@@ -15,9 +15,17 @@ nav#gnb {
     padding: get-vw(10px,$divceWidth);
     gap: 0px get-vw(10px,$divceWidth);
     border-radius: get-vw(27px,$divceWidth);
+    background-color: transparent;
+    transition: 0.3s ease 0.15s background-color;
     .g_navi {
-        display: none;
+        visibility: hidden;
         box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        gap: 0px;
+        align-items: center;
+        width: 0px;
+        transition: 0.3s ease all;
         a {
             display: flex;
             align-items: center;
@@ -29,6 +37,7 @@ nav#gnb {
             line-height: 1;
             font-size: get-vw(17px,$divceWidth);
             font-family: var(--alkatra);
+            white-space: nowrap;
             transition: 0.3s ease all;
             &[part="bullet-active"] {
                 background-color: white;
@@ -57,7 +66,9 @@ nav#gnb {
         position: relative;
         width: get-vw(27px,$divceWidth);
         height: get-vw(27px,$divceWidth);
-        border-radius: 50%;
+        border-radius: 0%;
+        background-color: transparent;
+        transition: 0.3s ease 0.15s all;
         span {
             position: absolute;
             display: block;
@@ -66,7 +77,7 @@ nav#gnb {
                 height: get-vw(3px,$divceWidth);
                 background-color: #333333;
                 transform: rotate(0deg);
-                transition: 0.3s ease all;
+                transition: 0.3s ease 0.15s all;
                 &:nth-child(1) {
                     left: 0px;
                     top: 0px;
@@ -89,20 +100,30 @@ nav#gnb {
                 left: -999%;
             }
         }
+        &.reverse {
+            span.bar {
+                background-color: whitesmoke;
+                transition-delay: 0s;
+            }
+        }
     }
     &.on {
-        background-color: black;
+        background-color: rgba(0,0,0,0.8);
+        transition-delay: 0s;
         .g_navi {
-            display: flex;
+            visibility: visible;
+            width: get-vw(326px,$divceWidth);
             gap: 0px get-vw(5px,$divceWidth);
-            align-items: center;
         }
         button.btn_g_navi {
+            border-radius: 50%;
             background-color: #555555;
+            transition-delay: 0s;
             span {
                 &.bar {
                     width: get-vw(7px,$divceWidth);
                     background-color: white;
+                    transition-delay: 0s;
                     &:nth-child(1) {
                         left: get-vw(7px,$divceWidth);
                         top: get-vw(9px,$divceWidth);

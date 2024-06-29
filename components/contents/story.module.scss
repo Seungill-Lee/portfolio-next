@@ -72,6 +72,30 @@ section#story {
             font-size: get-vw(40px,$divceWidth);
             line-height: 170%;
             color: white;
+            p {
+                transform: translateY(get-vw(20px,$divceWidth));
+                opacity: 0;
+                transition: 0.3s ease transform,0.3s ease opacity;
+                &:nth-child(1) {
+                    transition-delay: 0.15s;
+                }
+                &:nth-child(2) {
+                    transition-delay: 0.3s;
+                }
+                &:nth-child(3) {
+                    transition-delay: 0.45s;
+                }
+            }
+        }
+    }
+    swiper-slide[class*="swiper-slide-active"] {
+        .story_cont {
+            .sc_inner {
+                p {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
         }
     }
 }
@@ -84,6 +108,9 @@ section#story {
         .story_cont {
             .sc_inner {
                 font-size: get-vw(34px,$divceWidth);
+                p {
+                    transform: translateY(get-vw(20px,$divceWidth));
+                }
             }
         }
     }
@@ -98,6 +125,9 @@ section#story {
             padding: get-vw(80px,$divceWidth) get-vw(180px,$divceWidth) get-vw(80px,$divceWidth) get-vw(80px,$divceWidth);
             .sc_inner {
                 font-size: get-vw(36px,$divceWidth);
+                p {
+                    transform: translateY(get-vw(20px,$divceWidth));
+                }
             }
         }
     }
@@ -120,7 +150,7 @@ section#story {
             .sc_inner {
                 font-size: get-vw(26px,$divceWidth);
                 p {
-                    // transform: translateY(get-vw(20px,$divceWidth));
+                    transform: translateY(get-vw(20px,$divceWidth));
                     letter-spacing: -1px;
                 }
             }
@@ -138,7 +168,7 @@ section#story {
                 .sc_inner {
                     font-size: get-vh(26px,$divceHeight);
                     p {
-                        // transform: translateY(get-vh(20px,$divceHeight));
+                        transform: translateY(get-vh(20px,$divceHeight));
                     }
                 }
             }
