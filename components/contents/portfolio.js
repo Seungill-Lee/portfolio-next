@@ -9,6 +9,7 @@ register()
 export default function Portfolio(props) {
     const slideLoading = props.slideLoadingIs
     const pathname = usePathname();
+    const [pfYears,setPfYears] = useState()
 
     useEffect(() => {
         if(slideLoading) {
@@ -16,7 +17,7 @@ export default function Portfolio(props) {
             const params = {
                 direction: "vertical",
                 mousewheel: true,
-                slidesPerView: "auto",
+                slidesPerView: 8,
                 watchSlidesProgress: true
             }
 
@@ -24,8 +25,33 @@ export default function Portfolio(props) {
 
             swiperPortfolioSummary.initialize();
 
-            if(pathname != "/story") {
+            const swiperPortfolioDetail = document.querySelector('swiper-container.pf_detail_slide');
+            const spdItem = swiperPortfolioDetail.querySelectorAll('swiper-slide');
+            const params2 = {
+                direction: "vertical",
+                mousewheel: true,
+                slidesPerView: 1,
+                effect: "fade",
+                thumbs: {
+                    swiper: swiperPortfolioSummary,
+                },
+                on: {
+                    init: () => {
+                        setPfYears(spdItem[0].getAttribute("data-year"))
+                    },
+                    realIndexChange: (swiper) => {
+                        setPfYears(spdItem[swiper.realIndex].getAttribute("data-year"))
+                    }
+                }
+            }
+
+            Object.assign(swiperPortfolioDetail, params2)
+
+            swiperPortfolioDetail.initialize();
+
+            if(pathname != "/portfolio") {
                 swiperPortfolioSummary.swiper.slideTo(0)
+                swiperPortfolioDetail.swiper.slideTo(0)
             }
         }
     },[slideLoading,pathname]);
@@ -33,250 +59,251 @@ export default function Portfolio(props) {
     return(
         <section id={scss.portfolio} className={scss.content}>
             <h2>Portfolio</h2>
-            <div className={scss.pf_year}>2023</div>
+            <div className={scss.pf_year}>{pfYears}</div>
             <div className={scss.pf_summary}>
                 <swiper-container class="pf_summary_slide" init={false}>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2023">
+                        <div className={scss.pf_summary_cont}>
                             <i className={scss.bullet}></i>
                             <div className={scss.trems}>2023년 10월 ~ 2024년 2월</div>
                             <div className={scss.project_name}>한화 큐셀 발전소 관리 플랫폼 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2023">
+                        <div className={scss.pf_summary_cont}>
                             <i className={scss.bullet}></i>
                             <div className={scss.trems}>2023년 7월 ~ 9월</div>
                             <div className={scss.project_name}>LG Global Sustainability 마이크로 사이트 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2023">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2023년 2월 ~ 6월</div>
                             <div className={scss.project_name}>효성중공업 웹사이트 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2022">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2022년 7월 ~ 10월</div>
                             <div className={scss.project_name}>HL Mando 웹사이트 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2022">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2022년 6월</div>
                             <div className={scss.project_name}>LG Open Source 사이트 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2022">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2022년 4월 ~ 5월</div>
                             <div className={scss.project_name}>삼성카드 쇼핑몰&amp;복지몰 웹사이트 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2022">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2022년 2월 ~ 3월</div>
                             <div className={scss.project_name}>호텔관리프로그램 PMS 3.5 웹솔루션 제작</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2022">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2021년 12월 ~ 2022년 1월</div>
                             <div className={scss.project_name}>LG CES 2022 웹사이트 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2021">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2021년 6월 ~ 11월</div>
                             <div className={scss.project_name}>국립국어원 용어 구축 시스템 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2021">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2021년 3월 ~ 5월</div>
                             <div className={scss.project_name}>신세계백화점 과학관(넥스페리움) 웹사이트(PC,Mobile) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2020">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2020년 8월 ~ 2021년 1월</div>
                             <div className={scss.project_name}>LECS(유니클로,칠성몰,무인양품,더콘란샵) 통합 운영</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2020">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2020년 4월 ~ 2020년 8월</div>
                             <div className={scss.project_name}>삼성물산 래미안 웹사이트(PC,Mobile) 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2019">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2019년 7월 ~ 8월</div>
                             <div className={scss.project_name}>AOS VDR 웹솔루션 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2019">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2019년 6월</div>
                             <div className={scss.project_name}>리걸서치(LegalSearch) 사이트(PC,Mobile) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2019">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2019년 4월 ~ 5월</div>
                             <div className={scss.project_name}>DataTech 사이트 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2019">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2019년 1월 ~ 2월</div>
                             <div className={scss.project_name}>리걸테크(LegalTech) 사이트 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2018">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2018년 7월 ~ 8월</div>
                             <div className={scss.project_name}>AOS VDR 웹솔루션 소개 사이트 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2018">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2018년 4월 ~ 5월</div>
                             <div className={scss.project_name}>변호사님닷컴 사이트(PC,Mobile,Web App) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2018">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2018년 2월 ~ 3월</div>
                             <div className={scss.project_name}>APIbank(AP 거래소) 사이트(PC,Mobile) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2017">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2017년 1월 ~ 2018년 1월</div>
                             <div className={scss.project_name}>T 다이렉트샵 웹사이트(PC,Mobile) 운영</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2016">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2016년 9월 ~ 12월</div>
                             <div className={scss.project_name}>현대캐피탈 웹사이트(PC) 프로토타이핑,UI/UX R&amp;D</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2016">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2016년 2월 ~ 5월</div>
                             <div className={scss.project_name}>한화생명 인터넷보험 온슈어 사이트(Mobile) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2015">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2015년 1월 ~ 12월</div>
                             <div className={scss.project_name}>1300k 쇼핑몰(PC,Mobile) 운영</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2014">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2014년 10월 ~ 12월</div>
                             <div className={scss.project_name}>지니빌더(홈페이지 빌더) 웹솔루션 제작</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2014">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2014년 8월 ~ 9월</div>
                             <div className={scss.project_name}>Rise Investment 웹사이트(PC) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2014">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2014년 7월</div>
                             <div className={scss.project_name}>디지털파빌리온 웹사이트(PC) 웹접근성 개선</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2014">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2014년 5월 ~ 6월</div>
                             <div className={scss.project_name}>LG G3 Global 웹사이트(PC,Mobile) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2013">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2013년 11월 ~ 12월</div>
                             <div className={scss.project_name}>고려사이버대학교 홈페이지 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2013">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2013년 10월</div>
                             <div className={scss.project_name}>해양생물연구센터 웹사이트(PC) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2013">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2013년 9월</div>
                             <div className={scss.project_name}>아쿠아리움 개발사업(PC) 웹사이트 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2013">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2013년 4월 ~ 6월</div>
                             <div className={scss.project_name}>디큐브시티 사이트(PC,Mobile) 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2013">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2013년 3월</div>
                             <div className={scss.project_name}>(주)동진레저(주)블랙야크 사이트(PC,Mobile) 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2012">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2012년 9월 ~ 10월</div>
                             <div className={scss.project_name}>SKT 이메일 청구서 페이지 퍼블리싱</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2012">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2012년 2월 ~ 7월</div>
                             <div className={scss.project_name}>신라인터넷면세점 사이트(PC) 운영</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2012">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2012년 1월</div>
                             <div className={scss.project_name}>투니랜드 케로로팡팡 게임사이트(PC) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2011">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2011년 10월 ~ 11월</div>
                             <div className={scss.project_name}>금천구청 및 산하기관 웹사이트(PC) 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2011">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2011년 8월 ~ 9월</div>
                             <div className={scss.project_name}>문화재보호재단 웹사이트(PC) 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2011">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2011년 7월 ~ 9월</div>
                             <div className={scss.project_name}>부천시청 산하기관 웹사이트(PC) 리뉴얼</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div className={scss.pf_summary_cont} data-year="2009">
+                        <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2009년 2월 ~ 3월</div>
                             <div className={scss.project_name}>은평인터넷방송국 사이트(PC) 리뉴얼</div>
                         </div>
                     </swiper-slide>
                 </swiper-container>
+                <div className={scss.gauge}></div>
             </div>
             <div className={scss.pf_detail}>
                 <swiper-container class="pf_detail_slide" init={false}>
-                    <swiper-slide>
+                    <swiper-slide data-year="2023">
                         <div className={`${scss.pf_detail_cont} ${scss.active}`}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202310-202402_hanhwaqsell.jpg" alt="" width={1920} height={1345} />
@@ -319,7 +346,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2023">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202307-09_lg_sustainability.jpg" alt="" width={1920} height={1080} />
@@ -362,7 +389,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2023">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202302-06_hyosunghi.jpg" alt="" width={1920} height={1080} />
@@ -409,7 +436,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2022">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202207-10_hlmando.jpg" alt="" width={1920} height={1080} />
@@ -457,7 +484,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2022">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202206_lg_opensource.jpg" alt="" width={1920} height={1080} />
@@ -496,7 +523,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2022">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202204-05_samsungcard.jpg" alt="" width={1920} height={1080} />
@@ -535,7 +562,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2022">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202202-03_pmsv35.jpg" alt="" width={1920} height={1080} />
@@ -574,7 +601,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2021">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202112-202201_lgces2022.jpg" alt="" width={1280} height={720} />
@@ -613,7 +640,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2021">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202106-11_koreanterms.jpg" alt="" width={1920} height={1080} />
@@ -652,7 +679,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2021">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202103-05_nexperium.jpg" alt="" width={1920} height={1080} />
@@ -691,7 +718,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2020">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202008-202101_lecs.jpg" alt="" width={936} height={700} />
@@ -730,7 +757,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2020">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_202004-202008_raemian.jpg" alt="" width={1920} height={1080} />
@@ -777,7 +804,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2019">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201907-08_aos_vdr.jpg" alt="" width={800} height={544} />
@@ -816,7 +843,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2019">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201906_legalsearch.jpg" alt="" width={1920} height={1080} />
@@ -855,7 +882,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2019">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201904_datatech.jpg" alt="" width={1920} height={1080} />
@@ -894,7 +921,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2019">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201901-02_legaltech.jpg" alt="" width={1920} height={1080} />
@@ -933,7 +960,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2018">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201807-08_aos_vdr.jpg" alt="" width={800} height={544} />
@@ -972,7 +999,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2018">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201804-05_byunhosanim.jpg" alt="" width={1100} height={620} />
@@ -1019,7 +1046,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2018">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201802-03_apibank.jpg" alt="" width={1920} height={1080} />
@@ -1058,7 +1085,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2017">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_2017_twordshop.jpg" alt="" width={660} height={660} />
@@ -1097,7 +1124,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2016">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201609-12_hyundaicapital.jpg" alt="" width={1920} height={1080} />
@@ -1136,7 +1163,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2016">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201602-05_onsure.jpg" alt="" width={768} height={512} />
@@ -1175,7 +1202,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2015">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_2015_1300k.jpg" alt="" width={740} height={1115} />
@@ -1214,7 +1241,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2014">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201410-12_geniebuiler.jpg" alt="" width={1500} height={1100} />
@@ -1253,7 +1280,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2014">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201410-12_riseinvestment.jpg" alt="" width={740} height={537} />
@@ -1292,7 +1319,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2014">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201407_digitalpavilion.jpg" alt="" width={1060} height={807} />
@@ -1339,7 +1366,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2014">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201405-06_lg_g3.jpg" alt="" width={880} height={544} />
@@ -1378,7 +1405,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2013">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201311-201312_cuk.jpg" alt="" width={1394} height={790} />
@@ -1417,7 +1444,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2013">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201310_hmbrc.jpg" alt="" width={1920} height={1080} />
@@ -1456,7 +1483,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2013">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201309_aquazium.jpg" alt="" width={1920} height={805} />
@@ -1495,7 +1522,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2013">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_20130406_dcubecity.jpg" alt="" width={935} height={696} />
@@ -1534,7 +1561,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2013">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201303_blackyak.jpg" alt="" width={996} height={1282} />
@@ -1573,7 +1600,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2012">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201209-10_skt_email.jpg" alt="" width={960} height={1080} />
@@ -1612,7 +1639,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2012">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201202-07_shilladfs.jpg" alt="" width={800} height={597} />
@@ -1651,7 +1678,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2012">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201201_keroro_pangpang.jpg" alt="" width={740} height={407} />
@@ -1690,7 +1717,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2011">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201110-11_geumcheon.jpg" alt="" width={640} height={500} />
@@ -1729,7 +1756,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2011">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201108-09_chf.jpg" alt="" width={1200} height={885} />
@@ -1768,7 +1795,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2011">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_201107-09_bucheon.jpg" alt="" width={640} height={515} />
@@ -1807,7 +1834,7 @@ export default function Portfolio(props) {
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide data-year="2009">
                         <div className={scss.pf_detail_cont}>
                             <div className={scss.screenshot}>
                                 <Image src="/images/portfolio/pf_200902-03_ebn.jpg" alt="" width={700} height={394} />
