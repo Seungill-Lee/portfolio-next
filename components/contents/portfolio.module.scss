@@ -37,20 +37,32 @@ section#portfolio {
                 .pf_summary_cont {
                     position: relative;
                     z-index: 2;
-                    padding-left: get-vw(30px,$divceWidth);
+                    height: get-vw(64px,$divceWidth);
+                    padding: 0px 0px get-vw(80px,$divceWidth) get-vw(30px,$divceWidth);
+                    &:before,
                     &:after {
-                        position: absolute;
-                        top: get-vw(10px,$divceWidth);
-                        left: 0px;
                         content: '';
                         display: block;
+                        position: absolute;
+                    }
+                    &:before {
+                        z-index: 1;
+                        top: get-vw(11px,$divceWidth);
+                        left: get-vw(5px,$divceWidth);
+                        width: 1px;
+                        height: calc(100% + get-vw(11px,$divceWidth));
+                        overflow: hidden;
+                        background-color: #6CA5EF;
+                        transition: 0.15s ease background-color;
+                    }
+                    &:after {
+                        z-index: 2;
+                        top: get-vw(11px,$divceWidth);
+                        left: 0px;
                         width: get-vw(11px,$divceWidth);
                         height: get-vw(11px,$divceWidth);
                         border-radius: 50%;
                         background-color: #6CA5EF;
-                    }
-                    &.on:after {
-                        background-color: blue;
                     }
                     .trems {
                         font-size: get-vw(14px,$divceWidth);
@@ -60,10 +72,6 @@ section#portfolio {
                         transition: 0.3s ease all;
                         transform-origin: left;
                     }
-                    &.active .trems {
-                        transform: scale(1.2);
-                        opacity: 1;
-                    }
                     .project_name {
                         margin-top: get-vw(4px,$divceWidth);
                         font-weight: 400;
@@ -72,34 +80,41 @@ section#portfolio {
                         transition: 0.3s ease all;
                         transform-origin: left;
                     }
-                    &.active .project_name {
-                        font-weight: 500;
-                        letter-spacing: -0.5px;
-                        text-decoration: underline;
-                        text-decoration-thickness: 1px;
-                        text-decoration-style: dotted;
-                        text-underline-offset: get-vw(4px,$divceWidth);
-                        transform: scale(1.2);
-                        opacity: 1;
-                    }
                     .project_info {
                         display: none;
                     }
                 }
-            }
-        }
-        .gauge {
-            position: absolute;
-            z-index: 1;
-            top: get-vw(16px,$divceWidth);
-            left: get-vw(5px,$divceWidth);
-            width: 1px;
-            height: 100%;
-            overflow: hidden;
-            background-color: #6CA5EF;
-            .bar {
-                background-color: blue;
-                transition: 0.15s ease height;
+                &[class*="swiper-slide-prev"] {
+                    .pf_summary_cont:before {
+                        background-color: blue;
+                    }
+                }
+                &[class*="swiper-slide-active"] {
+                    .pf_summary_cont {
+                        &:after {
+                            background-color: blue;
+                        }
+                        .trems {
+                            transform: scale(1.2);
+                            opacity: 1;
+                        }
+                        .project_name {
+                            font-weight: 500;
+                            letter-spacing: -0.5px;
+                            text-decoration: underline;
+                            text-decoration-thickness: 1px;
+                            text-decoration-style: dotted;
+                            text-underline-offset: get-vw(4px,$divceWidth);
+                            transform: scale(1.2);
+                            opacity: 1;
+                        }
+                    }
+                }
+                &:last-child {
+                    .pf_summary_cont:before {
+                        display: none;
+                    }
+                }
             }
         }
     }

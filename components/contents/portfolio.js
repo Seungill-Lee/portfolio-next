@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import scss from "./portfolio.module.scss";
 import { register } from 'swiper/element/bundle';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
 register()
@@ -11,14 +11,12 @@ export default function Portfolio(props) {
     const pathname = usePathname();
 
     useEffect(() => {
-        const swiperPortfolioSummary = document.querySelector('swiper-container.pf_summary_slide');
         if(slideLoading) {
+            const swiperPortfolioSummary = document.querySelector('swiper-container.pf_summary_slide');
             const params = {
                 direction: "vertical",
                 mousewheel: true,
                 slidesPerView: "auto",
-                spaceBetween: 80,
-                freeMode: true,
                 watchSlidesProgress: true
             }
 
@@ -30,7 +28,6 @@ export default function Portfolio(props) {
                 swiperPortfolioSummary.swiper.slideTo(0)
             }
         }
-        
     },[slideLoading,pathname]);
 
     return(
@@ -40,7 +37,7 @@ export default function Portfolio(props) {
             <div className={scss.pf_summary}>
                 <swiper-container class="pf_summary_slide" init={false}>
                     <swiper-slide>
-                        <div className={`${scss.pf_summary_cont} ${scss.on} ${scss.active}`} data-year="2023">
+                        <div className={scss.pf_summary_cont} data-year="2023">
                             <i className={scss.bullet}></i>
                             <div className={scss.trems}>2023년 10월 ~ 2024년 2월</div>
                             <div className={scss.project_name}>한화 큐셀 발전소 관리 플랫폼 신규 구축</div>
@@ -276,9 +273,6 @@ export default function Portfolio(props) {
                         </div>
                     </swiper-slide>
                 </swiper-container>
-                <div className={scss.gauge}>
-                    <div className={scss.bar}></div>
-                </div>
             </div>
             <div className={scss.pf_detail}>
                 <swiper-container class="pf_detail_slide" init={false}>
