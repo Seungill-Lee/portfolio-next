@@ -98,7 +98,7 @@ export default function Intro() {
                     </swiper-slide>
                     <swiper-slide data-history="portfolio">
                         <div className={scss.content_wrap}>
-                            <Portfolio />
+                            <Portfolio slideLoadingIs={loadingIs} />
                         </div>
                     </swiper-slide>
                     <swiper-slide data-history="contact-us">
