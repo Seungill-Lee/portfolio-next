@@ -29,8 +29,11 @@ section#portfolio {
         top: get-vw(100px,$divceWidth);
         bottom: 0px;
         left: get-vw(600px,$divceWidth);
-        width: get-vw(700px,$divceWidth);
+        width: get-vw(680px,$divceWidth);
         swiper-container {
+            &::part(container) {
+                overflow: visible;
+            }
             z-index: 3;
             height: 100%;
             swiper-slide {
@@ -171,6 +174,7 @@ section#portfolio {
                                     th {
                                         width: get-vw(130px,$divceWidth);
                                         font-weight: 400;
+                                        text-align: left;
                                         color: navy;
                                     }
                                     td {
