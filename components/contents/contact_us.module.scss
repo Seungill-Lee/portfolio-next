@@ -17,7 +17,6 @@ section#contact_us {
             display: grid;
             grid-template-columns: repeat(2,1fr);
             gap: get-vw(30px,$divceWidth);
-            margin-top: get-vw(60px,$divceWidth);
             .field {
                 position: relative;
                 height: get-vw(80px,$divceWidth);
@@ -162,7 +161,6 @@ section#contact_us {
         form.sendmail_form {
             fieldset {
                 gap: get-vw(20px,$divceWidth);
-                margin-top: get-vw(40px,$divceWidth);
                 .field {
                     &.message {
                         height: get-vw(500px,$divceWidth);
@@ -182,7 +180,6 @@ section#contact_us {
         form.sendmail_form {
             fieldset {
                 gap: get-vw(20px,$divceWidth);
-                margin-top: get-vw(30px,$divceWidth);
                 .field {
                     height: get-vw(72px,$divceWidth);
                     &.message {
@@ -252,7 +249,6 @@ section#contact_us {
             form.sendmail_form {
                 fieldset {
                     gap: get-vh(24px,$divceHeight);
-                    margin-top: get-vh(30px,$divceHeight);
                     .field {
                         grid-column: 1 / span 2;
                         height: get-vh(70px,$divceHeight);
@@ -331,7 +327,6 @@ section#contact_us {
             form.sendmail_form {
                 fieldset {
                     gap: get-vh(14px,$divceHeight);
-                    margin-top: get-vh(20px,$divceHeight);
                     .field {
                         height: get-vh(50px,$divceHeight);
                         &.message {

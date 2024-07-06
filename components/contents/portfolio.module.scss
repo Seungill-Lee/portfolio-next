@@ -10,11 +10,6 @@ section#portfolio {
     &::-webkit-scrollbar-track {
         background-color: skyblue;
     }
-    h2 {
-        position: fixed;
-        top: get-vw(100px,$divceWidth);
-        left: get-vw(200px,$divceWidth);
-    }
     .pf_year {
         position: fixed;
         top: get-vw(230px,$divceWidth);

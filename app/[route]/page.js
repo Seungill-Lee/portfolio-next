@@ -87,22 +87,20 @@ export default function Intro() {
             <main id={scss.container}>
                 <swiper-container class="intro_slide" init={false}>
                     <swiper-slide data-history="about">
-                        <div className={scss.content_wrap}>
+                        <div className={scss.scroll_content}>
                             <About />
                         </div>
                     </swiper-slide>
                     <swiper-slide data-history="story">
-                        <div className={scss.content_wrap}>
-                            <Story slideLoadingIs={loadingIs} />
-                        </div>
+                        <Story slideLoadingIs={loadingIs} />
                     </swiper-slide>
                     <swiper-slide data-history="portfolio">
-                        <div className={scss.content_wrap}>
+                        <div className={scss.scroll_content}>
                             <Portfolio slideLoadingIs={loadingIs} />
                         </div>
                     </swiper-slide>
                     <swiper-slide data-history="contact-us">
-                        <div className={scss.content_wrap}>
+                        <div className={scss.scroll_content}>
                             <ContactUs />
                         </div>
                     </swiper-slide>

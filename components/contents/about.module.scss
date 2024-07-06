@@ -5,7 +5,6 @@
 $divceWidth: $QuadHDMax;
 
 section#about {
-    padding: get-vw(100px,$divceWidth) get-vw(200px,$divceWidth);
     background-color: orange;
     &::-webkit-scrollbar-track {
         background-color: orange;
@@ -24,7 +23,9 @@ section#about {
         }
     }
     .about_cont {
-        margin-top: get-vw(64px,$divceWidth);
+        & + .about_cont {
+            margin-top: get-vw(64px,$divceWidth);
+        }
         h3 {
             margin-bottom: get-vw(26px,$divceWidth);
             // transform: translateY(get-vw(20px,$divceWidth));
@@ -139,7 +140,9 @@ section#about {
             width: get-vw(390px,$divceWidth);
         }
         .about_cont {
-            padding-right: get-vw(700px,$divceWidth);
+            & + .about_cont {
+                margin-top: get-vw(64px,$divceWidth);
+            }
             h3 {
                 margin-bottom: get-vw(24px,$divceWidth);
                 transform: translateY(get-vw(20px,$divceWidth));
@@ -189,24 +192,22 @@ section#about {
     $divceWidth: $TabletMax;
 
     section#about {
-        padding: get-vw(80px,$divceWidth) get-vw(180px,$divceWidth) get-vw(80px,$divceWidth) get-vw(80px,$divceWidth);
-        h2 {
-            position: static;
-            margin-bottom: get-vw(40px,$divceWidth);
-        }
         .about_photo {
-            top: get-vw(230px,$divceWidth);
-            right: get-vw(180px,$divceWidth);
-            width: get-vw(430px,$divceWidth);
+            position: absolute;
+            top: get-vw(275px,$divceWidth);
+            right: get-vw(120px,$divceWidth);
+            width: get-vw(420px,$divceWidth);
         }
         .about_cont {
             position: static;
             height: auto;
             padding: 0px;
             opacity: 1;
-            margin-top: get-vw(60px,$divceWidth);
+            & + .about_cont {
+                margin-top: get-vw(60px,$divceWidth);
+            }
             h3 {
-                margin-bottom: get-vw(25px,$divceWidth);
+                margin-bottom: get-vw(30px,$divceWidth);
                 transform: translateY(0px);
                 opacity: 1;
             }
@@ -242,7 +243,7 @@ section#about {
             &.skill {
                 ul {
                     li {
-                        grid-template-columns: get-vw(150px,$divceWidth) auto;
+                        grid-template-columns: get-vw(120px,$divceWidth) auto;
                         gap: 0px get-vw(12px,$divceWidth);
                         transform: translateY(0px);
                         opacity: 1;
@@ -263,7 +264,73 @@ section#about {
 
     /* 세로 모드 */
     @media screen and (orientation: portrait) {
-        $divceHeight: $TabletMax;
+        $divceWidth: $TabletMin;
+
+        section#about {
+            .about_photo {
+                top: get-vw(275px,$divceWidth);
+                right: get-vw(120px,$divceWidth);
+                width: get-vw(420px,$divceWidth);
+            }
+            .about_cont {
+                & + .about_cont {
+                    margin-top: get-vw(60px,$divceWidth);
+                }
+                h3 {
+                    margin-bottom: get-vw(30px,$divceWidth);
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+                &.profile {
+                    ul {
+                        li {
+                            opacity: 1;
+                            padding-left: get-vw(20px,$divceWidth);
+                            transform: translateY(0px);
+                            & + li {
+                                margin-top: get-vw(14px,$divceWidth);
+                            }
+                            &:before {
+                                top: get-vw(15px,$divceWidth);
+                                width: get-vw(8px,$divceWidth);
+                                height: get-vw(8px,$divceWidth);
+                            }
+                        }
+                    }
+                }
+                &.intro {
+                    p {
+                        transform: translateY(0px);
+                        opacity: 1;
+                        & + p {
+                            margin-top: get-vw(20px,$divceWidth);
+                        }
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+                &.skill {
+                    ul {
+                        li {
+                            grid-template-columns: get-vw(120px,$divceWidth) auto;
+                            gap: 0px get-vw(12px,$divceWidth);
+                            transform: translateY(0px);
+                            opacity: 1;
+                            & + li {
+                                margin-top: get-vw(20px,$divceWidth);
+                            }
+                            .gauge {
+                                .bar {
+                                    padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(10px,$divceWidth);
+                                    border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -273,13 +340,12 @@ section#about {
 
     /* 세로 모드 */
     @media screen and (orientation: portrait) {
-        $divceHeight: $MobileMax;
+        $divceWidth: $TabletMin;
         
         /* About */
         section#about {
-            padding: get-vh(60px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight) get-vh(40px,$divceHeight);
             h2 {
-                margin-bottom: get-vh(40px,$divceHeight);
+                margin-bottom: get-vw(30px,$divceWidth);
             }
             .about_photo {
                 position: static;
@@ -287,21 +353,23 @@ section#about {
                 height: auto;
             }
             .about_cont {
-                margin-top: get-vh(40px,$divceHeight);
+                & + .about_cont {
+                    margin-top: get-vw(40px,$divceWidth);
+                }
                 h3 {
-                    margin-bottom: get-vh(20px,$divceHeight);
+                    margin-bottom: get-vw(20px,$divceWidth);
                 }
                 &.profile {
                     ul {
                         li {
-                            padding-left: get-vh(14px,$divceHeight);
+                            padding-left: get-vw(14px,$divceWidth);
                             & + li {
-                                margin-top: get-vh(12px,$divceHeight);
+                                margin-top: get-vw(12px,$divceWidth);
                             }
                             &:before {
-                                top: get-vh(11px,$divceHeight);
-                                width: get-vh(7px,$divceHeight);
-                                height: get-vh(7px,$divceHeight);
+                                top: get-vw(11px,$divceWidth);
+                                width: get-vw(7px,$divceWidth);
+                                height: get-vw(7px,$divceWidth);
                             }
                         }
                     }
@@ -310,23 +378,23 @@ section#about {
                     p {
                         transform: translateY(0px);
                         & + p {
-                            margin-top: get-vh(20px,$divceHeight);
+                            margin-top: get-vw(20px,$divceWidth);
                         }
                     }
                 }
                 &.skill {
                     ul {
                         li {
-                            grid-template-columns: get-vh(110px,$divceHeight) auto;
-                            gap: 0px get-vh(8px,$divceHeight);
+                            grid-template-columns: get-vw(110px,$divceWidth) auto;
+                            gap: 0px get-vw(8px,$divceWidth);
                             transform: translateY(0px);
                             & + li {
-                                margin-top: get-vh(20px,$divceHeight);
+                                margin-top: get-vw(20px,$divceWidth);
                             }
                             .gauge {
                                 .bar {
-                                    padding: get-vh(7px,$divceHeight) get-vh(12px,$divceHeight) get-vh(9px,$divceHeight);
-                                    border-radius: 0px get-vh(10px,$divceHeight) get-vh(10px,$divceHeight) 0px;
+                                    padding: get-vw(7px,$divceWidth) get-vw(12px,$divceWidth) get-vw(9px,$divceWidth);
+                                    border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                                 }
                             }
                         }
