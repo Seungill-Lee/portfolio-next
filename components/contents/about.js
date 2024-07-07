@@ -15,7 +15,7 @@ export default function About() {
                     <li>생년월일 : 1989년 3월 31일</li>
                     <li>사는곳 : 서울특별시 동작구 노량진동</li>
                     <li>헨드폰 : 010-9907-9415</li>
-                    <li>이메일&네이트온 : <a href="mailto:ever9415@nate.com">ever9415@nate.com</a></li>
+                    <li>이메일 : <a href="mailto:ever9415@nate.com">ever9415@nate.com</a></li>
                     <li>취미 : 유튜브 보기, 게임하기, 음악듣기</li>
                     <li>특기: 홈페이지 만들기, 2D CAD</li>
                     <li>관심사: 부동산, 예적금, 자취용품, 인테리어</li>

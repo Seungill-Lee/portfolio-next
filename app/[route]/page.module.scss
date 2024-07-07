@@ -311,8 +311,8 @@ main#container {
 
     /* GNB */
     nav#gnb {
-        top: get-vw(90px,$divceWidth);
-        right: get-vw(122px,$divceWidth);
+        top: get-vw(85px,$divceWidth);
+        right: get-vw(96px,$divceWidth);
         padding: get-vw(10px,$divceWidth);
         gap: 0px get-vw(10px,$divceWidth);
         border-radius: get-vw(27px,$divceWidth);
@@ -383,11 +383,11 @@ main#container {
             section {
                 padding: get-vw(200px,$divceWidth) get-vw(100px,$divceWidth) get-vw(80px,$divceWidth);
                 &::-webkit-scrollbar {
-                    width: get-vw(12px,$divceWidth); 
+                    width: get-vw(8px,$divceWidth); 
                 }
                 &::-webkit-scrollbar-thumb {
-                    border-radius: get-vw(20px,$divceWidth);
-                    border-width: get-vw(3px,$divceWidth);
+                    border-radius: get-vw(15px,$divceWidth);
+                    border-width: get-vw(2px,$divceWidth);
                 }
                 h2 {
                     height: get-vw(200px,$divceWidth);
@@ -410,8 +410,8 @@ main#container {
 
         /* GNB */
         nav#gnb {
-            top: get-vw(90px,$divceWidth);
-            right: get-vw(122px,$divceWidth);
+            top: get-vw(85px,$divceWidth);
+            right: get-vw(98px,$divceWidth);
             padding: get-vw(10px,$divceWidth);
             gap: 0px get-vw(10px,$divceWidth);
             border-radius: get-vw(27px,$divceWidth);
@@ -482,11 +482,11 @@ main#container {
                 section {
                     padding: get-vw(200px,$divceWidth) get-vw(100px,$divceWidth) get-vw(80px,$divceWidth);
                     &::-webkit-scrollbar {
-                        width: get-vw(12px,$divceWidth); 
+                        width: get-vw(8px,$divceWidth); 
                     }
                     &::-webkit-scrollbar-thumb {
-                        border-radius: get-vw(20px,$divceWidth);
-                        border-width: get-vw(3px,$divceWidth);
+                        border-radius: get-vw(15px,$divceWidth);
+                        border-width: get-vw(2px,$divceWidth);
                     }
                     h2 {
                         height: get-vw(196px,$divceWidth);
@@ -513,7 +513,7 @@ main#container {
     /* GNB */
     nav#gnb {
         top: get-vw(40px,$divceWidth);
-        right: get-vw(52px,$divceWidth);
+        right: get-vw(46px,$divceWidth);
         padding: get-vw(10px,$divceWidth);
         gap: 0px get-vw(10px,$divceWidth);
         border-radius: get-vw(27px,$divceWidth);
@@ -584,11 +584,11 @@ main#container {
             section {
                 padding: get-vw(120px,$divceWidth) get-vw(50px,$divceWidth) get-vw(40px,$divceWidth);
                 &::-webkit-scrollbar {
-                    width: get-vw(12px,$divceWidth); 
+                    width: get-vw(6px,$divceWidth); 
                 }
                 &::-webkit-scrollbar-thumb {
-                    border-radius: get-vw(20px,$divceWidth);
-                    border-width: get-vw(3px,$divceWidth);
+                    border-radius: get-vw(10px,$divceWidth);
+                    border-width: get-vw(1.5px,$divceWidth);
                 }
                 h2 {
                     height: get-vw(120px,$divceWidth);
@@ -612,7 +612,7 @@ main#container {
         /* GNB */
         nav#gnb {
             top: get-vw(40px,$divceWidth);
-            right: get-vw(52px,$divceWidth);
+            right: get-vw(46px,$divceWidth);
             padding: get-vw(10px,$divceWidth);
             gap: 0px get-vw(10px,$divceWidth);
             border-radius: get-vw(27px,$divceWidth);
@@ -683,14 +683,14 @@ main#container {
                 section {
                     padding: get-vw(120px,$divceWidth) get-vw(50px,$divceWidth) get-vw(40px,$divceWidth);
                     &::-webkit-scrollbar {
-                        width: get-vw(12px,$divceWidth); 
+                        width: get-vw(6px,$divceWidth); 
                     }
                     &::-webkit-scrollbar-thumb {
-                        border-radius: get-vw(20px,$divceWidth);
-                        border-width: get-vw(3px,$divceWidth);
+                        border-radius: get-vw(10px,$divceWidth);
+                        border-width: get-vw(1.5px,$divceWidth);
                     }
                     h2 {
-                        height: get-vw(136px,$divceWidth);
+                        height: get-vw(120px,$divceWidth);
                         padding: get-vw(40px,$divceWidth) get-vw(50px,$divceWidth) get-vw(24px,$divceWidth);
                     }
                 }

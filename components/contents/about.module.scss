@@ -13,7 +13,7 @@ section#about {
         position: fixed;
         top: get-vw(230px,$divceWidth);
         right: get-vw(212px,$divceWidth);
-        width: get-vw(450px,$divceWidth);
+        width: get-vw(400px,$divceWidth);
         background-color: green;
         img {
             width: 100%;
@@ -194,8 +194,8 @@ section#about {
     section#about {
         .about_photo {
             position: absolute;
-            top: get-vw(275px,$divceWidth);
-            right: get-vw(120px,$divceWidth);
+            top: get-vw(200px,$divceWidth);
+            right: get-vw(100px,$divceWidth);
             width: get-vw(420px,$divceWidth);
         }
         .about_cont {
@@ -268,9 +268,9 @@ section#about {
 
         section#about {
             .about_photo {
-                top: get-vw(275px,$divceWidth);
-                right: get-vw(120px,$divceWidth);
-                width: get-vw(420px,$divceWidth);
+                top: get-vw(260px,$divceWidth);
+                right: get-vw(100px,$divceWidth);
+                width: get-vw(370px,$divceWidth);
             }
             .about_cont {
                 & + .about_cont {
@@ -338,9 +338,79 @@ section#about {
 @include Mobile {
     $divceWidth: $MobileMax;
 
+    section#about {
+        .about_photo {
+            top: get-vw(200px,$divceWidth);
+            right: get-vw(50px,$divceWidth);
+            width: get-vw(340px,$divceWidth);
+        }
+        .about_cont {
+            position: static;
+            height: auto;
+            padding: 0px;
+            opacity: 1;
+            & + .about_cont {
+                margin-top: get-vw(60px,$divceWidth);
+            }
+            h3 {
+                margin-bottom: get-vw(30px,$divceWidth);
+                transform: translateY(0px);
+                opacity: 1;
+            }
+            &.profile {
+                ul {
+                    li {
+                        opacity: 1;
+                        padding-left: get-vw(20px,$divceWidth);
+                        transform: translateY(0px);
+                        & + li {
+                            margin-top: get-vw(14px,$divceWidth);
+                        }
+                        &:before {
+                            top: get-vw(15px,$divceWidth);
+                            width: get-vw(8px,$divceWidth);
+                            height: get-vw(8px,$divceWidth);
+                        }
+                    }
+                }
+            }
+            &.intro {
+                p {
+                    transform: translateY(0px);
+                    opacity: 1;
+                    & + p {
+                        margin-top: get-vw(20px,$divceWidth);
+                    }
+                    br {
+                        display: none;
+                    }
+                }
+            }
+            &.skill {
+                ul {
+                    li {
+                        grid-template-columns: get-vw(120px,$divceWidth) auto;
+                        gap: 0px get-vw(12px,$divceWidth);
+                        transform: translateY(0px);
+                        opacity: 1;
+                        & + li {
+                            margin-top: get-vw(20px,$divceWidth);
+                        }
+                        .gauge {
+                            .bar {
+                                padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(10px,$divceWidth);
+                                border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     /* 세로 모드 */
     @media screen and (orientation: portrait) {
-        $divceWidth: $TabletMin;
+        $divceWidth: $MobileMin;
         
         /* About */
         section#about {
@@ -351,6 +421,7 @@ section#about {
                 position: static;
                 width: 100%;
                 height: auto;
+                margin-bottom: get-vw(40px,$divceWidth);
             }
             .about_cont {
                 & + .about_cont {

@@ -174,49 +174,64 @@ strong,b {
 
 	/* 세로 모드 */
 	@media screen and (orientation: portrait) {
-		$divceHeight: $TabletMax;
+		$divceWidth: $TabletMin;
 
 		body {
-			font-size: get-vh(18px,$divceHeight);
-			line-height: 150%;
+			font-size: get-vw(15px,$divceWidth);
 		}
 		h2 {
-			font-size: get-vh(62px,$divceHeight);
+			font-size: get-vw(50px,$divceWidth);
 		}
 		h3 {
-			font-size: get-vh(34px,$divceHeight);
+			font-size: get-vw(27px,$divceWidth);
 		}
 		h4 {
-			font-size: get-vh(26px,$divceHeight);
+			font-size: get-vw(20px,$divceWidth);
 		}
 		input,textarea {
-			font-size: get-vh(18px,$divceHeight);
+			font-size: get-vw(15px,$divceWidth);
 		}
 	}
 }
 
 /* Mobile */
 @include Mobile {
+	$divceWidth: $MobileMax;
+
+	body {
+		font-size: get-vw(18px,$divceWidth);
+	}
+	h2 {
+		font-size: get-vw(56px,$divceWidth);
+	}
+	h3 {
+		font-size: get-vw(32px,$divceWidth);
+	}
+	h4 {
+		font-size: get-vw(26px,$divceWidth);
+	}
+	input,textarea {
+		font-size: get-vw(18px,$divceWidth);
+	}
 
 	/* 세로모드 */
 	@media screen and (orientation: portrait) {
-		$divceHeight: $MobileMax;
+		$divceWidth: $MobileMin;
 
 		body {
-			font-size: get-vh(18px,$divceHeight);
-			line-height: 150%;
+			font-size: get-vw(18px,$divceWidth);
 		}
 		h2 {
-			font-size: get-vh(62px,$divceHeight);
+			font-size: get-vw(56px,$divceWidth);
 		}
 		h3 {
-			font-size: get-vh(34px,$divceHeight);
+			font-size: get-vw(32px,$divceWidth);
 		}
 		h4 {
-			font-size: get-vh(26px,$divceHeight);
+			font-size: get-vw(26px,$divceWidth);
 		}
 		input,textarea {
-			font-size: get-vh(18px,$divceHeight);
+			font-size: get-vw(18px,$divceWidth);
 		}
 	}
 }
