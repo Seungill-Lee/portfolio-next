@@ -121,7 +121,7 @@ export default function Portfolio(props) {
                     <swiper-slide>
                         <div className={scss.pf_summary_cont}>
                             <div className={scss.trems}>2021년 3월 ~ 5월</div>
-                            <div className={scss.project_name}>신세계백화점 과학관(넥스페리움) 웹사이트(PC,Mobile) 신규 구축</div>
+                            <div className={scss.project_name}>신세계백화점 넥스페리움 웹사이트(PC,Mobile) 신규 구축</div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
@@ -685,7 +685,7 @@ export default function Portfolio(props) {
                                 <Image src="/images/portfolio/pf_202103-05_nexperium.jpg" alt="" width={1920} height={1080} />
                             </div>
                             <div className={scss.project_info}>
-                                <h3><a href="https://www.shinsegae.com/science/index.do" target="_blank" title="새 창으로 열림">신세계백화점 과학관(넥스페리움) 웹사이트(PC,Mobile) 신규 구축</a></h3>
+                                <h3><a href="https://www.shinsegae.com/science/index.do" target="_blank" title="새 창으로 열림">신세계백화점 넥스페리움 웹사이트(PC,Mobile) 신규 구축</a></h3>
                                 <table>
                                     <caption>프로젝트 상세 정보</caption>
                                     <tbody>

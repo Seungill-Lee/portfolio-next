@@ -137,7 +137,9 @@ section#about {
 
     section#about {
         .about_photo {
-            width: get-vw(390px,$divceWidth);
+            top: get-vw(180px,$divceWidth);
+            right: get-vw(172px,$divceWidth);
+            width: get-vw(380px,$divceWidth);
         }
         .about_cont {
             & + .about_cont {

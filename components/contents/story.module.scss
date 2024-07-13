@@ -27,7 +27,7 @@ section#story {
         width: 100%;
         height: 100vh;
         box-sizing: border-box;
-        padding: get-vw(100px,$divceWidth) get-vw(200px,$divceWidth) get-vw(100px,$divceWidth) get-vw(100px,$divceWidth);
+        padding: get-vw(100px,$divceWidth) get-vw(200px,$divceWidth);
         background-repeat: no-repeat;
         background-size: cover;
         &:after {
@@ -106,10 +106,11 @@ section#story {
 
     section#story {
         .story_cont {
+            padding: get-vw(80px,$divceWidth) get-vw(160px,$divceWidth);
             .sc_inner {
-                font-size: get-vw(34px,$divceWidth);
+                font-size: get-vw(32px,$divceWidth);
                 p {
-                    transform: translateY(get-vw(20px,$divceWidth));
+                    transform: translateY(get-vw(16px,$divceWidth));
                 }
             }
         }

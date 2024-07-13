@@ -131,7 +131,6 @@ nav#gnb {
                         transform: rotate(45deg);
                     }
                     &:nth-child(2) {
-                        
                         right: get-vw(7px,$divceWidth);
                         top: get-vw(9px,$divceWidth);
                         transform: rotate(-45deg);
@@ -181,7 +180,7 @@ main#container {
                 left: 0px;
                 width: 100%;
                 height: get-vw(220px,$divceWidth);
-                padding: get-vw(90px,$divceWidth) get-vw(200px,$divceWidth) get-vw(50px,$divceWidth);
+                padding: get-vw(90px,$divceWidth) get-vw(212px,$divceWidth) get-vw(50px,$divceWidth) get-vw(200px,$divceWidth);
                 box-sizing: border-box;
             }
         }
@@ -219,8 +218,8 @@ main#container {
 
     /* GNB */
     nav#gnb {
-        top: get-vw(90px,$divceWidth);
-        right: get-vw(202px,$divceWidth);
+        top: get-vw(70px,$divceWidth);
+        right: get-vw(162px,$divceWidth);
         padding: get-vw(10px,$divceWidth);
         gap: 0px get-vw(10px,$divceWidth);
         border-radius: get-vw(27px,$divceWidth);
@@ -231,7 +230,6 @@ main#container {
                 padding: 0px get-vw(12px,$divceWidth);
                 line-height: get-vw(27px,$divceWidth);
                 font-size: get-vw(17px,$divceWidth);
-                font-family: var(--alkatra);
             }
         }
         button.btn_g_navi {
@@ -241,6 +239,12 @@ main#container {
                 &.bar {
                     width: get-vw(27px,$divceWidth);
                     height: get-vw(3px,$divceWidth);
+                    &:nth-child(2) {
+                        top: get-vw(8px,$divceWidth);
+                    }
+                    &:nth-child(3) {
+                        bottom: get-vw(8px,$divceWidth);
+                    }
                 }
             }
         }
@@ -250,7 +254,6 @@ main#container {
                 gap: 0px get-vw(5px,$divceWidth);
             }
             button.btn_g_navi {
-                border-radius: 50%;
                 span {
                     &.bar {
                         width: get-vw(7px,$divceWidth);
@@ -259,6 +262,7 @@ main#container {
                             top: get-vw(9px,$divceWidth);
                         }
                         &:nth-child(2) {
+                            
                             right: get-vw(7px,$divceWidth);
                             top: get-vw(9px,$divceWidth);
                         }
@@ -280,7 +284,7 @@ main#container {
     main#container {
         .scroll_content {
             section {
-                padding: get-vw(220px,$divceWidth) get-vw(200px,$divceWidth) get-vw(100px,$divceWidth);
+                padding: get-vw(200px,$divceWidth) get-vw(160px,$divceWidth) get-vw(80px,$divceWidth);
                 &::-webkit-scrollbar {
                     width: get-vw(12px,$divceWidth); 
                 }
@@ -289,16 +293,16 @@ main#container {
                     border-width: get-vw(3px,$divceWidth);
                 }
                 h2 {
-                    height: get-vw(220px,$divceWidth);
-                    padding: get-vw(90px,$divceWidth) get-vw(200px,$divceWidth) get-vw(50px,$divceWidth);
+                    height: get-vw(200px,$divceWidth);
+                    padding: get-vw(80px,$divceWidth) get-vw(172px,$divceWidth) get-vw(40px,$divceWidth)  get-vw(160px,$divceWidth);
                 }
             }
         }
         .intro_navi {
             button {
-                top: calc(50% - get-vw(40px,$divceWidth));
-                width: get-vw(50px,$divceWidth);
-                height: get-vw(80px,$divceWidth);
+                top: calc(50% - get-vw(35px,$divceWidth));
+                width: get-vw(40px,$divceWidth);
+                height: get-vw(70px,$divceWidth);
             }
         }
     }

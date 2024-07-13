@@ -202,71 +202,90 @@ section#portfolio {
     $divceWidth: $FullHDMax;
 
     section#portfolio {
-        .pf_cont_inner {
-            .pf_year {
-                top: get-vw(195px,$divceWidth);
-                font-size: get-vw(34px,$divceWidth);
-            }
-            .summary {
-                left: get-vw(480px,$divceWidth);
-                right: get-vw(880px,$divceWidth);
-                > ul {
-                    > li {
+        .pf_year {
+            top: get-vw(200px,$divceWidth);
+            left: get-vw(160px,$divceWidth);
+            font-size: get-vw(40px,$divceWidth);
+        }
+        .pf_summary {
+            top: get-vw(80px,$divceWidth);
+            left: get-vw(540px,$divceWidth);
+            width: get-vw(680px,$divceWidth);
+            swiper-container {
+                swiper-slide {
+                    .pf_summary_cont {
+                        height: get-vw(64px,$divceWidth);
+                        padding-left: get-vw(30px,$divceWidth);
                         &:after {
-                            top: get-vw(7px,$divceWidth);
-                            width: get-vw(11px,$divceWidth);
-                            height: get-vw(11px,$divceWidth);
+                            display: block;
+                            position: absolute;
+                            top: get-vw(8px,$divceWidth);
+                            left: 0px;
+                            width: get-vw(9px,$divceWidth);
+                            height: get-vw(9px,$divceWidth);
                         }
                         .trems {
-                            font-size: get-vw(13px,$divceWidth);
+                            font-size: get-vw(14px,$divceWidth);
                         }
                         .project_name {
-                            margin-top: get-vw(6px,$divceWidth);
-                        }
-                        &.active .project_name {
-                            text-underline-offset: get-vw(4px,$divceWidth);
+                            margin-top: get-vw(4px,$divceWidth);
                         }
                     }
-                }
-                .gauge {
-                    top: get-vw(16px,$divceWidth);
-                    left: get-vw(5px,$divceWidth);
-                }
-            }
-            ul.detail {
-                width: get-vw(540px,$divceWidth);
-                > li {
-                    .screenshot {
-                        img {
-                            max-height: get-vw(450px,$divceWidth);
-                        }
-                    }
-                    .project_info {
-                        h3 {
-                            font-size: get-vw(24px,$divceWidth);
-                            a {
-                                &:hover {
-                                    text-decoration-thickness: get-vw(2px,$divceWidth);
-                                    text-underline-offset: get-vw(8px,$divceWidth);
-                                }
+                    &[class*="swiper-slide-thumb-active"] {
+                        .pf_summary_cont {
+                            .project_name {
+                                text-underline-offset: get-vw(4px,$divceWidth);
+                                transform: scale(1.2);
+                                opacity: 1;
                             }
                         }
-                        table {
-                            margin-top: get-vw(8px,$divceWidth);
-                            tbody {
-                                tr {
-                                    th,td {
-                                        padding: get-vw(14px,$divceWidth) 0px;
+                    }
+                }
+            }
+            .gauge {
+                top: get-vw(-80px,$divceWidth);
+                left: get-vw(4px,$divceWidth);
+            }
+        }
+        .pf_detail {
+            top: get-vw(80px,$divceWidth);
+            bottom: get-vw(80px,$divceWidth);
+            right: get-vw(300px,$divceWidth);
+            width: get-vw(500px,$divceWidth);
+            swiper-container {
+                swiper-slide {
+                    .pf_detail_cont {
+                        .screenshot {
+                            img {
+                                max-height: get-vw(480px,$divceWidth);
+                            }
+                        }
+                        .project_info {
+                            h3 {
+                                a {
+                                    &:hover {
+                                        text-decoration-thickness: get-vw(2px,$divceWidth);
+                                        text-underline-offset: get-vw(6px,$divceWidth);
                                     }
-                                    th {
-                                        width: get-vw(104px,$divceWidth);
-                                    }
-                                    td {
-                                        &.participation {
-                                            .gauge {
-                                                .bar {
-                                                    padding: get-vw(9px,$divceWidth) get-vw(14px,$divceWidth) get-vw(11px,$divceWidth);
-                                                    font-size: get-vw(16px,$divceWidth);
+                                }
+                            }
+                            table {
+                                margin-top: get-vw(10px,$divceWidth);
+                                tbody {
+                                    tr {
+                                        th,td {
+                                            padding: get-vw(15px,$divceWidth) 0px;
+                                        }
+                                        th {
+                                            width: get-vw(120px,$divceWidth);
+                                        }
+                                        td {
+                                            &.participation {
+                                                .gauge {
+                                                    .bar {
+                                                        padding: get-vw(10px,$divceWidth) get-vw(12px,$divceWidth) get-vw(12px,$divceWidth);
+                                                        font-size: get-vw(14px,$divceWidth);
+                                                    }
                                                 }
                                             }
                                         }
@@ -321,15 +340,15 @@ section#portfolio {
                     padding-top: get-vw(40px,$divceWidth);
                 }
             }
-            .summary {
+            .pf_summary {
                 display: none;
             }
-            ul.detail {
+            .pf_detail {
                 position: relative;
                 top: 0px;
                 right: 0px;
                 width: auto;
-                > li {
+                > .pf_detail_cont {
                     position: relative;
                     visibility: visible;
                     opacity: 1;
@@ -418,8 +437,8 @@ section#portfolio {
                         padding-top: get-vh(32px,$divceHeight);
                     }
                 }
-                ul.detail {
-                    > li {
+                .pf_detail {
+                    > .pf_detail_cont {
                         padding: get-vh(120px,$divceHeight) 0px 0px 0px;
                         min-height: auto;
                         .screenshot {

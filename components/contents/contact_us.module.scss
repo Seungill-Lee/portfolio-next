@@ -5,7 +5,6 @@
 $divceWidth: $QuadHDMax;
 
 section#contact_us {
-    padding: get-vw(100px,$divceWidth) get-vw(200px,$divceWidth);
     background-color: gainsboro;
     &::-webkit-scrollbar-track {
         background-color: gainsboro;
@@ -160,10 +159,63 @@ section#contact_us {
     section#contact_us {
         form.sendmail_form {
             fieldset {
-                gap: get-vw(20px,$divceWidth);
+                gap: get-vw(16px,$divceWidth);
                 .field {
+                    height: get-vw(60px,$divceWidth);
                     &.message {
-                        height: get-vw(500px,$divceWidth);
+                        height: get-vw(420px,$divceWidth);
+                    }
+                    label {
+                        padding: 0px get-vw(20px,$divceWidth);
+                        font-size: get-vw(20px,$divceWidth);
+                        line-height: get-vw(60px,$divceWidth);
+                        &:has(+ *:focus),
+                        &:has(+ *:valid) {
+                            top: get-vw(-9px,$divceWidth);
+                            left: get-vw(20px,$divceWidth);
+                            padding: 0px get-vw(4px,$divceWidth);
+                            font-size: get-vw(13px,$divceWidth);
+                            line-height: get-vw(21px,$divceWidth);
+                        }
+                    }
+                    input,textarea {
+                        font-size: get-vw(20px,$divceWidth);
+                    }
+                    input {
+                        padding: 0px get-vw(18px,$divceWidth);
+                        line-height: get-vw(60px,$divceWidth);
+                    }
+                    textarea {
+                        padding: get-vw(16px,$divceWidth) get-vw(24px,$divceWidth);
+                    }
+                }
+                .btn_send {
+                    button {
+                        padding: get-vw(2px,$divceWidth) get-vw(40px,$divceWidth) 0px;
+                        height: get-vw(60px,$divceWidth);
+                        font-size: get-vw(20px,$divceWidth);
+                    }
+                }
+            }
+        }
+        .sendmail_result {
+            .sr_message {
+                .ico {
+                    img {
+                        width: get-vw(200px,$divceWidth);
+                        height: get-vw(200px,$divceWidth);
+                    }
+                }
+                p.message {
+                    font-size: get-vw(28px,$divceWidth);
+                    line-height: 150%;
+                    margin: get-vw(32px,$divceWidth) 0px get-vw(36px,$divceWidth);
+                }
+                .btn_set {
+                    button {
+                        padding: get-vw(2px,$divceWidth) get-vw(50px,$divceWidth) 0px;
+                        height: get-vw(80px,$divceWidth);
+                        font-size: get-vw(28px,$divceWidth);
                     }
                 }
             }
