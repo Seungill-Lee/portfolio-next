@@ -43,10 +43,10 @@ export default function Portfolio(props) {
                 },
                 breakpoints: {
                     320: {
-                      slidesPerView: "auto",
-                      effect: "slide",
-                      freeMode: true,
-                      spaceBetween: 40,
+                        slidesPerView: 3,
+                        effect: "slide",
+                        freeMode: true,
+                        spaceBetween: 80,
                     },
                     1371: {
                         slidesPerView: 1,
