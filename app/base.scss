@@ -177,19 +177,19 @@ strong,b {
 		$divceWidth: $TabletMin;
 
 		body {
-			font-size: get-vw(15px,$divceWidth);
-		}
-		h2 {
-			font-size: get-vw(50px,$divceWidth);
-		}
-		h3 {
-			font-size: get-vw(27px,$divceWidth);
-		}
-		h4 {
 			font-size: get-vw(20px,$divceWidth);
 		}
+		h2 {
+			font-size: get-vw(76px,$divceWidth);
+		}
+		h3 {
+			font-size: get-vw(40px,$divceWidth);
+		}
+		h4 {
+			font-size: get-vw(30px,$divceWidth);
+		}
 		input,textarea {
-			font-size: get-vw(15px,$divceWidth);
+			font-size: get-vw(20px,$divceWidth);
 		}
 	}
 }
