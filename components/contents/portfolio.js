@@ -29,6 +29,7 @@ export default function Portfolio(props) {
             const spdItem = swiperPortfolioDetail.querySelectorAll('swiper-slide');
             const params2 = {
                 direction: "vertical",
+                effect: "fade",
                 mousewheel: true,
                 thumbs: {
                     swiper: swiperPortfolioSummary,
@@ -40,21 +41,7 @@ export default function Portfolio(props) {
                     realIndexChange: (swiper) => {
                         setPfYears(spdItem[swiper.realIndex].getAttribute("data-year"))
                     }
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 3,
-                        effect: "slide",
-                        freeMode: true,
-                        spaceBetween: 80,
-                    },
-                    1371: {
-                        slidesPerView: 1,
-                        effect: "fade",
-                        freeMode: false,
-                        spaceBetween: 0,
-                    }
-                },
+                }
             }
 
             Object.assign(swiperPortfolioDetail, params2)
