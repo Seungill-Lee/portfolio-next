@@ -5,7 +5,6 @@
 $divceWidth: $QuadHDMax;
 
 section#portfolio {
-    overflow-y: hidden !important;
     background-color: skyblue;
     &::-webkit-scrollbar-track {
         background-color: skyblue;
@@ -22,169 +21,148 @@ section#portfolio {
     .pf_summary {
         position: absolute;
         top: get-vw(100px,$divceWidth);
-        bottom: 0px;
         left: get-vw(600px,$divceWidth);
         width: get-vw(680px,$divceWidth);
-        swiper-container {
-            &::part(container) {
-                overflow: visible;
-            }
-            z-index: 3;
-            height: 100%;
-            swiper-slide {
-                height: auto;
-                .pf_summary_cont {
-                    position: relative;
-                    height: get-vw(64px,$divceWidth);
-                    padding-left: get-vw(30px,$divceWidth);
-                    cursor: pointer;
-                    &:after {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        z-index: 2;
-                        top: get-vw(11px,$divceWidth);
-                        left: 0px;
-                        width: get-vw(11px,$divceWidth);
-                        height: get-vw(11px,$divceWidth);
-                        border-radius: 50%;
-                        background-color: #6CA5EF;
-                    }
-                    .trems {
-                        font-size: get-vw(14px,$divceWidth);
-                        font-weight: 700;
-                        color: navy;
-                        opacity: 0.5;
-                        transition: 0.3s ease all;
-                        transform-origin: left;
-                    }
-                    .project_name {
-                        margin-top: get-vw(4px,$divceWidth);
-                        font-weight: 400;
-                        line-height: 140%;
-                        opacity: 0.75;
-                        transition: 0.3s ease all;
-                        transform-origin: left;
-                    }
-                    .project_info {
-                        display: none;
-                    }
+        ul {
+            > li {
+                position: relative;
+                height: get-vw(64px,$divceWidth);
+                padding-left: get-vw(30px,$divceWidth);
+                cursor: pointer;
+                & + li {
+                    margin-top: get-vw(80px,$divceWidth);
                 }
-                &[class*="swiper-slide-prev"] {
-                    .pf_summary_cont:before {
-                        background-color: blue;
-                    }
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    z-index: 2;
+                    top: get-vw(11px,$divceWidth);
+                    left: 0px;
+                    width: get-vw(10px,$divceWidth);
+                    height: get-vw(10px,$divceWidth);
+                    border-radius: 50%;
+                    background-color: #6CA5EF;
                 }
-                &[class*="swiper-slide-thumb-active"] {
-                    .pf_summary_cont {
-                        &:after {
-                            background-color: blue;
-                        }
-                        .trems {
-                            transform: scale(1.2);
-                            opacity: 1;
-                        }
-                        .project_name {
-                            font-weight: 500;
-                            letter-spacing: -0.5px;
-                            text-decoration: underline;
-                            text-decoration-thickness: 1px;
-                            text-decoration-style: dotted;
-                            text-underline-offset: get-vw(4px,$divceWidth);
-                            transform: scale(1.2);
-                            opacity: 1;
-                        }
-                    }
+                &.on:after {
+                    background-color: blue;
                 }
-                &:last-child {
-                    .pf_summary_cont:before {
-                        display: none;
-                    }
+                .trems {
+                    font-size: get-vw(14px,$divceWidth);
+                    font-weight: 700;
+                    color: navy;
+                    opacity: 0.5;
+                    transition: 0.3s ease all;
+                    transform-origin: left;
+                }
+                &.active .trems {
+                    transform: scale(1.2);
+                    opacity: 1;
+                }
+                .project_name {
+                    margin-top: get-vw(4px,$divceWidth);
+                    font-weight: 400;
+                    line-height: 140%;
+                    opacity: 0.75;
+                    transition: 0.3s ease all;
+                    transform-origin: left;
+                }
+                &.active .project_name {
+                    font-weight: 500;
+                    letter-spacing: -0.5px;
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-decoration-style: dotted;
+                    text-underline-offset: get-vw(4px,$divceWidth);
+                    transform: scale(1.2);
+                    opacity: 1;
+                }
+                .project_info {
+                    display: none;
                 }
             }
         }
         .gauge {
             position: absolute;
             z-index: 1;
-            top: get-vw(-100px,$divceWidth);
+            top: get-vw(16px,$divceWidth);
+            bottom: get-vw(47px,$divceWidth);
             left: get-vw(5px,$divceWidth);
             width: 1px;
-            height: 100vh;
             overflow: hidden;
             background-color: #6CA5EF;
+            .bar {
+                background-color: blue;
+                transition: 0.15s ease height;
+            }
         }
     }
-    .pf_detail {
+    ul.pf_detail {
         position: absolute;
         top: get-vw(100px,$divceWidth);
         bottom: get-vw(100px,$divceWidth);
         right: get-vw(625px,$divceWidth);
         width: get-vw(600px,$divceWidth);
-        swiper-container {
+        > li {
             height: 100%;
-            swiper-slide {
-                .pf_detail_cont {
-                    height: 100%;
-                    background-color: skyblue;
-                    .screenshot {
-                        width: 100%;
-                        height: auto;
-                        img {
-                            width: 100%;
-                            height: auto;
-                            max-height: get-vw(480px,$divceWidth);
-                            object-fit: cover;
-                            object-position: 50% 0%;
-                            border: 1px solid cadetblue;
-                            background-color: deepskyblue;
-                            box-sizing: border-box;
+            background-color: skyblue;
+            .screenshot {
+                width: 100%;
+                height: auto;
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-height: get-vw(480px,$divceWidth);
+                    object-fit: cover;
+                    object-position: 50% 0%;
+                    border: 1px solid cadetblue;
+                    background-color: deepskyblue;
+                    box-sizing: border-box;
+                }
+            }
+            .project_info {
+                margin-top: get-vw(32px,$divceWidth);
+                h3 {
+                    font-size: get-vw(28px,$divceWidth);
+                    font-weight: 700;
+                    line-height: 140%;
+                    letter-spacing: -1px;
+                    a {
+                        color: darkblue;
+                        &:hover {
+                            text-decoration: underline;
+                            text-decoration-thickness: get-vw(2px,$divceWidth);
+                            text-decoration-style: solid;
+                            text-underline-offset: get-vw(6px,$divceWidth);
                         }
                     }
-                    .project_info {
-                        margin-top: get-vw(32px,$divceWidth);
-                        h3 {
-                            font-size: get-vw(28px,$divceWidth);
-                            font-weight: 700;
-                            line-height: 140%;
-                            letter-spacing: -1px;
-                            a {
-                                color: darkblue;
-                                &:hover {
-                                    text-decoration: underline;
-                                    text-decoration-thickness: get-vw(2px,$divceWidth);
-                                    text-decoration-style: solid;
-                                    text-underline-offset: get-vw(6px,$divceWidth);
-                                }
+                }
+                table {
+                    margin-top: get-vw(10px,$divceWidth);
+                    border-collapse: collapse;
+                    tbody {
+                        tr {
+                            th,td {
+                                padding: get-vw(18px,$divceWidth) 0px;
+                                border-bottom: 1px solid rgba(0,0,128,0.25);
                             }
-                        }
-                        table {
-                            margin-top: get-vw(10px,$divceWidth);
-                            border-collapse: collapse;
-                            tbody {
-                                tr {
-                                    th,td {
-                                        padding: get-vw(18px,$divceWidth) 0px;
-                                        border-bottom: 1px solid rgba(0,0,128,0.25);
-                                    }
-                                    th {
-                                        width: get-vw(130px,$divceWidth);
-                                        font-weight: 400;
-                                        text-align: left;
-                                        color: navy;
-                                    }
-                                    td {
-                                        font-weight: 500;
-                                        &.participation {
-                                            .gauge {
-                                                .bar {
-                                                    padding: get-vw(10px,$divceWidth) get-vw(12px,$divceWidth) get-vw(12px,$divceWidth);
-                                                    box-sizing: border-box;
-                                                    line-height: 1;
-                                                    color: white;
-                                                    font-size: get-vw(18px,$divceWidth);
-                                                    background-color: orangered;
-                                                }
-                                            }
+                            th {
+                                width: get-vw(130px,$divceWidth);
+                                font-weight: 400;
+                                text-align: left;
+                                color: navy;
+                            }
+                            td {
+                                font-weight: 500;
+                                &.participation {
+                                    .gauge {
+                                        .bar {
+                                            padding: get-vw(10px,$divceWidth) get-vw(12px,$divceWidth) get-vw(12px,$divceWidth);
+                                            box-sizing: border-box;
+                                            line-height: 1;
+                                            color: white;
+                                            font-size: get-vw(18px,$divceWidth);
+                                            background-color: orangered;
                                         }
                                     }
                                 }
@@ -207,38 +185,37 @@ section#portfolio {
             left: get-vw(160px,$divceWidth);
             font-size: get-vw(40px,$divceWidth);
         }
-        .pf_summary {
+        ul.pf_summary {
             top: get-vw(80px,$divceWidth);
             left: get-vw(540px,$divceWidth);
             width: get-vw(680px,$divceWidth);
-            swiper-container {
-                swiper-slide {
-                    .pf_summary_cont {
-                        height: get-vw(64px,$divceWidth);
-                        padding-left: get-vw(30px,$divceWidth);
-                        &:after {
-                            display: block;
-                            position: absolute;
-                            top: get-vw(8px,$divceWidth);
-                            left: 0px;
-                            width: get-vw(9px,$divceWidth);
-                            height: get-vw(9px,$divceWidth);
-                        }
-                        .trems {
-                            font-size: get-vw(14px,$divceWidth);
-                        }
-                        .project_name {
-                            margin-top: get-vw(4px,$divceWidth);
-                        }
-                    }
-                    &[class*="swiper-slide-thumb-active"] {
-                        .pf_summary_cont {
-                            .project_name {
-                                text-underline-offset: get-vw(4px,$divceWidth);
-                                transform: scale(1.2);
-                                opacity: 1;
-                            }
-                        }
+            > li {
+                height: get-vw(64px,$divceWidth);
+                padding-left: get-vw(30px,$divceWidth);
+                & + li {
+                    margin-top: get-vw(80px,$divceWidth);
+                }
+                &:after {
+                    display: block;
+                    position: absolute;
+                    top: get-vw(8px,$divceWidth);
+                    left: 0px;
+                    width: get-vw(9px,$divceWidth);
+                    height: get-vw(9px,$divceWidth);
+                }
+                .trems {
+                    font-size: get-vw(14px,$divceWidth);
+                }
+                .project_name {
+                    margin-top: get-vw(4px,$divceWidth);
+                }
+            }
+            &[class*="swiper-slide-thumb-active"] {
+                .pf_summary_cont {
+                    .project_name {
+                        text-underline-offset: get-vw(4px,$divceWidth);
+                        transform: scale(1.2);
+                        opacity: 1;
                     }
                 }
             }
@@ -247,49 +224,45 @@ section#portfolio {
                 left: get-vw(4px,$divceWidth);
             }
         }
-        .pf_detail {
+        ul.pf_detail {
             top: get-vw(80px,$divceWidth);
             bottom: get-vw(80px,$divceWidth);
             right: get-vw(300px,$divceWidth);
             width: get-vw(500px,$divceWidth);
-            swiper-container {
-                swiper-slide {
-                    .pf_detail_cont {
-                        .screenshot {
-                            width: auto;
-                            img {
-                                max-height: get-vw(480px,$divceWidth);
+            > li {
+                .screenshot {
+                    width: auto;
+                    img {
+                        max-height: get-vw(480px,$divceWidth);
+                    }
+                }
+                .project_info {
+                    margin-top: get-vw(30px,$divceWidth);
+                    h3 {
+                        font-size: get-vw(25px,$divceWidth);
+                        a {
+                            &:hover {
+                                text-decoration-thickness: get-vw(2px,$divceWidth);
+                                text-underline-offset: get-vw(6px,$divceWidth);
                             }
                         }
-                        .project_info {
-                            margin-top: get-vw(30px,$divceWidth);
-                            h3 {
-                                font-size: get-vw(25px,$divceWidth);
-                                a {
-                                    &:hover {
-                                        text-decoration-thickness: get-vw(2px,$divceWidth);
-                                        text-underline-offset: get-vw(6px,$divceWidth);
-                                    }
+                    }
+                    table {
+                        margin-top: get-vw(8px,$divceWidth);
+                        tbody {
+                            tr {
+                                th,td {
+                                    padding: get-vw(15px,$divceWidth) 0px;
                                 }
-                            }
-                            table {
-                                margin-top: get-vw(8px,$divceWidth);
-                                tbody {
-                                    tr {
-                                        th,td {
-                                            padding: get-vw(15px,$divceWidth) 0px;
-                                        }
-                                        th {
-                                            width: get-vw(120px,$divceWidth);
-                                        }
-                                        td {
-                                            &.participation {
-                                                .gauge {
-                                                    .bar {
-                                                        padding: get-vw(10px,$divceWidth) get-vw(12px,$divceWidth) get-vw(12px,$divceWidth);
-                                                        font-size: get-vw(14px,$divceWidth);
-                                                    }
-                                                }
+                                th {
+                                    width: get-vw(120px,$divceWidth);
+                                }
+                                td {
+                                    &.participation {
+                                        .gauge {
+                                            .bar {
+                                                padding: get-vw(10px,$divceWidth) get-vw(12px,$divceWidth) get-vw(12px,$divceWidth);
+                                                font-size: get-vw(14px,$divceWidth);
                                             }
                                         }
                                     }
@@ -313,51 +286,47 @@ section#portfolio {
             left: get-vw(160px,$divceWidth);
             font-size: get-vw(40px,$divceWidth);
         }
-        .pf_summary {
+        ul.pf_summary {
             display: none;
         }
-        .pf_detail {
+        ul.pf_detail {
             width: auto;
-            swiper-container {
-                swiper-slide {
-                    .pf_detail_cont {
-                        display: grid;
-                        grid-template-columns: 40% auto;
-                        gap: 0px get-vw(40px,$divceWidth);
-                        .screenshot {
-                            img {
-                                max-height: 100%;
+            > li {
+                display: grid;
+                grid-template-columns: 40% auto;
+                gap: 0px get-vw(40px,$divceWidth);
+                .screenshot {
+                    img {
+                        max-height: 100%;
+                    }
+                }
+                .project_info {
+                    margin-top: 0px;
+                    h3 {
+                        font-size: get-vw(28px,$divceWidth);
+                        a {
+                            &:hover {
+                                text-decoration-thickness: get-vw(2px,$divceWidth);
+                                text-underline-offset: get-vw(6px,$divceWidth);
                             }
                         }
-                        .project_info {
-                            margin-top: 0px;
-                            h3 {
-                                font-size: get-vw(28px,$divceWidth);
-                                a {
-                                    &:hover {
-                                        text-decoration-thickness: get-vw(2px,$divceWidth);
-                                        text-underline-offset: get-vw(6px,$divceWidth);
-                                    }
+                    }
+                    table {
+                        margin-top: get-vw(10px,$divceWidth);
+                        tbody {
+                            tr {
+                                th,td {
+                                    padding: get-vw(15px,$divceWidth) 0px;
                                 }
-                            }
-                            table {
-                                margin-top: get-vw(10px,$divceWidth);
-                                tbody {
-                                    tr {
-                                        th,td {
-                                            padding: get-vw(15px,$divceWidth) 0px;
-                                        }
-                                        th {
-                                            width: get-vw(120px,$divceWidth);
-                                        }
-                                        td {
-                                            &.participation {
-                                                .gauge {
-                                                    .bar {
-                                                        padding: get-vw(10px,$divceWidth) get-vw(12px,$divceWidth) get-vw(12px,$divceWidth);
-                                                        font-size: get-vw(14px,$divceWidth);
-                                                    }
-                                                }
+                                th {
+                                    width: get-vw(120px,$divceWidth);
+                                }
+                                td {
+                                    &.participation {
+                                        .gauge {
+                                            .bar {
+                                                padding: get-vw(10px,$divceWidth) get-vw(12px,$divceWidth) get-vw(12px,$divceWidth);
+                                                font-size: get-vw(14px,$divceWidth);
                                             }
                                         }
                                     }
