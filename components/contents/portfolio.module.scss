@@ -19,7 +19,7 @@ section#portfolio {
         color: navy;
     }
     .pf_summary {
-        position: absolute;
+        position: fixed;
         top: get-vw(100px,$divceWidth);
         left: get-vw(600px,$divceWidth);
         width: get-vw(680px,$divceWidth);
@@ -98,14 +98,22 @@ section#portfolio {
         }
     }
     ul.pf_detail {
-        position: absolute;
+        position: fixed;
         top: get-vw(100px,$divceWidth);
         bottom: get-vw(100px,$divceWidth);
         right: get-vw(625px,$divceWidth);
         width: get-vw(600px,$divceWidth);
         > li {
+            position: absolute;
+            top: 0px;
+            left: 0px;
             height: 100%;
             background-color: skyblue;
+            opacity: 0;
+            transition: 0.3s ease opacity;
+            &.active {
+                opacity: 1;
+            }
             .screenshot {
                 width: 100%;
                 height: auto;
@@ -171,6 +179,11 @@ section#portfolio {
                     }
                 }
             }
+        }
+    }
+    .pf_dist_wrap {
+        .pf_dist {
+            height: 100vh;
         }
     }
 }

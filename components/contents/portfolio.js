@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import scss from "./portfolio.module.scss";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { InView } from "react-intersection-observer";
 import data from "../data.json";
@@ -8,9 +8,25 @@ import data from "../data.json";
 export default function Portfolio(props) {
     const slideLoading = props.slideLoadingIs
     const pathname = usePathname();
-    const [pfYears,setPfYears] = useState()
+    const [onPf,setOnPf] = useState(0);
+    const [activePf,setActiviePf] = useState(0);
+    const [pfYears,setPfYears] = useState();
+    const pfLength = data["portfolio"].length;
+    const distWrapRef = useRef();
 
     useEffect(() => {
+        const distWrap = distWrapRef.current;
+        const dist = distWrap.querySelectorAll("div");
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                console.log(entry) // entry is 'IntersectionObserverEntry'
+            })
+        });
+
+        dist.forEach((section) => {
+            observer.observe(section);
+        });
         
     },[slideLoading,pathname]);
 
@@ -22,7 +38,7 @@ export default function Portfolio(props) {
                 <ul>
                     {data["portfolio"].map(function(a,i) {
                         return(
-                            <li key={i}>
+                            <li key={i} className={`${i <= onPf ? scss["on"] : ""} ${i == activePf  ? scss["active"] : ""}`}>
                                 <i className={scss.bullet}></i>
                                 <div className={scss.trems}>{a.terms}</div>
                                 <div className={scss.project_name}>{a.projectName}</div>
@@ -31,13 +47,13 @@ export default function Portfolio(props) {
                     })}
                 </ul>
                 <div className={scss.gauge}>
-                    <div className={scss.bar}></div>
+                    <div className={scss.bar} style={{"height":(onPf/pfLength)*100+"%"}}></div>
                 </div>
             </div>
             <ul className={scss.pf_detail}>
                 {data["portfolio"].map((b,j)=> {
                     return(
-                        <li key={j}>
+                        <li key={j} className={j == activePf  ? scss["active"] : ""}>
                             <div className={scss.screenshot}>
                                 <Image src={`/images/portfolio/${b.screenshotImg}`} alt="" width={1920} height={1345} />
                             </div>
@@ -95,6 +111,13 @@ export default function Portfolio(props) {
                     )
                 })}
             </ul>
+            <div className={scss.pf_dist_wrap} ref={distWrapRef}>
+                {data["portfolio"].map((c,k)=> {
+                    return(
+                        <div className={scss.pf_dist} key={c}></div>
+                    )
+                })}
+            </div>
         </section>
     )
 }
