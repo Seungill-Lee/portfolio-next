@@ -19,8 +19,11 @@ export default function Portfolio(props) {
         const dist = distWrap.querySelectorAll("div");
 
         const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                console.log(entry) // entry is 'IntersectionObserverEntry'
+            entries.forEach((entry,idx) => {
+                console.log(entry.target.getAttribute("data-key")) // entry is 'IntersectionObserverEntry'
+
+                setOnPf(entry.target.getAttribute("data-key"))
+                setActiviePf(entry.target.getAttribute("data-key"))
             })
         });
 
@@ -114,7 +117,7 @@ export default function Portfolio(props) {
             <div className={scss.pf_dist_wrap} ref={distWrapRef}>
                 {data["portfolio"].map((c,k)=> {
                     return(
-                        <div className={scss.pf_dist} key={c}></div>
+                        <div className={scss.pf_dist} data-key={k} key={k}></div>
                     )
                 })}
             </div>

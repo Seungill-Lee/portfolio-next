@@ -12,6 +12,7 @@ section#portfolio {
     }
     .pf_year {
         position: fixed;
+        z-index: 1;
         top: get-vw(230px,$divceWidth);
         left: get-vw(200px,$divceWidth);
         font-size: get-vw(40px,$divceWidth);
@@ -21,6 +22,7 @@ section#portfolio {
     }
     .pf_summary {
         position: fixed;
+        z-index: 1;
         top: get-vw(100px,$divceWidth);
         left: get-vw(600px,$divceWidth);
         width: get-vw(680px,$divceWidth);
@@ -88,7 +90,7 @@ section#portfolio {
             z-index: 1;
             top: get-vw(16px,$divceWidth);
             bottom: get-vw(47px,$divceWidth);
-            left: get-vw(5px,$divceWidth);
+            left: get-vw(4px,$divceWidth);
             width: 1px;
             overflow: hidden;
             background-color: #6CA5EF;
@@ -184,6 +186,8 @@ section#portfolio {
     }
     .pf_dist_wrap {
         .pf_dist {
+            position: relative;
+            z-index: 2;
             height: 100vh;
         }
     }
