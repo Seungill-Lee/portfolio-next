@@ -12,36 +12,50 @@ export default function Portfolio(props) {
     const [activePf,setActiviePf] = useState(0);
     const [pfYears,setPfYears] = useState();
     const pfLength = data["portfolio"].length;
+    const portfolioRef = useRef();
     const distWrapRef = useRef();
 
     useEffect(() => {
+        const portfolio = portfolioRef.current;
         const distWrap = distWrapRef.current;
         const dist = distWrap.querySelectorAll("div");
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry,idx) => {
-                console.log(entry.target.getAttribute("data-key")) // entry is 'IntersectionObserverEntry'
+        portfolio.addEventListener("scroll",function() {
+            //console.log(this.scrollTop)
 
-                setOnPf(entry.target.getAttribute("data-key"))
-                setActiviePf(entry.target.getAttribute("data-key"))
-            })
-        });
+            dist.forEach((element,i) => {
+                if(dist[i].offsetTop <= portfolio.scrollTop) {
+                    console.log(i)
+                    setOnPf(i)
+                    setActiviePf(i)
+                }
+            });
+        })
 
-        dist.forEach((section) => {
-            observer.observe(section);
-        });
+        // const observer = new IntersectionObserver((entries, observer) => {
+        //     entries.forEach((entry,idx) => {
+        //         console.log(entry.target.getAttribute("data-key")) // entry is 'IntersectionObserverEntry'
+
+        //         setOnPf(entry.target.getAttribute("data-key"))
+        //         setActiviePf(entry.target.getAttribute("data-key"))
+        //     })
+        // });
+
+        // dist.forEach((section) => {
+        //     observer.observe(section);
+        // });
         
     },[slideLoading,pathname]);
 
     return(
-        <section id={scss.portfolio} className={scss.content}>
+        <section id={scss.portfolio} className={scss.content} ref={portfolioRef}>
             <h2>Portfolio</h2>
             <div className={scss.pf_year}>{pfYears}</div>
             <div className={scss.pf_summary}>
                 <ul>
                     {data["portfolio"].map(function(a,i) {
                         return(
-                            <li key={i} className={`${i <= onPf ? scss["on"] : ""} ${i == activePf  ? scss["active"] : ""}`}>
+                            <li key={i} className={`${i <= onPf ? scss["on"] : ""} ${i == activePf ? scss["active"] : ""}`}>
                                 <i className={scss.bullet}></i>
                                 <div className={scss.trems}>{a.terms}</div>
                                 <div className={scss.project_name}>{a.projectName}</div>
@@ -50,7 +64,7 @@ export default function Portfolio(props) {
                     })}
                 </ul>
                 <div className={scss.gauge}>
-                    <div className={scss.bar} style={{"height":(onPf/pfLength)*100+"%"}}></div>
+                    <div className={scss.bar} style={{"height":Math.ceil((onPf/pfLength)*100)+"%"}}></div>
                 </div>
             </div>
             <ul className={scss.pf_detail}>
@@ -117,9 +131,10 @@ export default function Portfolio(props) {
             <div className={scss.pf_dist_wrap} ref={distWrapRef}>
                 {data["portfolio"].map((c,k)=> {
                     return(
-                        <div className={scss.pf_dist} data-key={k} key={k}></div>
+                        <div className={scss.pf_dist} key={k}></div>
                     )
                 })}
+                <div className={scss.pf_dist}></div>
             </div>
         </section>
     )
