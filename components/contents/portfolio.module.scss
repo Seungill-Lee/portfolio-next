@@ -7,6 +7,7 @@ $divceWidth: $QuadHDMax;
 section#portfolio {
     padding: 0px !important;
     background-color: skyblue;
+    --pfs-move-top: get-vw(144px,$divceWidth);
     &::-webkit-scrollbar-track {
         background-color: skyblue;
     }
@@ -26,6 +27,7 @@ section#portfolio {
         top: get-vw(100px,$divceWidth);
         left: get-vw(600px,$divceWidth);
         width: get-vw(680px,$divceWidth);
+        transition: 0.3s ease transform;
         ul {
             > li {
                 position: relative;
@@ -46,9 +48,11 @@ section#portfolio {
                     height: get-vw(10px,$divceWidth);
                     border-radius: 50%;
                     background-color: #6CA5EF;
+                    transition: 0.15s ease background-color;
                 }
                 &.on:after {
                     background-color: blue;
+                    transition-delay: 0.15s;
                 }
                 .trems {
                     font-size: get-vw(14px,$divceWidth);
@@ -96,7 +100,7 @@ section#portfolio {
             background-color: #6CA5EF;
             .bar {
                 background-color: blue;
-                transition: 0.15s ease height;
+                transition: 0.3s ease height;
             }
         }
     }

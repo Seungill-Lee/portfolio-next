@@ -51,7 +51,7 @@ export default function Portfolio(props) {
         <section id={scss.portfolio} className={scss.content} ref={portfolioRef}>
             <h2>Portfolio</h2>
             <div className={scss.pf_year}>{pfYears}</div>
-            <div className={scss.pf_summary}>
+            <div className={scss.pf_summary} style={{"transform":`translateY(-${144*activePf}px)`}}>
                 <ul>
                     {data["portfolio"].map(function(a,i) {
                         return(
@@ -64,7 +64,7 @@ export default function Portfolio(props) {
                     })}
                 </ul>
                 <div className={scss.gauge}>
-                    <div className={scss.bar} style={{"height":Math.ceil((onPf/pfLength)*100)+"%"}}></div>
+                    <div className={scss.bar} style={{"height":(activePf/(pfLength-1))*100+"%"}}></div>
                 </div>
             </div>
             <ul className={scss.pf_detail}>
