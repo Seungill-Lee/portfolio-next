@@ -176,9 +176,10 @@ main#container {
             }
             h2 {
                 position: fixed;
+                z-index: 10;
                 top: 0px;
                 left: 0px;
-                width: 100%;
+                right: get-vw(12px,$divceWidth);
                 height: get-vw(220px,$divceWidth);
                 padding: get-vw(90px,$divceWidth) get-vw(212px,$divceWidth) get-vw(50px,$divceWidth) get-vw(200px,$divceWidth);
                 box-sizing: border-box;
@@ -293,6 +294,7 @@ main#container {
                     border-width: get-vw(3px,$divceWidth);
                 }
                 h2 {
+                    right: get-vw(12px,$divceWidth);
                     height: get-vw(200px,$divceWidth);
                     padding: get-vw(80px,$divceWidth) get-vw(172px,$divceWidth) get-vw(40px,$divceWidth)  get-vw(160px,$divceWidth);
                 }
@@ -394,6 +396,7 @@ main#container {
                     border-width: get-vw(2px,$divceWidth);
                 }
                 h2 {
+                    right: get-vw(8px,$divceWidth);
                     height: get-vw(200px,$divceWidth);
                     padding: get-vw(80px,$divceWidth) get-vw(100px,$divceWidth) get-vw(44px,$divceWidth);
                 }
@@ -493,6 +496,7 @@ main#container {
                         border-width: get-vw(2px,$divceWidth);
                     }
                     h2 {
+                        right: get-vw(8px,$divceWidth);
                         height: get-vw(200px,$divceWidth);
                         padding: get-vw(80px,$divceWidth) get-vw(100px,$divceWidth) get-vw(44px,$divceWidth);
                     }
@@ -596,6 +600,7 @@ main#container {
                     border-width: get-vw(1.5px,$divceWidth);
                 }
                 h2 {
+                    right: get-vw(6px,$divceWidth);
                     height: get-vw(120px,$divceWidth);
                     padding: get-vw(40px,$divceWidth) get-vw(50px,$divceWidth) get-vw(24px,$divceWidth);
                 }
@@ -695,6 +700,7 @@ main#container {
                         border-width: get-vw(1.5px,$divceWidth);
                     }
                     h2 {
+                        right: get-vw(6px,$divceWidth);
                         height: get-vw(120px,$divceWidth);
                         padding: get-vw(40px,$divceWidth) get-vw(50px,$divceWidth) get-vw(24px,$divceWidth);
                     }

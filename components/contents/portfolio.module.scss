@@ -5,7 +5,6 @@
 $divceWidth: $QuadHDMax;
 
 section#portfolio {
-    padding: 0px !important;
     background-color: skyblue;
     --pfs-move-top: 5.6vw;
     &::-webkit-scrollbar-track {
@@ -138,7 +137,7 @@ section#portfolio {
             .project_info {
                 margin-top: get-vw(32px,$divceWidth);
                 h3 {
-                    font-size: get-vw(28px,$divceWidth);
+                    font-size: get-vw(30px,$divceWidth);
                     font-weight: 700;
                     line-height: 140%;
                     letter-spacing: -1px;
@@ -158,7 +157,7 @@ section#portfolio {
                     tbody {
                         tr {
                             th,td {
-                                padding: get-vw(18px,$divceWidth) 0px;
+                                padding: get-vw(16px,$divceWidth) 0px;
                                 border-bottom: 1px solid rgba(0,0,128,0.25);
                             }
                             th {
@@ -189,6 +188,7 @@ section#portfolio {
         }
     }
     .pf_dist_wrap {
+        margin: get-vw(-220px,$divceWidth) get-vw(-188px,$divceWidth) get-vw(-100px,$divceWidth) get-vw(-200px,$divceWidth);
         .pf_dist {
             position: relative;
             z-index: 2;
@@ -279,10 +279,10 @@ section#portfolio {
                         tbody {
                             tr {
                                 th,td {
-                                    padding: get-vw(15px,$divceWidth) 0px;
+                                    padding: get-vw(14px,$divceWidth) 0px;
                                 }
                                 th {
-                                    width: get-vw(120px,$divceWidth);
+                                    width: get-vw(110px,$divceWidth);
                                 }
                                 td {
                                     &.participation {
@@ -300,6 +300,9 @@ section#portfolio {
                 }
             }
         }
+        .pf_dist_wrap {
+            margin: get-vw(-200px,$divceWidth) get-vw(-148px,$divceWidth) get-vw(-80px,$divceWidth) get-vw(-160px,$divceWidth);
+        }
     }
 }
 
@@ -308,7 +311,9 @@ section#portfolio {
     $divceWidth: $TabletMax;
 
     section#portfolio {
-        padding: get-vw(200px,$divceWidth) get-vw(100px,$divceWidth) get-vw(80px,$divceWidth) !important;
+        h2 {
+            background-image: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(135,206,235,1) 60%, rgba(135,206,235,0.9) 90%, rgba(135,206,235,0) 100%);
+        }
         .pf_year {
             top: get-vw(200px,$divceWidth);
             left: get-vw(160px,$divceWidth);
@@ -378,7 +383,6 @@ section#portfolio {
 
         /* Portfolio */
         section#portfolio {
-            padding: get-vw(200px,$divceWidth) get-vw(100px,$divceWidth) get-vw(80px,$divceWidth) !important;
             .pf_cont_inner {
                 h2 {
                     padding: get-vh(80px,$divceHeight) get-vh(150px,$divceHeight) get-vh(40px,$divceHeight) get-vh(60px,$divceHeight);
@@ -464,7 +468,6 @@ section#portfolio {
         
         /* Portfolio */
         section#portfolio {
-            padding: get-vh(40px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight) get-vh(40px,$divceHeight);
             .pf_cont_inner {
                 h2 {
                     padding: get-vh(60px,$divceHeight) get-vh(80px,$divceHeight) get-vh(40px,$divceHeight) get-vh(40px,$divceHeight);
