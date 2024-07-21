@@ -315,9 +315,7 @@ section#portfolio {
             background-image: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(135,206,235,1) 60%, rgba(135,206,235,0.9) 90%, rgba(135,206,235,0) 100%);
         }
         .pf_year {
-            top: get-vw(200px,$divceWidth);
-            left: get-vw(160px,$divceWidth);
-            font-size: get-vw(40px,$divceWidth);
+            display: none;
         }
         .pf_summary,
         .pf_dist_wrap {
@@ -389,19 +387,10 @@ section#portfolio {
                     background-color: rgba(255,255,255,0);
                     transition: 0.2s ease all;
                 }
-                .pf_year {
-                    font-size: get-vh(34px,$divceHeight);
-                    padding-top: get-vh(94px,$divceHeight);
-                    right: get-vh(150px,$divceHeight);
-                    transition: 0.2s ease all;
-                }
                 &.fixed {
                     h2 {
                         padding: get-vh(16px,$divceHeight) get-vh(150px,$divceHeight) get-vh(14px,$divceHeight) get-vh(60px,$divceHeight);
                         background-color: rgba(255,255,255,0.75);
-                    }
-                    .pf_year {
-                        padding-top: get-vh(32px,$divceHeight);
                     }
                 }
                 .pf_detail {
@@ -474,19 +463,10 @@ section#portfolio {
                     background-color: rgba(255,255,255,0);
                     transition: 0.2s ease all;
                 }
-                .pf_year {
-                    font-size: get-vh(34px,$divceHeight);
-                    padding-top: get-vh(70px,$divceHeight);
-                    right: get-vh(80px,$divceHeight);
-                    transition: 0.2s ease all;
-                }
                 &.fixed {
                     h2 {
                         padding: get-vh(16px,$divceHeight) get-vh(80px,$divceHeight) get-vh(14px,$divceHeight) get-vh(40px,$divceHeight);
                         background-color: rgba(255,255,255,0.75);
-                    }
-                    .pf_year {
-                        padding-top: get-vh(28px,$divceHeight);
                     }
                 }
                 ul.detail {

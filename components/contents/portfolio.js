@@ -24,6 +24,7 @@ export default function Portfolio(props) {
         const dist = distWrap.querySelectorAll("div");
 
         setPfsMoveTop(window.getComputedStyle(pfSummary).getPropertyValue("--pfs-move-top"))
+        setPfYears(data["portfolio"][0].year)
 
         portfolio.addEventListener("scroll",function() {
             //console.log(this.scrollTop)
@@ -33,6 +34,7 @@ export default function Portfolio(props) {
                     //console.log(i)
                     setOnPf(i)
                     setActiviePf(i)
+                    setPfYears(data["portfolio"][i].year)
                 }
             });
         })
