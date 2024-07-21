@@ -258,7 +258,6 @@ section#portfolio {
             width: get-vw(480px,$divceWidth);
             > li {
                 .screenshot {
-                    width: auto;
                     img {
                         max-height: get-vw(480px,$divceWidth);
                     }
@@ -310,6 +309,7 @@ section#portfolio {
 @include Tablet {
     $divceWidth: $TabletMax;
 
+    /* Portfolio */
     section#portfolio {
         h2 {
             background-image: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(135,206,235,1) 60%, rgba(135,206,235,0.9) 90%, rgba(135,206,235,0) 100%);
@@ -327,11 +327,17 @@ section#portfolio {
             > li {
                 position: relative;
                 height: auto;
-                display: grid;
-                grid-template-columns: 40% auto;
-                gap: 0px get-vw(40px,$divceWidth);
+                padding-left: get-vw(504px,$divceWidth);
                 opacity: 1;
+                & + li {
+                    margin-top: get-vw(100px,$divceWidth);
+                }
                 .screenshot {
+                    position: absolute;
+                    top: get-vw(8px,$divceWidth);
+                    bottom: 0px;
+                    left: 0px;
+                    width: get-vw(464px,$divceWidth);
                     img {
                         max-height: 100%;
                     }
@@ -339,7 +345,7 @@ section#portfolio {
                 .project_info {
                     margin-top: 0px;
                     h3 {
-                        font-size: get-vw(28px,$divceWidth);
+                        font-size: get-vw(30px,$divceWidth);
                         a {
                             &:hover {
                                 text-decoration-thickness: get-vw(2px,$divceWidth);
@@ -352,7 +358,7 @@ section#portfolio {
                         tbody {
                             tr {
                                 th,td {
-                                    padding: get-vw(15px,$divceWidth) 0px;
+                                    padding: get-vw(14px,$divceWidth) 0px get-vw(15px,$divceWidth);
                                 }
                                 th {
                                     width: get-vw(120px,$divceWidth);
@@ -361,8 +367,8 @@ section#portfolio {
                                     &.participation {
                                         .gauge {
                                             .bar {
-                                                padding: get-vw(10px,$divceWidth) get-vw(12px,$divceWidth) get-vw(12px,$divceWidth);
-                                                font-size: get-vw(14px,$divceWidth);
+                                                padding: get-vw(8px,$divceWidth) get-vw(12px,$divceWidth) get-vw(10px,$divceWidth);
+                                                font-size: get-vw(16px,$divceWidth);
                                             }
                                         }
                                     }
@@ -377,62 +383,47 @@ section#portfolio {
 
     /* 세로 모드 */
     @media screen and (orientation: portrait) {
-        $divceHeight: $TabletMax;
+        $divceWidth: $TabletMin;
 
         /* Portfolio */
         section#portfolio {
-            .pf_cont_inner {
-                h2 {
-                    padding: get-vh(80px,$divceHeight) get-vh(150px,$divceHeight) get-vh(40px,$divceHeight) get-vh(60px,$divceHeight);
-                    background-color: rgba(255,255,255,0);
-                    transition: 0.2s ease all;
-                }
-                &.fixed {
-                    h2 {
-                        padding: get-vh(16px,$divceHeight) get-vh(150px,$divceHeight) get-vh(14px,$divceHeight) get-vh(60px,$divceHeight);
-                        background-color: rgba(255,255,255,0.75);
+            ul.pf_detail {
+                > li {
+                    padding-left: get-vw(344px,$divceWidth);
+                    & + li {
+                        margin-top: get-vw(100px,$divceWidth);
                     }
-                }
-                .pf_detail {
-                    > .pf_detail_cont {
-                        padding: get-vh(120px,$divceHeight) 0px 0px 0px;
-                        min-height: auto;
-                        .screenshot {
-                            position: static;
-                            width: 100%;
-                            max-height: none;
-                            img {
-                                max-height: calc(100vw - get-vh(260px,$divceHeight))
-                            }
-                        }
-                        .project_info {
-                            margin-top: get-vh(20px,$divceHeight);
-                            h3 {
-                                font-size: get-vh(26px,$divceHeight);
-                                a {
-                                    &:hover {
-                                        text-decoration-thickness: get-vh(2px,$divceHeight);
-                                        text-underline-offset: get-vh(12px,$divceHeight);
-                                    }
+                    .screenshot {
+                        top: get-vw(65px,$divceWidth);
+                        width: get-vw(304px,$divceWidth);
+                    }
+                    .project_info {
+                        h3 {
+                            margin-left: get-vw(-344px,$divceWidth);
+                            font-size: get-vw(28px,$divceWidth);
+                            a {
+                                &:hover {
+                                    text-decoration-thickness: get-vw(2px,$divceWidth);
+                                    text-underline-offset: get-vw(6px,$divceWidth);
                                 }
                             }
-                            table {
-                                margin-top: get-vh(12px,$divceHeight);
-                                tbody {
-                                    tr {
-                                        th,td {
-                                            padding: get-vh(15px,$divceHeight) 0px;
-                                        }
-                                        th {
-                                            width: get-vh(120px,$divceHeight)
-                                        }
-                                        td {
-                                            &.participation {
-                                                .gauge {
-                                                    .bar {
-                                                        padding: get-vh(11px,$divceHeight) get-vh(12px,$divceHeight) get-vh(12px,$divceHeight);
-                                                        font-size: get-vh(15px,$divceHeight);
-                                                    }
+                        }
+                        table {
+                            margin-top: get-vw(10px,$divceWidth);
+                            tbody {
+                                tr {
+                                    th,td {
+                                        padding: get-vw(12px,$divceWidth) 0px get-vw(13px,$divceWidth);
+                                    }
+                                    th {
+                                        width: get-vw(100px,$divceWidth);
+                                    }
+                                    td {
+                                        &.participation {
+                                            .gauge {
+                                                .bar {
+                                                    padding: get-vw(8px,$divceWidth) get-vw(10px,$divceWidth) get-vw(10px,$divceWidth);
+                                                    font-size: get-vw(16px,$divceWidth);
                                                 }
                                             }
                                         }

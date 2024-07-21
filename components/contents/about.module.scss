@@ -199,9 +199,9 @@ section#about {
     section#about {
         .about_photo {
             position: absolute;
-            top: get-vw(200px,$divceWidth);
+            top: get-vw(210px,$divceWidth);
             right: get-vw(100px,$divceWidth);
-            width: get-vw(420px,$divceWidth);
+            width: get-vw(370px,$divceWidth);
         }
         .about_cont {
             position: static;
@@ -220,15 +220,15 @@ section#about {
                 ul {
                     li {
                         opacity: 1;
-                        padding-left: get-vw(20px,$divceWidth);
+                        padding-left: get-vw(16px,$divceWidth);
                         transform: translateY(0px);
                         & + li {
                             margin-top: get-vw(14px,$divceWidth);
                         }
                         &:before {
-                            top: get-vw(15px,$divceWidth);
-                            width: get-vw(8px,$divceWidth);
-                            height: get-vw(8px,$divceWidth);
+                            top: get-vw(12px,$divceWidth);
+                            width: get-vw(6px,$divceWidth);
+                            height: get-vw(6px,$divceWidth);
                         }
                     }
                 }
@@ -273,7 +273,7 @@ section#about {
 
         section#about {
             .about_photo {
-                top: get-vw(250px,$divceWidth);
+                top: get-vw(210px,$divceWidth);
                 right: get-vw(100px,$divceWidth);
                 width: get-vw(370px,$divceWidth);
             }
@@ -290,15 +290,15 @@ section#about {
                     ul {
                         li {
                             opacity: 1;
-                            padding-left: get-vw(20px,$divceWidth);
+                            padding-left: get-vw(16px,$divceWidth);
                             transform: translateY(0px);
                             & + li {
                                 margin-top: get-vw(14px,$divceWidth);
                             }
                             &:before {
-                                top: get-vw(15px,$divceWidth);
-                                width: get-vw(8px,$divceWidth);
-                                height: get-vw(8px,$divceWidth);
+                                top: get-vw(12px,$divceWidth);
+                                width: get-vw(6px,$divceWidth);
+                                height: get-vw(6px,$divceWidth);
                             }
                         }
                     }

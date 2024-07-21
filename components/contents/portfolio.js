@@ -30,8 +30,7 @@ export default function Portfolio(props) {
             //console.log(this.scrollTop)
 
             dist.forEach((element,i) => {
-                if(dist[i].offsetTop <= portfolio.scrollTop) {
-                    //console.log(i)
+                if(dist[i].offsetTop <= portfolio.scrollTop && i <= pfLength-1) {
                     setOnPf(i)
                     setActiviePf(i)
                     setPfYears(data["portfolio"][i].year)

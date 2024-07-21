@@ -157,19 +157,19 @@ strong,b {
     $divceWidth: $TabletMax;
 
 	body {
-		font-size: get-vw(20px,$divceWidth);
+		font-size: get-vw(18px,$divceWidth);
 	}
 	h2 {
-		font-size: get-vw(76px,$divceWidth);
+		font-size: get-vw(64px,$divceWidth);
 	}
 	h3 {
-		font-size: get-vw(40px,$divceWidth);
+		font-size: get-vw(36px,$divceWidth);
 	}
 	h4 {
-		font-size: get-vw(30px,$divceWidth);
+		font-size: get-vw(24px,$divceWidth);
 	}
 	input,textarea {
-		font-size: get-vw(20px,$divceWidth);
+		font-size: get-vw(18px,$divceWidth);
 	}
 
 	/* 세로 모드 */
@@ -177,19 +177,19 @@ strong,b {
 		$divceWidth: $TabletMin;
 
 		body {
-			font-size: get-vw(20px,$divceWidth);
+			font-size: get-vw(18px,$divceWidth);
 		}
 		h2 {
-			font-size: get-vw(76px,$divceWidth);
+			font-size: get-vw(66px,$divceWidth);
 		}
 		h3 {
-			font-size: get-vw(40px,$divceWidth);
+			font-size: get-vw(36px,$divceWidth);
 		}
 		h4 {
-			font-size: get-vw(30px,$divceWidth);
+			font-size: get-vw(24px,$divceWidth);
 		}
 		input,textarea {
-			font-size: get-vw(20px,$divceWidth);
+			font-size: get-vw(18px,$divceWidth);
 		}
 	}
 }
