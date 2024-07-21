@@ -7,7 +7,7 @@ $divceWidth: $QuadHDMax;
 section#portfolio {
     padding: 0px !important;
     background-color: skyblue;
-    --pfs-move-top: get-vw(144px,$divceWidth);
+    --pfs-move-top: 5.6vw;
     &::-webkit-scrollbar-track {
         background-color: skyblue;
     }
@@ -28,14 +28,14 @@ section#portfolio {
         left: get-vw(600px,$divceWidth);
         width: get-vw(680px,$divceWidth);
         transition: 0.3s ease transform;
-        ul {
+        > ul {
             > li {
                 position: relative;
-                height: get-vw(64px,$divceWidth);
+                height: 2.5vw;
                 padding-left: get-vw(30px,$divceWidth);
                 cursor: pointer;
                 & + li {
-                    margin-top: get-vw(80px,$divceWidth);
+                    margin-top: 3.1vw;
                 }
                 &:after {
                     content: '';
@@ -44,15 +44,15 @@ section#portfolio {
                     z-index: 2;
                     top: get-vw(11px,$divceWidth);
                     left: 0px;
-                    width: get-vw(10px,$divceWidth);
-                    height: get-vw(10px,$divceWidth);
+                    width: get-vw(11px,$divceWidth);
+                    height: get-vw(11px,$divceWidth);
                     border-radius: 50%;
                     background-color: #6CA5EF;
                     transition: 0.15s ease background-color;
                 }
                 &.on:after {
                     background-color: blue;
-                    transition-delay: 0.15s;
+                    transition-delay: 0.25s;
                 }
                 .trems {
                     font-size: get-vw(14px,$divceWidth);
@@ -94,8 +94,8 @@ section#portfolio {
             z-index: 1;
             top: get-vw(16px,$divceWidth);
             bottom: get-vw(47px,$divceWidth);
-            left: get-vw(4px,$divceWidth);
-            width: 1px;
+            left: get-vw(5px,$divceWidth);
+            width: get-vw(1px,$divceWidth);
             overflow: hidden;
             background-color: #6CA5EF;
             .bar {
@@ -202,55 +202,60 @@ section#portfolio {
     $divceWidth: $FullHDMax;
 
     section#portfolio {
+        --pfs-move-top: 7.5vw;
         .pf_year {
             top: get-vw(200px,$divceWidth);
             left: get-vw(160px,$divceWidth);
             font-size: get-vw(40px,$divceWidth);
         }
-        ul.pf_summary {
+        .pf_summary {
             top: get-vw(80px,$divceWidth);
             left: get-vw(540px,$divceWidth);
             width: get-vw(680px,$divceWidth);
-            > li {
-                height: get-vw(64px,$divceWidth);
-                padding-left: get-vw(30px,$divceWidth);
-                & + li {
-                    margin-top: get-vw(80px,$divceWidth);
-                }
-                &:after {
-                    display: block;
-                    position: absolute;
-                    top: get-vw(8px,$divceWidth);
-                    left: 0px;
-                    width: get-vw(9px,$divceWidth);
-                    height: get-vw(9px,$divceWidth);
-                }
-                .trems {
-                    font-size: get-vw(14px,$divceWidth);
-                }
-                .project_name {
-                    margin-top: get-vw(4px,$divceWidth);
-                }
-            }
-            &[class*="swiper-slide-thumb-active"] {
-                .pf_summary_cont {
+            > ul {
+                > li {
+                    height: 3.33vw;
+                    padding-left: get-vw(30px,$divceWidth);
+                    & + li {
+                        margin-top: 4.17vw;
+                    }
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        top: get-vw(8px,$divceWidth);
+                        left: 0px;
+                        width: get-vw(9px,$divceWidth);
+                        height: get-vw(9px,$divceWidth);
+                    }
+                    .trems {
+                        font-size: get-vw(14px,$divceWidth);
+                    }
                     .project_name {
-                        text-underline-offset: get-vw(4px,$divceWidth);
-                        transform: scale(1.2);
-                        opacity: 1;
+                        margin-top: get-vw(4px,$divceWidth);
+                    }
+                }
+                &[class*="swiper-slide-thumb-active"] {
+                    .pf_summary_cont {
+                        .project_name {
+                            text-underline-offset: get-vw(4px,$divceWidth);
+                            transform: scale(1.2);
+                            opacity: 1;
+                        }
                     }
                 }
             }
             .gauge {
-                top: get-vw(-80px,$divceWidth);
+                top: get-vw(16px,$divceWidth);
+                bottom: get-vw(47px,$divceWidth);
                 left: get-vw(4px,$divceWidth);
+                width: get-vw(1px,$divceWidth);
             }
         }
         ul.pf_detail {
             top: get-vw(80px,$divceWidth);
             bottom: get-vw(80px,$divceWidth);
             right: get-vw(300px,$divceWidth);
-            width: get-vw(500px,$divceWidth);
+            width: get-vw(480px,$divceWidth);
             > li {
                 .screenshot {
                     width: auto;

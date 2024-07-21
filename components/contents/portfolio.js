@@ -13,19 +13,25 @@ export default function Portfolio(props) {
     const [pfYears,setPfYears] = useState();
     const pfLength = data["portfolio"].length;
     const portfolioRef = useRef();
+    const pfSummaryRef = useRef();
+    const [pfsMoveTop,setPfsMoveTop] = useState(0);
     const distWrapRef = useRef();
 
     useEffect(() => {
         const portfolio = portfolioRef.current;
+        const pfSummary = pfSummaryRef.current;
         const distWrap = distWrapRef.current;
         const dist = distWrap.querySelectorAll("div");
+
+        setPfsMoveTop(window.getComputedStyle(pfSummary).getPropertyValue("--pfs-move-top"))
+        console.log(window.getComputedStyle(pfSummary).getPropertyValue("--pfs-move-top"))
 
         portfolio.addEventListener("scroll",function() {
             //console.log(this.scrollTop)
 
             dist.forEach((element,i) => {
                 if(dist[i].offsetTop <= portfolio.scrollTop) {
-                    console.log(i)
+                    //console.log(i)
                     setOnPf(i)
                     setActiviePf(i)
                 }
@@ -51,7 +57,7 @@ export default function Portfolio(props) {
         <section id={scss.portfolio} className={scss.content} ref={portfolioRef}>
             <h2>Portfolio</h2>
             <div className={scss.pf_year}>{pfYears}</div>
-            <div className={scss.pf_summary} style={{"transform":`translateY(-${144*activePf}px)`}}>
+            <div className={scss.pf_summary} style={{"transform":`translateY(calc(-${pfsMoveTop} * ${activePf}))`}} ref={pfSummaryRef}>
                 <ul>
                     {data["portfolio"].map(function(a,i) {
                         return(
