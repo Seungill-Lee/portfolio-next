@@ -308,20 +308,26 @@ section#portfolio {
     $divceWidth: $TabletMax;
 
     section#portfolio {
+        padding: get-vw(200px,$divceWidth) get-vw(100px,$divceWidth) get-vw(80px,$divceWidth) !important;
         .pf_year {
             top: get-vw(200px,$divceWidth);
             left: get-vw(160px,$divceWidth);
             font-size: get-vw(40px,$divceWidth);
         }
-        ul.pf_summary {
+        .pf_summary,
+        .pf_dist_wrap {
             display: none;
         }
         ul.pf_detail {
+            position: static;
             width: auto;
             > li {
+                position: relative;
+                height: auto;
                 display: grid;
                 grid-template-columns: 40% auto;
                 gap: 0px get-vw(40px,$divceWidth);
+                opacity: 1;
                 .screenshot {
                     img {
                         max-height: 100%;
@@ -372,7 +378,7 @@ section#portfolio {
 
         /* Portfolio */
         section#portfolio {
-            padding: get-vh(60px,$divceHeight) get-vh(150px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight);
+            padding: get-vw(200px,$divceWidth) get-vw(100px,$divceWidth) get-vw(80px,$divceWidth) !important;
             .pf_cont_inner {
                 h2 {
                     padding: get-vh(80px,$divceHeight) get-vh(150px,$divceHeight) get-vh(40px,$divceHeight) get-vh(60px,$divceHeight);

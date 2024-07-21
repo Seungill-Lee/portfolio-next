@@ -24,7 +24,6 @@ export default function Portfolio(props) {
         const dist = distWrap.querySelectorAll("div");
 
         setPfsMoveTop(window.getComputedStyle(pfSummary).getPropertyValue("--pfs-move-top"))
-        console.log(window.getComputedStyle(pfSummary).getPropertyValue("--pfs-move-top"))
 
         portfolio.addEventListener("scroll",function() {
             //console.log(this.scrollTop)
@@ -38,18 +37,9 @@ export default function Portfolio(props) {
             });
         })
 
-        // const observer = new IntersectionObserver((entries, observer) => {
-        //     entries.forEach((entry,idx) => {
-        //         console.log(entry.target.getAttribute("data-key")) // entry is 'IntersectionObserverEntry'
-
-        //         setOnPf(entry.target.getAttribute("data-key"))
-        //         setActiviePf(entry.target.getAttribute("data-key"))
-        //     })
-        // });
-
-        // dist.forEach((section) => {
-        //     observer.observe(section);
-        // });
+        window.addEventListener("resize",function() {
+            setPfsMoveTop(window.getComputedStyle(pfSummary).getPropertyValue("--pfs-move-top"))
+        })
         
     },[slideLoading,pathname]);
 
