@@ -609,7 +609,7 @@ main#container {
     main#container {
         .scroll_content {
             section {
-                padding: get-vw(120px,$divceWidth) get-vw(50px,$divceWidth) get-vw(40px,$divceWidth);
+                padding: get-vw(128px,$divceWidth) get-vw(50px,$divceWidth) get-vw(40px,$divceWidth);
                 &::-webkit-scrollbar {
                     width: get-vw(6px,$divceWidth); 
                 }
@@ -619,7 +619,7 @@ main#container {
                 }
                 h2 {
                     right: get-vw(6px,$divceWidth);
-                    height: get-vw(120px,$divceWidth);
+                    height: get-vw(128px,$divceWidth);
                     padding: get-vw(40px,$divceWidth) get-vw(50px,$divceWidth) get-vw(24px,$divceWidth);
                 }
             }

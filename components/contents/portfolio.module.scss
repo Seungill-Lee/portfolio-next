@@ -442,63 +442,100 @@ section#portfolio {
 @include Mobile {
     $divceWidth: $MobileMax;
 
-    /* 세로 모드 */
-    @media screen and (orientation: portrait) {
-        $divceHeight: $MobileMax;
-        
-        /* Portfolio */
-        section#portfolio {
-            .pf_cont_inner {
-                h2 {
-                    padding: get-vh(60px,$divceHeight) get-vh(80px,$divceHeight) get-vh(40px,$divceHeight) get-vh(40px,$divceHeight);
-                    background-color: rgba(255,255,255,0);
-                    transition: 0.2s ease all;
+    /* Portfolio */
+    section#portfolio {
+        ul.pf_detail {
+            > li {
+                padding-left: get-vw(324px,$divceWidth);
+                & + li {
+                    margin-top: get-vw(80px,$divceWidth);
                 }
-                &.fixed {
-                    h2 {
-                        padding: get-vh(16px,$divceHeight) get-vh(80px,$divceHeight) get-vh(14px,$divceHeight) get-vh(40px,$divceHeight);
-                        background-color: rgba(255,255,255,0.75);
-                    }
+                .screenshot {
+                    top: get-vw(65px,$divceWidth);
+                    width: get-vw(284px,$divceWidth);
                 }
-                ul.detail {
-                    > li {
-                        padding: get-vh(120px,$divceHeight) 0px 0px 0px;
-                        .screenshot {
-                            position: static;
-                            width: 100%;
-                            max-height: none;
-                            img {
-                                max-height: calc(100vw - get-vh(120px,$divceHeight))
+                .project_info {
+                    h3 {
+                        font-size: get-vw(28px,$divceWidth);
+                        margin-left: get-vw(-324px,$divceWidth);
+                        a {
+                            &:hover {
+                                text-decoration-thickness: get-vw(2px,$divceWidth);
+                                text-underline-offset: get-vw(6px,$divceWidth);
                             }
                         }
-                        .project_info {
-                            margin-top: get-vh(20px,$divceHeight);
-                            h3 {
-                                font-size: get-vh(26px,$divceHeight);
-                                a {
-                                    &:hover {
-                                        text-decoration-thickness: get-vh(2px,$divceHeight);
-                                        text-underline-offset: get-vh(12px,$divceHeight);
+                    }
+                    table {
+                        margin-top: get-vw(10px,$divceWidth);
+                        tbody {
+                            tr {
+                                th,td {
+                                    padding: get-vw(12px,$divceWidth) 0px get-vw(14px,$divceWidth);
+                                }
+                                th {
+                                    width: get-vw(100px,$divceWidth);
+                                }
+                                td {
+                                    &.participation {
+                                        .gauge {
+                                            .bar {
+                                                padding: get-vw(8px,$divceWidth) get-vw(12px,$divceWidth) get-vw(10px,$divceWidth);
+                                                font-size: get-vw(16px,$divceWidth);
+                                            }
+                                        }
                                     }
                                 }
                             }
-                            table {
-                                margin-top: get-vh(12px,$divceHeight);
-                                tbody {
-                                    tr {
-                                        th,td {
-                                            padding: get-vh(15px,$divceHeight) 0px;
-                                        }
-                                        th {
-                                            width: get-vh(110px,$divceHeight)
-                                        }
-                                        td {
-                                            &.participation {
-                                                .gauge {
-                                                    .bar {
-                                                        padding: get-vh(11px,$divceHeight) get-vh(12px,$divceHeight) get-vh(12px,$divceHeight);
-                                                        font-size: get-vh(15px,$divceHeight);
-                                                    }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* 세로 모드 */
+    @media screen and (orientation: portrait) {
+        $divceWidth: $MobileMin;
+        
+        /* Portfolio */
+        section#portfolio {
+            ul.pf_detail {
+                > li {
+                    padding-left: 0px;
+                    & + li {
+                        margin-top: get-vw(80px,$divceWidth);
+                    }
+                    .screenshot {
+                        position: static;
+                        width: 100%;
+                    }
+                    .project_info {
+                        h3 {
+                            font-size: get-vw(24px,$divceWidth);
+                            margin: get-vw(18px,$divceWidth) 0px 0px 0px;
+                            a {
+                                &:hover {
+                                    text-decoration-thickness: get-vw(2px,$divceWidth);
+                                    text-underline-offset: get-vw(6px,$divceWidth);
+                                }
+                            }
+                        }
+                        table {
+                            margin-top: get-vw(2px,$divceWidth);
+                            tbody {
+                                tr {
+                                    th,td {
+                                        padding: get-vw(12px,$divceWidth) 0px get-vw(14px,$divceWidth);
+                                    }
+                                    th {
+                                        width: get-vw(100px,$divceWidth);
+                                    }
+                                    td {
+                                        &.participation {
+                                            .gauge {
+                                                .bar {
+                                                    padding: get-vw(8px,$divceWidth) get-vw(12px,$divceWidth) get-vw(10px,$divceWidth);
+                                                    font-size: get-vw(16px,$divceWidth);
                                                 }
                                             }
                                         }

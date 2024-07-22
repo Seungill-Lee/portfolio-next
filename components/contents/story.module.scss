@@ -158,7 +158,7 @@ section#story {
     /* Story */
     section#story {
         .story_cont {
-            padding: get-vw(60px,$divceWidth) get-vw(80px,$divceWidth) get-vw(60px,$divceWidth) get-vw(40px,$divceWidth);
+            padding: get-vw(60px,$divceWidth) get-vw(50px,$divceWidth);
             .sc_inner {
                 font-size: get-vw(26px,$divceWidth);
                 p {
@@ -171,16 +171,16 @@ section#story {
 
     /* 세로 모드 */
     @media screen and (orientation: portrait) {
-        $divceHeight: $MobileMax;
+        $divceWidth: $MobileMin;
         
         /* Story */
         section#story {
             .story_cont {
-                padding: get-vh(60px,$divceHeight) get-vh(80px,$divceHeight) get-vh(60px,$divceHeight) get-vh(40px,$divceHeight);
+                padding: get-vw(60px,$divceWidth) get-vw(50px,$divceWidth);
                 .sc_inner {
-                    font-size: get-vh(26px,$divceHeight);
+                    font-size: get-vw(26px,$divceWidth);
                     p {
-                        transform: translateY(get-vh(20px,$divceHeight));
+                        transform: translateY(get-vw(20px,$divceWidth));
                     }
                 }
             }

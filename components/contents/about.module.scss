@@ -345,9 +345,9 @@ section#about {
 
     section#about {
         .about_photo {
-            top: get-vw(200px,$divceWidth);
+            top: get-vw(155px,$divceWidth);
             right: get-vw(50px,$divceWidth);
-            width: get-vw(340px,$divceWidth);
+            width: get-vw(350px,$divceWidth);
         }
         .about_cont {
             position: static;
@@ -366,15 +366,15 @@ section#about {
                 ul {
                     li {
                         opacity: 1;
-                        padding-left: get-vw(20px,$divceWidth);
+                        padding-left: get-vw(12px,$divceWidth);
                         transform: translateY(0px);
                         & + li {
                             margin-top: get-vw(14px,$divceWidth);
                         }
                         &:before {
-                            top: get-vw(15px,$divceWidth);
-                            width: get-vw(8px,$divceWidth);
-                            height: get-vw(8px,$divceWidth);
+                            top: get-vw(11px,$divceWidth);
+                            width: get-vw(6px,$divceWidth);
+                            height: get-vw(6px,$divceWidth);
                         }
                     }
                 }
@@ -438,14 +438,14 @@ section#about {
                 &.profile {
                     ul {
                         li {
-                            padding-left: get-vw(14px,$divceWidth);
+                            padding-left: get-vw(12px,$divceWidth);
                             & + li {
                                 margin-top: get-vw(12px,$divceWidth);
                             }
                             &:before {
                                 top: get-vw(11px,$divceWidth);
-                                width: get-vw(7px,$divceWidth);
-                                height: get-vw(7px,$divceWidth);
+                                width: get-vw(6px,$divceWidth);
+                                height: get-vw(6px,$divceWidth);
                             }
                         }
                     }

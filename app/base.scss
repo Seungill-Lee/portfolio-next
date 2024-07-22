@@ -160,7 +160,7 @@ strong,b {
 		font-size: get-vw(18px,$divceWidth);
 	}
 	h2 {
-		font-size: get-vw(64px,$divceWidth);
+		font-size: get-vw(66px,$divceWidth);
 	}
 	h3 {
 		font-size: get-vw(36px,$divceWidth);
@@ -208,7 +208,7 @@ strong,b {
 		font-size: get-vw(32px,$divceWidth);
 	}
 	h4 {
-		font-size: get-vw(26px,$divceWidth);
+		font-size: get-vw(24px,$divceWidth);
 	}
 	input,textarea {
 		font-size: get-vw(18px,$divceWidth);
@@ -219,19 +219,19 @@ strong,b {
 		$divceWidth: $MobileMin;
 
 		body {
-			font-size: get-vw(18px,$divceWidth);
+			font-size: get-vw(16px,$divceWidth);
 		}
 		h2 {
-			font-size: get-vw(56px,$divceWidth);
+			font-size: get-vw(54px,$divceWidth);
 		}
 		h3 {
-			font-size: get-vw(32px,$divceWidth);
+			font-size: get-vw(30px,$divceWidth);
 		}
 		h4 {
-			font-size: get-vw(26px,$divceWidth);
+			font-size: get-vw(24px,$divceWidth);
 		}
 		input,textarea {
-			font-size: get-vw(18px,$divceWidth);
+			font-size: get-vw(16px,$divceWidth);
 		}
 	}
 }
