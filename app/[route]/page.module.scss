@@ -626,9 +626,9 @@ main#container {
         }
         .intro_navi {
             button {
-                top: calc(50% - get-vw(40px,$divceWidth));
-                width: get-vw(50px,$divceWidth);
-                height: get-vw(80px,$divceWidth);
+                top: calc(50% - get-vw(20px,$divceWidth));
+                width: get-vw(25px,$divceWidth);
+                height: get-vw(40px,$divceWidth);
             }
         }
     }
@@ -640,7 +640,7 @@ main#container {
         /* GNB */
         nav#gnb {
             top: get-vw(40px,$divceWidth);
-            right: get-vw(46px,$divceWidth);
+            right: get-vw(36px,$divceWidth);
             padding: get-vw(10px,$divceWidth);
             gap: 0px get-vw(10px,$divceWidth);
             border-radius: get-vw(27px,$divceWidth);
@@ -709,7 +709,7 @@ main#container {
         main#container {
             .scroll_content {
                 section {
-                    padding: get-vw(120px,$divceWidth) get-vw(50px,$divceWidth) get-vw(40px,$divceWidth);
+                    padding: get-vw(128px,$divceWidth) get-vw(40px,$divceWidth) get-vw(40px,$divceWidth);
                     &::-webkit-scrollbar {
                         width: get-vw(6px,$divceWidth); 
                     }
@@ -720,15 +720,15 @@ main#container {
                     h2 {
                         right: get-vw(6px,$divceWidth);
                         height: get-vw(120px,$divceWidth);
-                        padding: get-vw(40px,$divceWidth) get-vw(50px,$divceWidth) get-vw(24px,$divceWidth);
+                        padding: get-vw(40px,$divceWidth) get-vw(40px,$divceWidth) get-vw(24px,$divceWidth);
                     }
                 }
             }
             .intro_navi {
                 button {
-                    top: calc(50% - get-vw(40px,$divceWidth));
-                    width: get-vw(50px,$divceWidth);
-                    height: get-vw(80px,$divceWidth);
+                    top: calc(50% - get-vw(20px,$divceWidth));
+                    width: get-vw(25px,$divceWidth);
+                    height: get-vw(40px,$divceWidth);
                 }
             }
         }

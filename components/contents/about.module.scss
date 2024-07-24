@@ -440,7 +440,7 @@ section#about {
                         li {
                             padding-left: get-vw(12px,$divceWidth);
                             & + li {
-                                margin-top: get-vw(12px,$divceWidth);
+                                margin-top: get-vw(13px,$divceWidth);
                             }
                             &:before {
                                 top: get-vw(10px,$divceWidth);
@@ -461,11 +461,11 @@ section#about {
                 &.skill {
                     ul {
                         li {
-                            grid-template-columns: get-vw(110px,$divceWidth) auto;
+                            grid-template-columns: get-vw(96px,$divceWidth) auto;
                             gap: 0px get-vw(8px,$divceWidth);
                             transform: translateY(0px);
                             & + li {
-                                margin-top: get-vw(14px,$divceWidth);
+                                margin-top: get-vw(12px,$divceWidth);
                             }
                             .gauge {
                                 .bar {

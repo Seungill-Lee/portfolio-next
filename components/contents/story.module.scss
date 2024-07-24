@@ -158,7 +158,7 @@ section#story {
     /* Story */
     section#story {
         .story_cont {
-            padding: get-vw(60px,$divceWidth) get-vw(50px,$divceWidth);
+            padding: get-vw(50px,$divceWidth);
             .sc_inner {
                 font-size: get-vw(26px,$divceWidth);
                 p {
@@ -176,9 +176,9 @@ section#story {
         /* Story */
         section#story {
             .story_cont {
-                padding: get-vw(60px,$divceWidth) get-vw(50px,$divceWidth);
+                padding: get-vw(40px,$divceWidth);
                 .sc_inner {
-                    font-size: get-vw(26px,$divceWidth);
+                    font-size: get-vw(24px,$divceWidth);
                     p {
                         transform: translateY(get-vw(20px,$divceWidth));
                     }
