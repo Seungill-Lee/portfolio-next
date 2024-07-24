@@ -443,7 +443,7 @@ section#about {
                                 margin-top: get-vw(12px,$divceWidth);
                             }
                             &:before {
-                                top: get-vw(11px,$divceWidth);
+                                top: get-vw(10px,$divceWidth);
                                 width: get-vw(6px,$divceWidth);
                                 height: get-vw(6px,$divceWidth);
                             }
@@ -465,7 +465,7 @@ section#about {
                             gap: 0px get-vw(8px,$divceWidth);
                             transform: translateY(0px);
                             & + li {
-                                margin-top: get-vw(20px,$divceWidth);
+                                margin-top: get-vw(14px,$divceWidth);
                             }
                             .gauge {
                                 .bar {

@@ -479,7 +479,7 @@ section#portfolio {
                                     &.participation {
                                         .gauge {
                                             .bar {
-                                                padding: get-vw(8px,$divceWidth) get-vw(12px,$divceWidth) get-vw(10px,$divceWidth);
+                                                padding: get-vw(8px,$divceWidth) get-vw(12px,$divceWidth) get-vw(9px,$divceWidth);
                                                 font-size: get-vw(16px,$divceWidth);
                                             }
                                         }
@@ -511,7 +511,7 @@ section#portfolio {
                     }
                     .project_info {
                         h3 {
-                            font-size: get-vw(24px,$divceWidth);
+                            font-size: get-vw(25px,$divceWidth);
                             margin: get-vw(18px,$divceWidth) 0px 0px 0px;
                             a {
                                 &:hover {
@@ -528,13 +528,13 @@ section#portfolio {
                                         padding: get-vw(12px,$divceWidth) 0px get-vw(14px,$divceWidth);
                                     }
                                     th {
-                                        width: get-vw(100px,$divceWidth);
+                                        width: get-vw(90px,$divceWidth);
                                     }
                                     td {
                                         &.participation {
                                             .gauge {
                                                 .bar {
-                                                    padding: get-vw(8px,$divceWidth) get-vw(12px,$divceWidth) get-vw(10px,$divceWidth);
+                                                    padding: get-vw(8px,$divceWidth) get-vw(11px,$divceWidth) get-vw(9px,$divceWidth);
                                                     font-size: get-vw(16px,$divceWidth);
                                                 }
                                             }
