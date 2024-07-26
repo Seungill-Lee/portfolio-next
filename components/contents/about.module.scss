@@ -31,22 +31,12 @@ section#about {
         }
         h3 {
             margin-bottom: get-vw(26px,$divceWidth);
-            // transform: translateY(get-vw(20px,$divceWidth));
-            // opacity: 0;
-            // transition: 0.3s ease transform, 0.3s ease opacity;
-        }
-        &.on h3 {
-            transform: translateY(0px);
-            opacity: 1;
         }
         &.profile {
             ul {
                 li {
                     position: relative;
                     padding-left: get-vw(18px,$divceWidth);
-                    // transform: translateY(get-vw(10px,$divceWidth));
-                    // opacity: 0;
-                    // transition: 0.3s ease transform, 0.3s ease opacity;
                     & + li {
                         margin-top: get-vw(14px,$divceWidth);
                     }
@@ -63,19 +53,8 @@ section#about {
                 }
             }
         }
-        // &.on.profile {
-        //     ul {
-        //         li {
-        //             transform: translateY(0px);
-        //             opacity: 1;
-        //         }
-        //     }
-        // }
         &.intro {
             p {
-                // transform: translateY(get-vw(20px,$divceWidth));
-                // opacity: 0;
-                // transition: 0.3s ease 0.15s transform, 0.3s ease 0.15s opacity;
                 & + p {
                     margin-top: get-vw(24px,$divceWidth);
                 }
@@ -88,9 +67,6 @@ section#about {
                     grid-template-columns: get-vw(150px,$divceWidth) get-vw(800px,$divceWidth);
                     align-items: center;
                     gap: 0px get-vw(12px,$divceWidth);
-                    // transform: translateY(get-vw(10px,$divceWidth));
-                    // opacity: 0;
-                    // transition: 0.3s ease transform, 0.3s ease opacity;
                     & + li {
                         margin-top: get-vw(20px,$divceWidth);
                     }
@@ -102,13 +78,13 @@ section#about {
                     .gauge {
                         overflow: hidden;
                         .bar {
-                            padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(9px,$divceWidth);
-                            box-sizing: border-box;
+                            padding: get-vw(7px,$divceWidth) 0px get-vw(9px,$divceWidth);
+                            text-indent: get-vw(16px,$divceWidth);
                             color: white;
                             border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                             background-color: crimson;
-                            // transform: translateX(-100%);
-                            // transition: 0.3s ease transform;
+                            transition: 0.3s ease-in width;
+                            overflow: hidden;
                             &.react {
                                 color: #61DAFB;
                                 background-color: rgb(23,23,23);
@@ -117,15 +93,13 @@ section#about {
                     }
                 }
             }
-        }
-        &.on.skill {
-            ul {
-                li {
-                    transform: translateY(0px);
-                    opacity: 1;
-                    .gauge {
-                        .bar {
-                            transform: translateX(0%);
+            &.on {
+                ul {
+                    li {
+                        .gauge {
+                            .bar {
+                                transition: 0.3s ease-out width;
+                            }
                         }
                     }
                 }
@@ -149,13 +123,11 @@ section#about {
                 margin-top: get-vw(64px,$divceWidth);
             }
             h3 {
-                margin-bottom: get-vw(24px,$divceWidth);
-                transform: translateY(get-vw(20px,$divceWidth));
+                margin-bottom: get-vw(26px,$divceWidth);
             }
             &.profile {
                 ul {
                     li {
-                        // transform: translateY(get-vw(10px,$divceWidth));
                         & + li {
                             margin-top: get-vw(14px,$divceWidth);
                         }
@@ -175,13 +147,13 @@ section#about {
                     li {
                         grid-template-columns: get-vw(150px,$divceWidth) get-vw(800px,$divceWidth);
                         gap: 0px 12px;
-                        // transform: translateY(get-vw(10px,$divceWidth));
                         & + li {
                             margin-top: get-vw(20px,$divceWidth);
                         }
                         .gauge {
                             .bar {
-                                padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(9px,$divceWidth);
+                                padding: get-vw(7px,$divceWidth) 0px get-vw(9px,$divceWidth);
+                                text-indent: get-vw(16px,$divceWidth);
                                 border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                             }
                         }
@@ -213,8 +185,6 @@ section#about {
             }
             h3 {
                 margin-bottom: get-vw(30px,$divceWidth);
-                transform: translateY(0px);
-                opacity: 1;
             }
             &.profile {
                 ul {
@@ -257,7 +227,8 @@ section#about {
                         }
                         .gauge {
                             .bar {
-                                padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(10px,$divceWidth);
+                                padding: get-vw(7px,$divceWidth) 0px get-vw(10px,$divceWidth);
+                                text-indent: get-vw(16px,$divceWidth);
                                 border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                             }
                         }
@@ -283,8 +254,6 @@ section#about {
                 }
                 h3 {
                     margin-bottom: get-vw(30px,$divceWidth);
-                    transform: translateY(0px);
-                    opacity: 1;
                 }
                 &.profile {
                     ul {
@@ -327,7 +296,8 @@ section#about {
                             }
                             .gauge {
                                 .bar {
-                                    padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(10px,$divceWidth);
+                                    padding: get-vw(7px,$divceWidth) 0px get-vw(10px,$divceWidth);
+                                    text-indent: get-vw(16px,$divceWidth);
                                     border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                                 }
                             }
@@ -403,7 +373,8 @@ section#about {
                         }
                         .gauge {
                             .bar {
-                                padding: get-vw(7px,$divceWidth) get-vw(16px,$divceWidth) get-vw(10px,$divceWidth);
+                                padding: get-vw(7px,$divceWidth) 0px get-vw(10px,$divceWidth);
+                                text-indent: get-vw(16px,$divceWidth);
                                 border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                             }
                         }
@@ -469,7 +440,8 @@ section#about {
                             }
                             .gauge {
                                 .bar {
-                                    padding: get-vw(7px,$divceWidth) get-vw(12px,$divceWidth) get-vw(9px,$divceWidth);
+                                    padding: get-vw(7px,$divceWidth) 0px get-vw(9px,$divceWidth);
+                                    text-indent: get-vw(12px,$divceWidth);
                                     border-radius: 0px get-vw(10px,$divceWidth) get-vw(10px,$divceWidth) 0px;
                                 }
                             }

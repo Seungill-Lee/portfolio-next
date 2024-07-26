@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import scss from "./portfolio.module.scss";
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { InView } from "react-intersection-observer";
 import data from "../data.json";
 
-export default function Portfolio(props) {
-    const slideLoading = props.slideLoadingIs
+export default function Portfolio() {
     const pathname = usePathname();
     const [onPf,setOnPf] = useState(0);
     const [activePf,setActiviePf] = useState(0);
@@ -41,8 +40,14 @@ export default function Portfolio(props) {
         window.addEventListener("resize",function() {
             setPfsMoveTop(window.getComputedStyle(pfSummary).getPropertyValue("--pfs-move-top"))
         })
-        
-    },[slideLoading,pathname]);
+
+        if(pathname != "/portfolio") {
+            portfolio.scrollTop = 0
+            setOnPf(0)
+            setActiviePf(0)
+            setPfYears(data["portfolio"][0].year)
+        }
+    },[pathname]);
 
     return(
         <section id={scss.portfolio} className={scss.content} ref={portfolioRef}>
@@ -131,6 +136,7 @@ export default function Portfolio(props) {
                         <div className={scss.pf_dist} key={k}></div>
                     )
                 })}
+                <div className={scss.pf_dist}></div>
                 <div className={scss.pf_dist}></div>
             </div>
         </section>

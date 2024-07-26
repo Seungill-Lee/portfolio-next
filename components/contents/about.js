@@ -1,9 +1,67 @@
 import Image from 'next/image';
 import scss from "./about.module.scss";
+import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
+import { useInView } from "react-intersection-observer";
+import CountUp from 'react-countup';
 
 export default function About() {
+    const pathname = usePathname();
+    const aboutRef = useRef();
+    const skillData = [
+        {
+            "name": "Photoshop",
+            "ability": 50
+        },
+        {
+            "name": "Figma",
+            "ability": 25
+        },
+        {
+            "name": "HTML&CSS",
+            "ability": 95
+        },
+        {
+            "name": "DOM Script<br />(ES5~ES6)",
+            "ability": 80
+        },
+        {
+            "name": "jQuery",
+            "ability": 90
+        },
+        {
+            "name": "Gulp.js",
+            "ability": 35
+        },
+        {
+            "name": "SVN&Git",
+            "ability": 70
+        },
+        {
+            "name": "Wordpress",
+            "ability": 30
+        },
+        {
+            "name": "React<br />Next.js",
+            "ability": 40
+        }
+    ]
+
+    useEffect(() => {
+        const about = aboutRef.current;
+
+        if(pathname != "/about") {
+            about.scrollTop = 0
+        }
+    },[pathname]);
+
+    const { ref:aboutSkillRef, inView } = useInView({
+        /* Optional options */
+        threshold: 0.5 ,
+    });
+
     return(
-        <section id={scss.about}>
+        <section id={scss.about} ref={aboutRef}>
             <h2>About</h2>
             <div className={scss.about_photo}>
                 <Image src="/images/photo_me.jpg" alt="" width={1100} height={1100} />
@@ -57,63 +115,20 @@ export default function About() {
                     </p>
                 </div>
             </div>
-            <div className={`${scss.skill} ${scss.about_cont}`}>
+            <div className={`${scss.skill} ${scss.about_cont} ${inView == true ? scss.on : ""}`} ref={aboutSkillRef}>
                 <h3>업무스킬</h3>
                 <ul>
-                    <li>
-                        <div className={scss.cateogry}>Photoshop</div>
-                        <div className={scss.gauge}>
-                            <div className={scss.bar} style={{"width":"50%"}}>50%</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={scss.cateogry}>Figma</div>
-                        <div className={scss.gauge}>
-                            <div className={scss.bar} style={{"width":"25%"}}>25%</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={scss.cateogry}>HTML&amp;CSS</div>
-                        <div className={scss.gauge}>
-                            <div className={scss.bar} style={{"width":"95%"}}>95%</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={scss.cateogry}>DOM Script<br />(ES5~ES6)</div>
-                        <div className={scss.gauge}>
-                            <div className={scss.bar} style={{"width":"80%"}}>80%</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={scss.cateogry}>jQuery</div>
-                        <div className={scss.gauge}>
-                            <div className={scss.bar} style={{"width":"90%"}}>90%</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={scss.cateogry}>Gulp.js</div>
-                        <div className={scss.gauge}>
-                            <div className={scss.bar} style={{"width":"35%"}}>35%</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={scss.cateogry}>SVN&amp;Git</div>
-                        <div className={scss.gauge}>
-                            <div className={scss.bar} style={{"width":"70%"}}>70%</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={scss.cateogry}>Wordpress</div>
-                        <div className={scss.gauge}>
-                            <div className={scss.bar} style={{"width":"30%"}}>30%</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className={scss.cateogry}>React<br />Next.js</div>
-                        <div className={scss.gauge}>
-                            <div className={`${scss.bar} ${scss.react}`} style={{"width":"40%"}}>40%</div>
-                        </div>
-                    </li>
+                    {skillData.map((skill,s) => {
+                        return(
+                            <li key={s}>
+                                <div className={scss.cateogry} dangerouslySetInnerHTML={{ __html: skill.name}} />
+                                <div className={scss.gauge}>
+                                    <div className={`${scss.bar} ${skill.name.indexOf("React") > -1 ? scss.react : ""}`} style={inView ? {"width":skill.ability+"%","transition-delay":`${0.1*s}s`} : {"width":"0%"}}>{inView ? <CountUp duration={1} delay={(0.1*s)+0.1} start={0} end={skill.ability} /> : 0}%</div>
+                                </div>
+                            </li>
+                        )
+                    })}
+                    
                 </ul>
             </div>
         </section>

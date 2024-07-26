@@ -60,6 +60,12 @@ export default function Intro() {
                         btnGNBNavi.current.classList.remove(scss["reverse"]);
                     }
                 }
+            },
+            breakpointsInverse: true,
+            breakpoints: {
+                1370: {
+                    allowTouchMove: false
+                }
             }
         }
 
