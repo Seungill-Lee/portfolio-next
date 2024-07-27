@@ -5,6 +5,7 @@ import scss from "./story.module.scss";
 import { register } from 'swiper/element/bundle';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import ScrollDownIcon from '../icons/scrollDownIcon';
 
 register()
 
@@ -37,7 +38,12 @@ export default function Story(props) {
         <section id={scss.story}>
             <swiper-container class="story_slide" init={false}>
                 <swiper-slide>
-                    <h2>Story</h2>
+                    <div className={`${scss.story_intro}`}>
+                        <h2>Story</h2>
+                        <div className={scss.scrolldown_guide}>
+                            <ScrollDownIcon className={scss.ico_scrolldown} />
+                        </div>
+                    </div>
                 </swiper-slide>
                 <swiper-slide>
                     <div className={`${scss.story_cont} ${scss.sc1}`}>

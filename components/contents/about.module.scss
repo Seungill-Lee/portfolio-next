@@ -14,9 +14,9 @@ section#about {
     }
     .about_photo {
         position: fixed;
-        top: get-vw(230px,$divceWidth);
+        top: get-vw(220px,$divceWidth);
         right: get-vw(212px,$divceWidth);
-        width: get-vw(400px,$divceWidth);
+        width: get-vw(420px,$divceWidth);
         background-color: green;
         img {
             width: 100%;
@@ -74,6 +74,7 @@ section#about {
                         font-weight: 500;
                         position: relative;
                         top: -1px;
+                        line-height: 140%;
                     }
                     .gauge {
                         overflow: hidden;
@@ -114,9 +115,9 @@ section#about {
 
     section#about {
         .about_photo {
-            top: get-vw(180px,$divceWidth);
+            top: get-vw(200px,$divceWidth);
             right: get-vw(172px,$divceWidth);
-            width: get-vw(380px,$divceWidth);
+            width: get-vw(360px,$divceWidth);
         }
         .about_cont {
             & + .about_cont {

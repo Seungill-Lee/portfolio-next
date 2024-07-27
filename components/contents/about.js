@@ -11,7 +11,7 @@ export default function About() {
     const skillData = [
         {
             "name": "Photoshop",
-            "ability": 50
+            "ability": 40
         },
         {
             "name": "Figma",
@@ -31,19 +31,19 @@ export default function About() {
         },
         {
             "name": "Gulp.js",
-            "ability": 35
-        },
-        {
-            "name": "SVN&Git",
-            "ability": 70
-        },
-        {
-            "name": "Wordpress",
             "ability": 30
         },
         {
+            "name": "SVN&Git",
+            "ability": 75
+        },
+        {
+            "name": "Wordpress",
+            "ability": 60
+        },
+        {
             "name": "React<br />Next.js",
-            "ability": 40
+            "ability": 45
         }
     ]
 
