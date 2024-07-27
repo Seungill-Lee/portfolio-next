@@ -46,8 +46,8 @@ section#about {
                         position: absolute;
                         top: get-vw(12px,$divceWidth);
                         left: 0px;
-                        width: get-vw(8px,$divceWidth);
-                        height: get-vw(8px,$divceWidth);
+                        width: get-vw(7px,$divceWidth);
+                        height: get-vw(7px,$divceWidth);
                         background-color: brown;
                     }
                 }
@@ -129,8 +129,14 @@ section#about {
             &.profile {
                 ul {
                     li {
+                        padding-left: get-vw(14px,$divceWidth);
                         & + li {
                             margin-top: get-vw(14px,$divceWidth);
+                        }
+                        &:before {
+                            top: get-vw(10px,$divceWidth);
+                            width: get-vw(5px,$divceWidth);
+                            height: get-vw(5px,$divceWidth);
                         }
                     }
                 }
@@ -337,7 +343,7 @@ section#about {
                 ul {
                     li {
                         opacity: 1;
-                        padding-left: get-vw(12px,$divceWidth);
+                        padding-left: get-vw(15px,$divceWidth);
                         transform: translateY(0px);
                         & + li {
                             margin-top: get-vw(14px,$divceWidth);
@@ -410,7 +416,7 @@ section#about {
                 &.profile {
                     ul {
                         li {
-                            padding-left: get-vw(12px,$divceWidth);
+                            padding-left: get-vw(13px,$divceWidth);
                             & + li {
                                 margin-top: get-vw(13px,$divceWidth);
                             }
