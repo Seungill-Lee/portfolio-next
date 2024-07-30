@@ -11,7 +11,7 @@ export default function About() {
     const skillData = [
         {
             "name": "Photoshop",
-            "ability": 40
+            "ability": 35
         },
         {
             "name": "Figma",
@@ -43,7 +43,7 @@ export default function About() {
         },
         {
             "name": "React<br />Next.js",
-            "ability": 45
+            "ability": 40
         }
     ]
 
