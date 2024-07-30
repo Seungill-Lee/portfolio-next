@@ -9,7 +9,7 @@ export const metadata = {
     author : [{ name: "이승일 Seungill Lee" }],
     generator : "Next.js",
     description: "웹퍼블리셔 승일이의 포트폴리오(Seungill's Portfolio) 페이지에 오신것을 환영합니다.",
-    keywords: ["포트폴리오, Portfolio, 웹퍼블리싱, UI, 웹표준, 웹접근성, HTML, CSS, Javascript, jQuery, Gulp, Github, Wordpress, EmailJS, 승일, 이승일, Seungill, Lee"],
+    keywords: ["포트폴리오, Portfolio, 웹퍼블리싱, UI, 웹표준, 웹접근성, HTML, CSS, Javascript, jQuery, Gulp, Github, Wordpress, React, Next.js, 승일, 이승일, Seungill, Lee"],
     referrer: "origin-when-cross-origin",
     formatDetection: {
         email: false,
@@ -39,7 +39,7 @@ export const metadata = {
         siteName: '웹퍼블리셔 승일이의 포트폴리오',
         images: [
             {
-                url: process.env.SITE_URL+'/images/photo_og_nextslam.jpg',
+                url: process.env.SITE_URL+'/images/photo_og_portfolio.jpg',
                 width: 1200,
                 height: 630,
             },
