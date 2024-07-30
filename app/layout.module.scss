@@ -1,56 +1,26 @@
+$vh: var(--vh);
 @import "/app/variables";
 @import "/app/vwvh";
 @import "/app/mixin";
 
 $divceWidth: $QuadHDMax;
 
-/* Footer */
-footer#footer {
-    padding: get-vw(40px,$divceWidth) get-vw(50px,$divceWidth) get-vw(38px,$divceWidth);
-    background-color: #333333;
-    p.copyright {
-        color: white;
-        font-family: 'Alkatra';
-        a {
-            color: orange;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+
+/* Full HD */
+@include FullHD {
+    $divceWidth: $FullHDMax;
+    
 }
 
 /* Tablet */
 @include Tablet {
     $divceWidth: $TabletMax;
 
-    /* Footer */
-    footer#footer {
-        padding: get-vw(40px,$divceWidth) get-vw(40px,$divceWidth) get-vw(38px,$divceWidth);
-    }
-
-    /* 세로 모드 */
-    @media screen and (orientation: portrait) {
-        $divceHeight: $TabletMin;
-
-        /* Footer */
-        footer#footer {
-            padding: get-vh(38px,$divceHeight) get-vh(40px,$divceHeight) get-vh(36px,$divceHeight);
-        }
-    }
 }
 
 
 /* Mobile */
 @include Mobile {
+    $divceWidth: $MobileMax;
 
-    /* 세로모드 */
-	@media screen and (orientation: portrait) {
-		$divceHeight: $MobileMax;
-
-        /* Footer */
-        footer#footer {
-            padding: get-vh(30px,$divceHeight) get-vh(30px,$divceHeight) get-vh(28px,$divceHeight);
-        }
-	}
 }

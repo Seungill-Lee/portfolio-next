@@ -5,5 +5,5 @@
 
 @function get-vh($target,$deviceH) {
     $vh-context: ($deviceH * 0.01);
-    @return calc($target / $vh-context) * 1vh;
+    @return calc(($target / $vh-context) * var(--vh));
 }

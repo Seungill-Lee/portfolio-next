@@ -1,3 +1,4 @@
+$vh: var(--vh);
 @import "/app/variables";
 @import "/app/vwvh";
 @import "/app/mixin";
@@ -157,7 +158,7 @@ main#container {
     .scroll_content {
         section {
             position: relative;
-            height: 100vh;
+            height: calc(100 * $vh);
             padding: get-vw(220px,$divceWidth) get-vw(200px,$divceWidth) get-vw(100px,$divceWidth);
             box-sizing: border-box;
             overflow-x: hidden;

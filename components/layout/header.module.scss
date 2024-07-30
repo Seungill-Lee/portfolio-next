@@ -1,3 +1,4 @@
+$vh: var(--vh);
 @import "/app/variables";
 @import "/app/vwvh";
 @import "/app/mixin";
@@ -11,6 +12,7 @@ header#header {
     z-index: 12;
     width: 100%;
     height: 100vh;
+    max-height: calc(100 * $vh);
     overflow: hidden;
     opacity: 1;
     h1 {
@@ -105,7 +107,7 @@ header#header {
     /* Header */
     header#header {
         .btn_enter {
-            top: calc(50% + 9vh);
+            top: calc(50% + (9 * $vh));
             button {
                 padding: get-vw(15px,$divceWidth) get-vw(20px,$divceWidth) get-vw(16px,$divceWidth);
                 font-size: get-vw(30px,$divceWidth);
@@ -120,7 +122,7 @@ header#header {
         /* Header */
         header#header {
             .btn_enter {
-                top: calc(50% + 8vh);
+                top: calc(50% + (8 * $vh));
                 button {
                     padding: get-vh(15px,$divceHeight) get-vh(18px,$divceHeight) get-vh(16px,$divceHeight);
                     font-size: get-vh(30px,$divceHeight);
@@ -138,7 +140,7 @@ header#header {
     /* Header */
     header#header {
         .btn_enter {
-            top: calc(50% + 10vh);
+            top: calc(50% + (10 * $vh));
             button {
                 padding: get-vw(10px,$divceWidth) get-vw(14px,$divceWidth) get-vw(11px,$divceWidth);
                 font-size: get-vw(24px,$divceWidth);
@@ -153,7 +155,7 @@ header#header {
         /* Header */
         header#header {
             .btn_enter {
-                top: calc(50% + 7vh);
+                top: calc(50% + (7 * $vh));
                 button {
                     padding: get-vh(18px,$divceHeight) get-vh(20px,$divceHeight) get-vh(19px,$divceHeight);
                     font-size: get-vh(36px,$divceHeight);

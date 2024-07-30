@@ -73,12 +73,6 @@ export default function RootLayout({ children }) {
         <html lang="ko" className={`${alkatra.variable} ${noto_sans_kr.variable}`}>
             <body>
                 {children}
-                <footer id={scss.footer}>
-                    <p className={scss.copyright}>
-                        Copyrightⓒ 2024 <a href="mailto:ever9415@nate.com">Seungill Lee</a>. All right reserved. <br />
-                        Powered by <a href="https://github.com/" target="_blank" title="새 창으로 열림">Github</a> and <a href="https://gulpjs.com/" target="_blank" title="새 창으로 열림">Gulp.js.</a> 
-                    </p>
-                </footer>
             </body>
         </html>
     );

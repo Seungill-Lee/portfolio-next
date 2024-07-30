@@ -1,3 +1,4 @@
+$vh: var(--vh);
 @import "/app/variables";
 @import "/app/vwvh";
 @import "/app/mixin";
@@ -19,7 +20,7 @@ section#story {
             align-items: center;
             justify-content: center;
             width: 100%;
-            height: 100vh;
+            height: calc(100 * $vh);
             color: white;
         }
         .scrolldown_guide {
@@ -40,7 +41,7 @@ section#story {
         display: flex;
         align-items: center;
         width: 100%;
-        height: 100vh;
+        height: calc(100 * $vh);
         box-sizing: border-box;
         padding: get-vw(100px,$divceWidth) get-vw(200px,$divceWidth);
         background-repeat: no-repeat;

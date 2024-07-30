@@ -1,3 +1,4 @@
+$vh: var(--vh);
 @import "/app/variables";
 @import "/app/vwvh";
 @import "/app/mixin";
@@ -192,7 +193,7 @@ section#portfolio {
         .pf_dist {
             position: relative;
             z-index: 2;
-            height: 33.33vh;
+            height: calc(33.33 * $vh);
         }
     }
 }

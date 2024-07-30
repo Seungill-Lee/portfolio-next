@@ -29,8 +29,15 @@ export default function Intro() {
     const pathname = usePathname();
 
     useEffect(() => {
+        const setVh = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+        window.addEventListener('resize', setVh);
+        setVh();
+
         const swiperPages = document.querySelector('swiper-container.intro_slide')
-        swiperPages.style.height = "100vh"
+        swiperPages.style.height = "calc(100 * var(--vh))"
         const params = {
             slidesPerView: 1,
             history: {
