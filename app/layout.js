@@ -37,13 +37,13 @@ export const metadata = {
         description: "웹퍼블리셔 승일이의 포트폴리오(Seungill's Portfolio) 페이지에 오신것을 환영합니다.",
         url: process.env.SITE_URL,
         siteName: '웹퍼블리셔 승일이의 포트폴리오',
-        // images: [
-        //     {
-        //         url: process.env.SITE_URL+'/images/photo_og_nextslam.jpg',
-        //         width: 1200,
-        //         height: 630,
-        //     },
-        // ],
+        images: [
+            {
+                url: process.env.SITE_URL+'/images/photo_og_nextslam.jpg',
+                width: 1200,
+                height: 630,
+            },
+        ],
         locale: 'ko_KR',
         type: 'website',
     }

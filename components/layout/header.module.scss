@@ -54,7 +54,7 @@ header#header {
             visibility: visible;
             padding: get-vw(15px,$divceWidth) get-vw(20px,$divceWidth) get-vw(16px,$divceWidth);
             font-size: get-vw(32px,$divceWidth);
-            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-family: 'Consolas', var(--noto-sans-mono), sans-serif;
             letter-spacing: get-vw(-1px,$divceWidth);
             line-height: 1;
             color: white;

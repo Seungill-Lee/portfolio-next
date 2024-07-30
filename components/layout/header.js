@@ -1,8 +1,15 @@
 "use client"
 
 import scss from './header.module.scss'
+import { Noto_Sans_Mono } from "next/font/google";
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation"
+
+export const noto_sans_mono = Noto_Sans_Mono({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--noto-sans-mono',
+})
 
 export default function Header(props) {
     const pathname = usePathname();
@@ -28,7 +35,7 @@ export default function Header(props) {
     //console.log(pathname)
 
     return(
-        <header id={scss.header} className={slideLoading ? scss["on"] : ""}>
+        <header id={scss.header} className={`${slideLoading ? scss["on"] : ""} ${noto_sans_mono.variable}`}>
             <h1 className="hidden_cont">Seungill&apos;s Portfolio</h1>
             <p className={`${scss.intro} hidden_cont`}>Welcome to my portfolio page.</p>
             <div className={scss.btn_enter}>
