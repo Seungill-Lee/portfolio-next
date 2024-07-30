@@ -235,14 +235,14 @@ section#contact_us {
             fieldset {
                 gap: get-vw(20px,$divceWidth);
                 .field {
-                    height: get-vw(70px,$divceWidth);
+                    height: get-vw(64px,$divceWidth);
                     &.message {
-                        height: get-vw(400px,$divceWidth);
+                        height: get-vw(320px,$divceWidth);
                     }
                     label {
                         padding: 0px get-vw(22px,$divceWidth);
                         font-size: get-vw(22px,$divceWidth);
-                        line-height: get-vw(68px,$divceWidth);
+                        line-height: get-vw(62px,$divceWidth);
                         &:has(+ *:focus),
                         &:has(+ *:valid) {
                             top: get-vw(-9px,$divceWidth);
@@ -257,7 +257,7 @@ section#contact_us {
                     }
                     input {
                         padding: 0px get-vw(22px,$divceWidth);
-                        line-height: get-vw(68px,$divceWidth);
+                        line-height: get-vw(62px,$divceWidth);
                     }
                     textarea {
                         padding: get-vw(14px,$divceWidth) get-vw(22px,$divceWidth);
@@ -265,8 +265,8 @@ section#contact_us {
                 }
                 .btn_send {
                     button {
-                        padding: get-vw(3px,$divceWidth) get-vw(50px,$divceWidth) 0px;
-                        height: get-vw(70px,$divceWidth);
+                        padding: get-vw(3px,$divceWidth) get-vw(42px,$divceWidth) 0px;
+                        height: get-vw(64px,$divceWidth);
                         font-size: get-vw(22px,$divceWidth);
                     }
                 }
@@ -286,8 +286,8 @@ section#contact_us {
                 }
                 .btn_set {
                     button {
-                        padding: get-vw(3px,$divceWidth) get-vw(50px,$divceWidth) 0px;
-                        height: get-vw(70px,$divceWidth);
+                        padding: get-vw(3px,$divceWidth) get-vw(42px,$divceWidth) 0px;
+                        height: get-vw(64px,$divceWidth);
                         font-size: get-vw(22px,$divceWidth);
                     }
                 }
@@ -305,14 +305,14 @@ section#contact_us {
                     gap: get-vh(20px,$divceHeight);
                     .field {
                         grid-column: 1 / span 2;
-                        height: get-vh(70px,$divceHeight);
+                        height: get-vh(64px,$divceHeight);
                         &.message {
-                            height: get-vh(700px,$divceHeight);
+                            height: get-vh(680px,$divceHeight);
                         }
                         label {
                             padding: 0px get-vh(22px,$divceHeight);
                             font-size: get-vh(22px,$divceHeight);
-                            line-height: get-vh(68px,$divceHeight);
+                            line-height: get-vh(62px,$divceHeight);
                             &:has(+ *:focus),
                             &:has(+ *:valid) {
                                 top: get-vh(-9px,$divceHeight);
@@ -327,7 +327,7 @@ section#contact_us {
                         }
                         input {
                             padding: 0px get-vh(22px,$divceHeight);
-                            line-height: get-vh(68px,$divceHeight);
+                            line-height: get-vh(62px,$divceHeight);
                         }
                         textarea {
                             padding: get-vh(17px,$divceHeight) get-vh(22px,$divceHeight);
@@ -335,8 +335,8 @@ section#contact_us {
                     }
                     .btn_send {
                         button {
-                            padding: get-vh(2px,$divceHeight) get-vh(50px,$divceHeight) 0px;
-                            height: get-vh(70px,$divceHeight);
+                            padding: get-vh(2px,$divceHeight) get-vh(42px,$divceHeight) 0px;
+                            height: get-vh(64px,$divceHeight);
                             font-size: get-vh(22px,$divceHeight);
                         }
                     }
@@ -376,14 +376,14 @@ section#contact_us {
             fieldset {
                 gap: get-vw(12px,$divceWidth);
                 .field {
-                    height: get-vw(48px,$divceWidth);
+                    height: get-vw(54px,$divceWidth);
                     &.message {
                         height: get-vw(240px,$divceWidth);
                     }
                     label {
                         padding: 0px get-vw(14px,$divceWidth);
                         font-size: get-vw(18px,$divceWidth);
-                        line-height: get-vw(48px,$divceWidth);
+                        line-height: get-vw(52px,$divceWidth);
                         &:has(+ *:focus),
                         &:has(+ *:valid) {
                             top: get-vw(-8px,$divceWidth);
@@ -398,7 +398,7 @@ section#contact_us {
                     }
                     input {
                         padding: 0px get-vw(14px,$divceWidth);
-                        line-height: get-vw(46px,$divceWidth);
+                        line-height: get-vw(52px,$divceWidth);
                     }
                     textarea {
                         padding: get-vw(10px,$divceWidth) get-vw(14px,$divceWidth);
@@ -407,7 +407,7 @@ section#contact_us {
                 .btn_send {
                     button {
                         padding: get-vw(3px,$divceWidth) get-vw(30px,$divceWidth) 0px;
-                        height: get-vw(48px,$divceWidth);
+                        height: get-vw(54px,$divceWidth);
                         font-size: get-vw(18px,$divceWidth);
                     }
                 }
@@ -444,16 +444,16 @@ section#contact_us {
         section#contact_us {
             form.sendmail_form {
                 fieldset {
-                    gap: get-vh(14px,$divceHeight);
+                    gap: get-vh(12px,$divceHeight);
                     .field {
-                        height: get-vh(60px,$divceHeight);
+                        height: get-vh(54px,$divceHeight);
                         &.message {
-                            height: get-vh(400px,$divceHeight);
+                            height: get-vh(350px,$divceHeight);
                         }
                         label {
                             padding: 0px get-vh(16px,$divceHeight);
                             font-size: get-vh(18px,$divceHeight);
-                            line-height: get-vh(60px,$divceHeight);
+                            line-height: get-vh(52px,$divceHeight);
                             &:has(+ *:focus),
                             &:has(+ *:valid) {
                                 top: get-vh(-9px,$divceHeight);
@@ -468,7 +468,7 @@ section#contact_us {
                         }
                         input {
                             padding: 0px get-vh(16px,$divceHeight);
-                            line-height: get-vh(58px,$divceHeight);
+                            line-height: get-vh(52px,$divceHeight);
                         }
                         textarea {
                             padding: get-vh(12px,$divceHeight) get-vh(16px,$divceHeight);
@@ -477,7 +477,7 @@ section#contact_us {
                     .btn_send {
                         button {
                             padding: get-vh(2px,$divceHeight) get-vh(30px,$divceHeight) 0px;
-                            height: get-vh(60px,$divceHeight);
+                            height: get-vh(54px,$divceHeight);
                             font-size: get-vh(18px,$divceHeight);
                         }
                     }
@@ -498,7 +498,7 @@ section#contact_us {
                     .btn_set {
                         button {
                             padding: get-vh(2px,$divceHeight) get-vh(30px,$divceHeight) 0px;
-                            height: get-vh(60px,$divceHeight);
+                            height: get-vh(54px,$divceHeight);
                             font-size: get-vh(18px,$divceHeight);
                         }
                     }

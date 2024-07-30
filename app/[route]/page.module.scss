@@ -405,7 +405,7 @@ main#container {
     main#container {
         .scroll_content {
             section {
-                padding: get-vw(188px,$divceWidth) get-vw(100px,$divceWidth) get-vw(80px,$divceWidth);
+                padding: get-vw(188px,$divceWidth) get-vw(100px,$divceWidth);
                 &::-webkit-scrollbar {
                     width: get-vw(8px,$divceWidth); 
                 }
@@ -445,7 +445,7 @@ main#container {
                 a {
                     border-radius: get-vw(20px,$divceWidth);
                     height: get-vw(27px,$divceWidth);
-                    padding: 0px get-vw(12px,$divceWidth);
+                    padding: get-vw(1px,$divceWidth) get-vw(12px,$divceWidth) 0px;
                     line-height: get-vw(27px,$divceWidth);
                     font-size: get-vw(17px,$divceWidth);
                     &[part="bullet-active"] {
@@ -505,7 +505,7 @@ main#container {
         main#container {
             .scroll_content {
                 section {
-                    padding: get-vw(188px,$divceWidth) get-vw(100px,$divceWidth) get-vw(80px,$divceWidth);
+                    padding: get-vw(188px,$divceWidth) get-vw(100px,$divceWidth);
                     &::-webkit-scrollbar {
                         width: get-vw(8px,$divceWidth); 
                     }
@@ -549,7 +549,7 @@ main#container {
             a {
                 border-radius: get-vw(20px,$divceWidth);
                 height: get-vw(27px,$divceWidth);
-                padding: 0px get-vw(12px,$divceWidth);
+                padding: get-vw(1px,$divceWidth) get-vw(12px,$divceWidth) 0px;
                 line-height: get-vw(27px,$divceWidth);
                 font-size: get-vw(17px,$divceWidth);
                 &[part="bullet-active"] {
@@ -609,7 +609,7 @@ main#container {
     main#container {
         .scroll_content {
             section {
-                padding: get-vw(128px,$divceWidth) get-vw(50px,$divceWidth) get-vw(40px,$divceWidth);
+                padding: get-vw(128px,$divceWidth) get-vw(50px,$divceWidth);
                 &::-webkit-scrollbar {
                     width: get-vw(6px,$divceWidth); 
                 }
@@ -649,7 +649,7 @@ main#container {
                 a {
                     border-radius: get-vw(20px,$divceWidth);
                     height: get-vw(27px,$divceWidth);
-                    padding: 0px get-vw(12px,$divceWidth);
+                    padding: get-vw(1px,$divceWidth) get-vw(12px,$divceWidth) 0px;
                     line-height: get-vw(27px,$divceWidth);
                     font-size: get-vw(17px,$divceWidth);
                     &[part="bullet-active"] {
@@ -709,7 +709,7 @@ main#container {
         main#container {
             .scroll_content {
                 section {
-                    padding: get-vw(128px,$divceWidth) get-vw(40px,$divceWidth) get-vw(40px,$divceWidth);
+                    padding: get-vw(128px,$divceWidth) get-vw(40px,$divceWidth);
                     &::-webkit-scrollbar {
                         width: get-vw(6px,$divceWidth); 
                     }

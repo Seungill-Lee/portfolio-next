@@ -3,7 +3,6 @@
 @import "/app/mixin";
 
 $divceWidth: $QuadHDMax;
-$divceHeight: $QuadHDMin;
 
 /* Header */
 header#header {
@@ -47,20 +46,20 @@ header#header {
     .btn_enter {
         position: absolute;
         z-index: 11;
-        top: calc(50% + 120px);
+        top: calc(50% + get-vw(120px,$divceWidth));
         left: 0px;
         width: 100%;
         text-align: center;
         button {
             visibility: visible;
-            padding: 15px 20px 17px;
-            font-size: 32px;
+            padding: get-vw(15px,$divceWidth) get-vw(20px,$divceWidth) get-vw(16px,$divceWidth);
+            font-size: get-vw(32px,$divceWidth);
             font-family: 'Consolas', 'Courier New', Courier, monospace;
-            letter-spacing: -1px;
+            letter-spacing: get-vw(-1px,$divceWidth);
             line-height: 1;
             color: white;
             background-color: #333333;
-            border-radius: 16px;
+            border-radius: get-vw(16px,$divceWidth);
             opacity: 1;
             &:disabled {
                 visibility: hidden;
@@ -81,25 +80,85 @@ header#header {
     }
 }
 
-/* Mobile */
-@include Mobile {
+/* Full HD */
+@include FullHD {
+    $divceWidth: $FullHDMax;
+
     /* Header */
     header#header {
         .btn_enter {
-            top: calc(50% + 12vh);
+            top: calc(50% + get-vw(90px,$divceWidth));
             button {
-                padding: 10px 11px 10px;
-                font-size: 20px;
-                border-radius: 8px;
+                padding: get-vw(13px,$divceWidth) get-vw(18px,$divceWidth) get-vw(14px,$divceWidth);
+                font-size: get-vw(28px,$divceWidth);
+                letter-spacing: get-vw(-1px,$divceWidth);
+                border-radius: get-vw(14px,$divceWidth);
+            }
+        }
+    }
+}
+
+/* Tablet */
+@include Tablet {
+    $divceWidth: $TabletMax;
+
+    /* Header */
+    header#header {
+        .btn_enter {
+            top: calc(50% + 9vh);
+            button {
+                padding: get-vw(15px,$divceWidth) get-vw(20px,$divceWidth) get-vw(16px,$divceWidth);
+                font-size: get-vw(30px,$divceWidth);
+                border-radius: get-vw(14px,$divceWidth);
             }
         }
     }
 
     @media screen and (orientation: portrait) {
+        $divceHeight: $TabletMax;
+
         /* Header */
         header#header {
             .btn_enter {
                 top: calc(50% + 8vh);
+                button {
+                    padding: get-vh(15px,$divceHeight) get-vh(18px,$divceHeight) get-vh(16px,$divceHeight);
+                    font-size: get-vh(30px,$divceHeight);
+                    border-radius: get-vh(14px,$divceHeight);
+                }
+            }
+        }
+    }
+}
+
+/* Mobile */
+@include Mobile {
+    $divceWidth: $MobileMax;
+
+    /* Header */
+    header#header {
+        .btn_enter {
+            top: calc(50% + 10vh);
+            button {
+                padding: get-vw(10px,$divceWidth) get-vw(14px,$divceWidth) get-vw(11px,$divceWidth);
+                font-size: get-vw(24px,$divceWidth);
+                border-radius: get-vw(12px,$divceWidth);
+            }
+        }
+    }
+
+    @media screen and (orientation: portrait) {
+        $divceHeight: $TabletMax;
+
+        /* Header */
+        header#header {
+            .btn_enter {
+                top: calc(50% + 7vh);
+                button {
+                    padding: get-vh(18px,$divceHeight) get-vh(20px,$divceHeight) get-vh(19px,$divceHeight);
+                    font-size: get-vh(36px,$divceHeight);
+                    border-radius: get-vh(16px,$divceHeight);
+                }
             }
         }
     }
