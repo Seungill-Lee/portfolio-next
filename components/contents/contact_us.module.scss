@@ -83,7 +83,7 @@ section#contact_us {
                     padding: get-vw(2px,$divceWidth) get-vw(50px,$divceWidth) 0px;
                     height: get-vw(80px,$divceWidth);
                     font-size: get-vw(28px,$divceWidth);
-                    font-family: Alkatra;
+                    font-family: var(--alkatra);
                     line-height: 1;
                     color: lightgoldenrodyellow;
                     border: 1px solid gray;
@@ -131,7 +131,7 @@ section#contact_us {
                     padding: get-vw(2px,$divceWidth) get-vw(50px,$divceWidth) 0px;
                     height: get-vw(80px,$divceWidth);
                     font-size: get-vw(28px,$divceWidth);
-                    font-family: Alkatra;
+                    font-family: var(--alkatra);
                     line-height: 1;
                     color: lightgoldenrodyellow;
                     transition: 0.5s ease background-color;
