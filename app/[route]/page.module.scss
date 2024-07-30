@@ -286,7 +286,7 @@ main#container {
     main#container {
         .scroll_content {
             section {
-                padding: get-vw(200px,$divceWidth) get-vw(160px,$divceWidth) get-vw(80px,$divceWidth);
+                padding: get-vw(200px,$divceWidth) get-vw(160px,$divceWidth) get-vw(90px,$divceWidth);
                 &::-webkit-scrollbar {
                     width: get-vw(12px,$divceWidth); 
                 }
@@ -406,7 +406,7 @@ main#container {
     main#container {
         .scroll_content {
             section {
-                padding: get-vw(188px,$divceWidth) get-vw(100px,$divceWidth);
+                padding: get-vw(188px,$divceWidth) get-vw(100px,$divceWidth) get-vw(90px,$divceWidth);
                 &::-webkit-scrollbar {
                     width: get-vw(8px,$divceWidth); 
                 }
@@ -506,7 +506,7 @@ main#container {
         main#container {
             .scroll_content {
                 section {
-                    padding: get-vw(188px,$divceWidth) get-vw(100px,$divceWidth);
+                    padding: get-vw(188px,$divceWidth) get-vw(100px,$divceWidth) get-vw(90px,$divceWidth);
                     &::-webkit-scrollbar {
                         width: get-vw(8px,$divceWidth); 
                     }
@@ -610,7 +610,7 @@ main#container {
     main#container {
         .scroll_content {
             section {
-                padding: get-vw(128px,$divceWidth) get-vw(50px,$divceWidth);
+                padding: get-vw(128px,$divceWidth) get-vw(50px,$divceWidth) get-vw(50px,$divceWidth);
                 &::-webkit-scrollbar {
                     width: get-vw(6px,$divceWidth); 
                 }
@@ -710,7 +710,7 @@ main#container {
         main#container {
             .scroll_content {
                 section {
-                    padding: get-vw(128px,$divceWidth) get-vw(40px,$divceWidth);
+                    padding: get-vw(128px,$divceWidth) get-vw(40px,$divceWidth) get-vw(50px,$divceWidth);
                     &::-webkit-scrollbar {
                         width: get-vw(6px,$divceWidth); 
                     }

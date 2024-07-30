@@ -24,7 +24,8 @@ export default function Header(props) {
                 document.documentElement.style.setProperty('--vh', `${vh}px`);
             };
             setVh();
-            window.addEventListener('resize orientationchange', setVh);
+            window.addEventListener('resize', setVh);
+            window.addEventListener('orientationchange', setVh);
 
             const screenRatio = () => {
                 //console.log(window.innerWidth)
@@ -35,7 +36,8 @@ export default function Header(props) {
                 document.documentElement.style.setProperty("--screen-ratio",Math.max(winWidth,winHeight)/Math.min(winWidth,winHeight))
             }
             screenRatio();
-            window.addEventListener('resize orientationchange', screenRatio);
+            window.addEventListener('resize', screenRatio);
+            window.addEventListener('orientationchange', screenRatio);
 
             completeVhSetting(true)
         }
