@@ -22,7 +22,14 @@ export default function ContactUs() {
                 setSendMailIs("FAILED");
             },
         );
-      };
+    };
+
+    const formReset = () => {
+        contactUsForm.current.username.value = ""
+        contactUsForm.current.email.value = ""
+        contactUsForm.current.subject.value = ""
+        contactUsForm.current.message.value = ""
+    }
 
     return(
         <section id={scss.contact_us}>
@@ -62,7 +69,7 @@ export default function ContactUs() {
                         검토 후 빠른 시일내에 답변드리겠습니다.
                     </p>
                     <div className={scss.btn_set}>
-                        <button type="button" className={scss.ok} onClick={()=> setSendMailIs("")}>OK</button>
+                        <button type="button" className={scss.ok} onClick={()=> {setSendMailIs(""); formReset()}}>OK</button>
                     </div>
                 </div>
                 <div className={`${scss.sr_message} ${scss.error}`} style={sendMailIs == "FAILED" ? {"display":"block"}:{"display":""}}>
