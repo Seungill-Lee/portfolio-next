@@ -1,8 +1,5 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import { Alkatra, Noto_Sans_KR } from "next/font/google";
 import "./base.scss";
-import scss from "./layout.module.scss";
 
 export const metadata = {
     title: "Seungill's Portfolio - 웹퍼블리셔 승일이의 포트폴리오",
