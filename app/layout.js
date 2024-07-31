@@ -29,9 +29,9 @@ export const metadata = {
           'max-snippet': -1,
         },
     },
-    // verification: {
-    //     google: '6d589bbpgf9SE3u5SiquJMJUxRIAm9_Qyd0uCqdZF_o',
-    // },
+    verification: {
+        google: '6d589bbpgf9SE3u5SiquJMJUxRIAm9_Qyd0uCqdZF_o',
+    },
     openGraph: {
         title: "Seungill's Portfolio - 웹퍼블리셔 승일이의 포트폴리오",
         description: "웹퍼블리셔 승일이의 포트폴리오(Seungill's Portfolio) 페이지에 오신것을 환영합니다.",
