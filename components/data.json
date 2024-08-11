@@ -1,6 +1,18 @@
 {
     "portfolio": [
         {
+            "projectName": "현대캐피탈 모바일웹&앱 운영 고도화",
+            "url": "https://www.hyundaicapital.com/",
+            "screenshotImg": "pf_202403-08_hyundaicapital.jpg",
+            "category": "운영",
+            "terms": "2024년 3월 ~ 8월",
+            "year": "2024",
+            "client": "현대캐피탈",
+            "position": "PL, 메인 퍼블리셔",
+            "contribution" : "95%",
+            "useSkill": "HTML5, CSS, jQuery"
+        },
+        {
             "projectName": "한화 큐셀 발전소 관리 플랫폼 신규 구축",
             "screenshotImg": "pf_202310-202402_hanhwaqsell.jpg",
             "category": "구축",
@@ -19,7 +31,7 @@
             "terms": "2023년 7월 ~ 9월",
             "year": "2023",
             "client": "LG전자",
-            "position": "PL,메인 퍼블리셔",
+            "position": "PL, 메인 퍼블리셔",
             "contribution" : "100%",
             "useSkill": "HTML5, CSS3, ECMAScript6(ES6), 반응형웹"
         },
@@ -432,7 +444,7 @@
             "year": "2011",
             "client": "부천시청",
             "position": "PL, 메인 퍼블리셔",
-            "contribution" : "",
+            "contribution" : "80%",
             "useSkill": "XHTML, CSS"
         },
         {

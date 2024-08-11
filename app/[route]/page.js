@@ -1,7 +1,5 @@
 "use client"
 
-import Link from 'next/link';
-import Image from 'next/image';
 import scss from "./page.module.scss";
 import About from "/components/contents/about.js"
 import Story from "/components/contents/story.js"

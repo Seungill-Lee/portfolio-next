@@ -106,12 +106,14 @@ section#portfolio {
     }
     ul.pf_detail {
         position: fixed;
+        z-index: 3;
         top: get-vw(100px,$divceWidth);
         bottom: get-vw(100px,$divceWidth);
         right: get-vw(625px,$divceWidth);
         width: get-vw(600px,$divceWidth);
         > li {
             position: absolute;
+            z-index: 1;
             top: 0px;
             left: 0px;
             height: 100%;
@@ -119,6 +121,7 @@ section#portfolio {
             opacity: 0;
             transition: 0.3s ease opacity;
             &.active {
+                z-index: 2;
                 opacity: 1;
             }
             .screenshot {
@@ -535,8 +538,8 @@ section#portfolio {
                                         &.participation {
                                             .gauge {
                                                 .bar {
-                                                    padding: get-vw(8px,$divceWidth) get-vw(11px,$divceWidth) get-vw(9px,$divceWidth);
-                                                    font-size: get-vw(16px,$divceWidth);
+                                                    padding: get-vw(7px,$divceWidth) get-vw(11px,$divceWidth) get-vw(8px,$divceWidth);
+                                                    font-size: get-vw(14px,$divceWidth);
                                                 }
                                             }
                                         }

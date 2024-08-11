@@ -13,12 +13,14 @@ export default function Portfolio() {
     const pfLength = data["portfolio"].length;
     const portfolioRef = useRef();
     const pfSummaryRef = useRef();
+    const pfDetailRef = useRef();
     const [pfsMoveTop,setPfsMoveTop] = useState(0);
     const distWrapRef = useRef();
 
     useEffect(() => {
         const portfolio = portfolioRef.current;
         const pfSummary = pfSummaryRef.current;
+        const pfDetail = pfDetailRef.current;
         const distWrap = distWrapRef.current;
         const dist = distWrap.querySelectorAll("div");
 
@@ -35,6 +37,11 @@ export default function Portfolio() {
                     setPfYears(data["portfolio"][i].year)
                 }
             });
+        })
+
+        pfDetail.addEventListener("wheel",function(e) {
+            portfolio.scrollTop += ((e.deltaY*2)/3)
+            //console.log(e.deltaY+" , "+e.deltaMode)
         })
 
         window.addEventListener("resize",function() {
@@ -69,7 +76,7 @@ export default function Portfolio() {
                     <div className={scss.bar} style={{"height":(activePf/(pfLength-1))*100+"%"}}></div>
                 </div>
             </div>
-            <ul className={scss.pf_detail}>
+            <ul className={scss.pf_detail} ref={pfDetailRef}>
                 {data["portfolio"].map((b,j)=> {
                     return(
                         <li key={j} className={j == activePf  ? scss["active"] : ""}>
