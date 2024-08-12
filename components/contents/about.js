@@ -18,12 +18,20 @@ export default function About() {
             "ability": 25
         },
         {
-            "name": "HTML&CSS",
+            "name": "HTML5&CSS3",
             "ability": 95
+        },,
+        {
+            "name": "SCSS&Sass",
+            "ability": 70
         },
         {
-            "name": "DOM Script<br />(ES5~ES6)",
+            "name": "DOM Script<br />(ES6 이전)",
             "ability": 80
+        },,
+        {
+            "name": "ECMAScript<br />(ES6 ~ 최신)",
+            "ability": 30
         },
         {
             "name": "jQuery",
@@ -31,7 +39,7 @@ export default function About() {
         },
         {
             "name": "Gulp.js",
-            "ability": 30
+            "ability": 25
         },
         {
             "name": "SVN&Git",
@@ -74,9 +82,9 @@ export default function About() {
                     <li>사는곳 : 서울특별시 동작구 노량진동</li>
                     <li>헨드폰 : 010-9907-9415</li>
                     <li>이메일 : <a href="mailto:ever9415@nate.com">ever9415@nate.com</a></li>
-                    <li>취미 : 유튜브 보기, 게임하기, 음악듣기</li>
+                    <li>취미 : 유튜브 시청, 게임하기, 음악듣기</li>
                     <li>특기: 홈페이지 만들기, 2D CAD</li>
-                    <li>관심사: 부동산, 예적금, 자취용품, 인테리어</li>
+                    <li>관심사: 부동산, 예적금, 주식(ETF)투자, Full-Stack Framework, Node.js</li>
                 </ul>
             </div>
             <div className={`${scss.intro} ${scss.about_cont}`}>
