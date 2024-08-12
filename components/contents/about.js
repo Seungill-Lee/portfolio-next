@@ -18,7 +18,7 @@ export default function About() {
             "ability": 25
         },
         {
-            "name": "HTML5&CSS3",
+            "name": "HTML&CSS",
             "ability": 95
         },,
         {
