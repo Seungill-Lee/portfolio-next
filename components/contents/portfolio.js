@@ -112,24 +112,19 @@ export default function Portfolio() {
                                             <th scope="row">사용 스킬</th>
                                             <td>{b.useSkill}</td>
                                         </tr>
-                                        {(()=> {
-                                            if(b.specialNote) {
-                                                return(
-                                                    <tr>
-                                                        <th scope="row">특이사항</th>
-                                                        <td>
-                                                            <ul className={scss.special_note}>
-                                                                {b["specialNote"].map((c,k) => {
-                                                                    return(
-                                                                        <li key={k}>{c}</li>
-                                                                    )
-                                                                })}
-                                                            </ul>
-                                                        </td>
-                                                    </tr>
-                                                )
-                                            }
-                                        })}
+                                        {b.specialNote ? 
+                                            <tr>
+                                                <th scope="row">특이사항</th>
+                                                <td>
+                                                    <ul className={scss.special_note}>
+                                                        {b["specialNote"].map((c,k) => {
+                                                            return(
+                                                                <li key={k}>{c}</li>
+                                                            )
+                                                        })}
+                                                    </ul>
+                                                </td>
+                                            </tr> : ""}
                                     </tbody>
                                 </table>
                             </div>

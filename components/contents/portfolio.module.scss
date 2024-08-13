@@ -184,6 +184,24 @@ section#portfolio {
                                         }
                                     }
                                 }
+                                ul.special_note {
+                                    > li {
+                                        position: relative;
+                                        padding-left: get-vw(15px,$divceWidth);
+                                        font-size: get-vw(17px,$divceWidth);
+                                        line-height: 140%;
+                                        &:before {
+                                            content: "-";
+                                            display: block;
+                                            position: absolute;
+                                            top: 0px;
+                                            left: 0px;
+                                        }
+                                        & + li {
+                                            margin-top: get-vw(7px,$divceWidth);
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -296,6 +314,15 @@ section#portfolio {
                                             }
                                         }
                                     }
+                                    ul.special_note {
+                                        > li {
+                                            padding-left: get-vw(12px,$divceWidth);
+                                            font-size: get-vw(14px,$divceWidth);
+                                            & + li {
+                                                margin-top: get-vw(4px,$divceWidth);
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -376,6 +403,15 @@ section#portfolio {
                                             }
                                         }
                                     }
+                                    ul.special_note {
+                                        > li {
+                                            padding-left: get-vw(13px,$divceWidth);
+                                            font-size: get-vw(16px,$divceWidth);
+                                            & + li {
+                                                margin-top: get-vw(6px,$divceWidth);
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -428,6 +464,15 @@ section#portfolio {
                                                 .bar {
                                                     padding: get-vw(8px,$divceWidth) get-vw(10px,$divceWidth) get-vw(10px,$divceWidth);
                                                     font-size: get-vw(16px,$divceWidth);
+                                                }
+                                            }
+                                        }
+                                        ul.special_note {
+                                            > li {
+                                                padding-left: get-vw(13px,$divceWidth);
+                                                font-size: get-vw(16px,$divceWidth);
+                                                & + li {
+                                                    margin-top: get-vw(6px,$divceWidth);
                                                 }
                                             }
                                         }
@@ -488,6 +533,15 @@ section#portfolio {
                                             }
                                         }
                                     }
+                                    ul.special_note {
+                                        > li {
+                                            padding-left: get-vw(12px,$divceWidth);
+                                            font-size: get-vw(16px,$divceWidth);
+                                            & + li {
+                                                margin-top: get-vw(6px,$divceWidth);
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -540,6 +594,15 @@ section#portfolio {
                                                 .bar {
                                                     padding: get-vw(7px,$divceWidth) get-vw(11px,$divceWidth) get-vw(8px,$divceWidth);
                                                     font-size: get-vw(14px,$divceWidth);
+                                                }
+                                            }
+                                        }
+                                        ul.special_note {
+                                            > li {
+                                                padding-left: get-vw(10px,$divceWidth);
+                                                font-size: get-vw(14px,$divceWidth);
+                                                & + li {
+                                                    margin-top: get-vw(4px,$divceWidth);
                                                 }
                                             }
                                         }
