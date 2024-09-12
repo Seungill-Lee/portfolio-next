@@ -47,7 +47,7 @@ export default function About() {
         },
         {
             "name": "Wordpress",
-            "ability": 60
+            "ability": 55
         },
         {
             "name": "React<br />Next.js",
