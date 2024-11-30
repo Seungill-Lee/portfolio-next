@@ -77,7 +77,7 @@ export default function About() {
             <div className={`${scss.profile} ${scss.about_cont} ${scss.on}`}>
                 <h3>프로필</h3>
                 <ul>
-                    <li>이름 : 이승이 [李承一, Seungill Lee]</li>
+                    <li>이름 : 이승일 [李承一, Seungill Lee]</li>
                     <li>생년월일 : 1989년 3월 31일</li>
                     <li>사는곳 : 서울특별시 동작구 노량진동</li>
                     <li>헨드폰 : 010-9907-9415</li>
