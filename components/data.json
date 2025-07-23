@@ -1,6 +1,18 @@
 {
     "portfolio": [
         {
+            "projectName": "LG전자 사이트 웹접근성 개선 고도화",
+            "url": "https://www.lge.co.kr/home",
+            "screenshotImg": "pf_202501-06_lge.jpg",
+            "category": "운영",
+            "terms": "2025년 1월 ~ 6월",
+            "year": "2025",
+            "client": "LG전자",
+            "position": "서브 퍼블리셔, 스크립터",
+            "contribution" : "30%",
+            "useSkill": "HTML5, CSS, jQuery"
+        },
+        {
             "projectName": "SK온 AXIS/ATIS Central(AI플랫품) 구축",
             "screenshotImg": "pf_202408-11_central.jpg",
             "category": "구축",
