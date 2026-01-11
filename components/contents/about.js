@@ -26,14 +26,6 @@ export default function About() {
             "ability": 70
         },
         {
-            "name": "DOM Script<br />(ES6 이전)",
-            "ability": 80
-        },,
-        {
-            "name": "ECMAScript<br />(ES6 ~ 최신)",
-            "ability": 30
-        },
-        {
             "name": "jQuery",
             "ability": 90
         },
@@ -48,6 +40,10 @@ export default function About() {
         {
             "name": "Wordpress",
             "ability": 55
+        },
+        {
+            "name": "Vue.js",
+            "ability": 35
         },
         {
             "name": "React<br />Next.js",
@@ -132,7 +128,7 @@ export default function About() {
                             <li key={s}>
                                 <div className={scss.cateogry} dangerouslySetInnerHTML={{ __html: skill.name}} />
                                 <div className={scss.gauge}>
-                                    <div className={`${scss.bar} ${skill.name.indexOf("React") > -1 ? scss.react : ""}`} style={inView ? {"width":skill.ability+"%","transition-delay":`${0.1*s}s`} : {"width":"0%"}}>{inView ? <CountUp duration={1} delay={(0.1*s)+0.1} start={0} end={skill.ability} /> : 0}%</div>
+                                    <div className={`${scss.bar} ${skill.name.indexOf("React") > -1 ? scss.react : ""} ${skill.name.indexOf("Vue") > -1 ? scss.vue : ""}`} style={inView ? {"width":skill.ability+"%","transition-delay":`${0.1*s}s`} : {"width":"0%"}}>{inView ? <CountUp duration={1} delay={(0.1*s)+0.1} start={0} end={skill.ability} /> : 0}%</div>
                                 </div>
                             </li>
                         )

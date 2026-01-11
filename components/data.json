@@ -1,6 +1,17 @@
 {
     "portfolio": [
         {
+            "projectName": "SHEM 플랫폼 대시보드 제작 및 메인화면 개편",
+            "screenshotImg": "pf_202507-12_skens.jpg",
+            "category": "구축",
+            "terms": "2025년 7월 ~ 12월",
+            "year": "2025",
+            "client": "SK E&S",
+            "position": "메인 퍼블리셔, 스크립터",
+            "contribution" : "100%",
+            "useSkill": "HTML5, CSS, Vue2, eChart 6.0"
+        },
+        {
             "projectName": "LG전자 사이트 웹접근성 개선 고도화",
             "url": "https://www.lge.co.kr/home",
             "screenshotImg": "pf_202501-06_lge.jpg",
@@ -13,7 +24,7 @@
             "useSkill": "HTML5, CSS, jQuery"
         },
         {
-            "projectName": "SK온 AXIS/ATIS Central(AI플랫품) 구축",
+            "projectName": "AXIS/ATIS Central(AI플랫품) 구축",
             "screenshotImg": "pf_202408-11_central.jpg",
             "category": "구축",
             "terms": "2024년 9월 ~ 11월",

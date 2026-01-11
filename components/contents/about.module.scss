@@ -87,6 +87,10 @@ section#about {
                             background-color: crimson;
                             transition: 0.3s ease-in width;
                             overflow: hidden;
+                            &.vue {
+                                color: #6fffd7;
+                                background-color: #5c7c9d;
+                            }
                             &.react {
                                 color: #61DAFB;
                                 background-color: rgb(23,23,23);

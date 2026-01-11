@@ -279,11 +279,6 @@ section#portfolio {
             right: get-vw(300px,$divceWidth);
             width: get-vw(480px,$divceWidth);
             > li {
-                .screenshot {
-                    img {
-                        max-height: get-vw(480px,$divceWidth);
-                    }
-                }
                 .project_info {
                     margin-top: get-vw(30px,$divceWidth);
                     h3 {
