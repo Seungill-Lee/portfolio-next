@@ -47,7 +47,7 @@
             "useSkill": "HTML5, CSS, jQuery"
         },
         {
-            "projectName": "한화 큐셀 발전소 관리 플랫폼 신규 구축",
+            "projectName": "Qcells 발전소 관리 플랫폼 신규 구축",
             "screenshotImg": "pf_202310-202402_hanhwaqsell.jpg",
             "category": "구축",
             "terms": "2023년 10월 ~ 2024년 2월",
@@ -182,7 +182,7 @@
             "url": "https://www.raemian.co.kr/main.do",
             "screenshotImg": "pf_202004-202008_raemian.jpg",
             "category": "구축",
-            "terms": "2020년 4월 ~ 2020년 8월",
+            "terms": "2020년 4월 ~ 8월",
             "year": "2020",
             "client": "삼성물산",
             "position": "PL, 메인 퍼블리셔",
@@ -437,6 +437,7 @@
         },
         {
             "projectName": "신라인터넷면세점 사이트(PC) 운영",
+            "url": "https://www.shilladfs.com/",
             "screenshotImg": "pf_201202-07_shilladfs.jpg",
             "category": "운영",
             "terms": "2012년 2월 ~ 7월",
